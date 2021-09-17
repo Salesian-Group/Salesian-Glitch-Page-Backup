@@ -59,13 +59,14 @@
     <button id="create" onclick="setSchedule()" type="button">
       Create Schedule
     </button>
-    <br><br>
+    <br /><br />
     <input id="sresult" type="text" readonly="True" placeholder="EMPTY" />
-    <br><br>
+    <br /><br />
     <input id="speriod" type="text" placeholder="Period Name" />
-    <br><br>
+    <br /><br />
     start time
     <select id="sihour">
+      <option>1</option>
       <option>6</option>
       <option>7</option>
       <option>8</option>
@@ -142,7 +143,7 @@
       <option>58</option>
       <option>59</option>
     </select>
-    <br>
+    <br />
     end time
     <select id="sfhour">
       <option>6</option>
@@ -221,10 +222,10 @@
       <option>58</option>
       <option>59</option>
     </select>
-    <br><br>
+    <br /><br />
     is a transition event?
     <input id="strans" type="checkbox" />
-    <br><br>
+    <br /><br />
     <button id="append" onclick="appendSchedule()" type="button">
       Append Period to Schedule
     </button>
@@ -257,18 +258,33 @@
         return ms;
       }
 
-      
       function appendSchedule() {
-        var startsec = (document.getElementById("sihour").value * 60 * 60) + (document.getElementById("siminute").value * 60);
-        var endsec = (document.getElementById("sfhour").value * 60 * 60) + (document.getElementById("sfminute").value * 60);
+        var startsec =
+          document.getElementById("sihour").value * 60 * 60 +
+          document.getElementById("siminute").value * 60;
+        var endsec =
+          document.getElementById("sfhour").value * 60 * 60 +
+          document.getElementById("sfminute").value * 60;
         var trans = 0;
-        if(document.getElementById("strans").checked=='true'){
+        if (document.getElementById("strans").checked == true) {
           trans = 1;
         }
-        sresult.value = sresult.value+"|a|"+startsec+"|b|"+endsec+"|b|"+document.getElementById("speriod").value+"|b|"+trans;
+        sresult.value =
+          sresult.value +
+          "|a|" +
+          startsec +
+          "|b|" +
+          endsec +
+          "|b|" +
+          document.getElementById("speriod").value +
+          "|b|" +
+          trans;
       }
       function setSchedule() {
-        sresult.value = document.getElementById("sdate").value+"|b|"+document.getElementById("sidentifier").value;
+        sresult.value =
+          document.getElementById("sdate").value +
+          "|b|" +
+          document.getElementById("sidentifier").value;
       }
     </script>
   </body>

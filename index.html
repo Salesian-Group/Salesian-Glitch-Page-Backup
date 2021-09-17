@@ -64,29 +64,48 @@
     <script>
       var sccalcbut = document.getElementById("schedulecalculate");
 
-      var schedule = [["0000", "Monday Schedule"], ["28800","31740","Block 1","0"]];
+      var schedule = [
+        ["0000", "Monday Schedule"],
+        ["28800", "31740", "Block 1", "0"]
+      ];
       // the first set contains schedule basics: [day-of-schedule, event-name]
       // the remaining sets are the periods: [start-time, end-time, period-name, is-transition]
       function encode(sched) {
         var ms = "";
-        ms = sched[0][0]+"|b|"+sched[0][1];
+        ms = sched[0][0] + "|b|" + sched[0][1];
         for (i = 1; i < sched.length; i++) {
-          ms = ms+"|a|"+sched[i][0]+"|b|"+sched[i][1]+"|b|"+sched[i][2]+"|b|"+sched[i][3];
+          ms =
+            ms +
+            "|a|" +
+            sched[i][0] +
+            "|b|" +
+            sched[i][1] +
+            "|b|" +
+            sched[i][2] +
+            "|b|" +
+            sched[i][3];
         }
         return ms;
       }
       function decode(sched) {
-        var msg = sched.split('|a|')
+        var msg = sched.split("|a|");
         var ms = [];
         for (i = 0; i < msg.length; i++) {
-          ms[i] = msg[i].split('|b|')
+          ms[i] = msg[i].split("|b|");
         }
         return ms;
       }
 
       function calcSchedule() {
-        var currenttime = new Date();
-        sccalcbut.innerHTML = decode('0000|b|Monday Schedule|a|28800|b|31740|b|Block 1|b|0');
+        var currenttime = new Date().getTime / 1000;
+        currenttime = currenttime 
+        var schedule = decode('1709|b|Evening Programming|a|24240|b|24360|b|Snack Break|b|0|a|24360|b|24420|b|Work Time|b|0');
+        sccalcbut.innerHTML = "none";
+        for (i = 1; i < schedule.length; i++) {
+          if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
+            sccalcbut.innerHTML = schedule[i][2];
+          }
+        }
       }
     </script>
   </body>
