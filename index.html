@@ -97,9 +97,8 @@
       }
 
       function calcSchedule() {
-        var currenttime = new Date().getTime / 1000;
-        currenttime = currenttime 
-        var schedule = decode('1709|b|Evening Programming|a|24240|b|24360|b|Snack Break|b|0|a|24360|b|24420|b|Work Time|b|0');
+        var currenttime = (new Date().getHours() * 60 * 60)+(new Date().getMinutes() * 60);
+        var schedule = decode('1709|b|midnight awesomeness|a|7200|b|7320|b|sunwa|b|0|a|7320|b|7440|b|sunwarewarewa|b|0|a|7560|b|7680|b|ABABABA|b|0');
         sccalcbut.innerHTML = "none";
         for (i = 1; i < schedule.length; i++) {
           if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
