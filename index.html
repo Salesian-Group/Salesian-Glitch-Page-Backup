@@ -130,10 +130,10 @@
             sccalcbut.innerHTML = schedule[i][2];
             if (schedule[i][3] == "1") {
               var schedsave = schedule[i][2];
-              for (i = schedule.length - 1; i > 0; i--) {
-                if (currenttime < schedule[i][0] && schedule[i][3] == "0") {
+              for (i2 = schedule.length - 1; i2 > 0; i2--) {
+                if (currenttime < schedule[i2][0] && schedule[i2][3] == "0") {
                   sccalcbut.innerHTML =
-                    schedsave + ", next is " + schedule[i][2];
+                    schedsave + ", next is " + schedule[i2][2];
                 }
               }
             }
