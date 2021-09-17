@@ -64,10 +64,28 @@
     <script>
       var sccalcbut = document.getElementById("schedulecalculate");
 
-      var schedule = [
-        ["0000", "Monday Schedule"],
-        ["28800", "31740", "Block 1", "0"]
+      var specialschedules = [];
+      var selectedschedule = "nan";
+      var weekdayschedules = [
+        [],
+        
       ];
+      
+      for (i = 0; i < specialschedules.length; i++) {
+        if (
+          parseInt(new Date().getMonth()) ==
+            parseInt(specialschedules[i].substring(2, 4)) &&
+          parseInt(new Date().getDate()) ==
+            parseInt(specialschedules[i].substring(0, 2))
+        ) {
+          selectedschedule = specialschedules[i];
+        }
+      }
+      
+      if (selectedschedule == "nan"){
+        
+      }
+
       // the first set contains schedule basics: [day-of-schedule, event-name]
       // the remaining sets are the periods: [start-time, end-time, period-name, is-transition]
       function encode(sched) {
@@ -97,8 +115,11 @@
       }
 
       function calcSchedule() {
-        var currenttime = (new Date().getHours() * 60 * 60)+(new Date().getMinutes() * 60);
-        var schedule = decode('1709|b|midnight awesomeness|a|7200|b|7320|b|sunwa|b|0|a|7320|b|7440|b|sunwarewarewa|b|0|a|7560|b|7680|b|ABABABA|b|0');
+        var currenttime =
+          new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
+        var schedule = decode(
+          "1709|b|midnight awesomeness|a|7200|b|7320|b|sunwa|b|0|a|7320|b|7440|b|sunwarewarewa|b|0|a|7560|b|7680|b|ABABABA|b|0"
+        );
         sccalcbut.innerHTML = "none";
         for (i = 1; i < schedule.length; i++) {
           if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
