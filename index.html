@@ -57,15 +57,18 @@
       id="schedulecalculate"
       onclick="calcSchedule()"
       type="button"
-      style="position: absolute;width: 500px;height: 300px;top: 50%;left: 50%;transform: translate(-50%, -50%);font-size:100px;z-index:1;"
+      style="position: absolute;width: 500px;height: 300px;top: 50%;left: 50%;transform: translate(-50%, -50%);font-size:100px;"
     >
       Get Schedule
     </button>
     <script>
       var sccalcbut = document.getElementById("schedulecalculate");
+      
+      var sched = [['soup','fat'],'fat'];
 
       function calcSchedule() {
-        sccalcbut.innerHTML = new Date();
+        sccalcbut.innerHTML = sched[0];
+        var currenttime = new Date();
       }
     </script>
   </body>
