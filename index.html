@@ -42,7 +42,6 @@
     <link rel="stylesheet" href="/style.css" />
 
     <!-- Import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
   </head>
   <body>
     <!--
@@ -54,28 +53,20 @@
     -->
 
     <!-- The wrapper and content divs set margins and positioning -->
-    <div class="wrapper">
-      <div class="content" role="main">
-        <!-- This is the start of content for our page -->
-        <h1 class="title">Schedulology</h1>
+    <button
+      id="schedulecalculate"
+      onclick="calcSchedule()"
+      type="button"
+      style="position: absolute;width: 500px;height: 300px;top: 50%;left: 50%;transform: translate(-50%, -50%);font-size:100px;z-index:1;"
+    >
+      Get Schedule
+    </button>
+    <script>
+      var sccalcbut = document.getElementById("schedulecalculate");
 
-        <button
-          id="schedulecalculate"
-          onclick="calcSchedule()"
-          type="button"
-          style="position: absolute;width: 500px;height: 300px;top: 50%;left: 50%;transform: translate(-50%, -50%);font-size:100px;"
-        >
-          Get Schedule
-        </button>
-        <script> 
-var sccalcbut = document.getElementById("schedulecalculate"); 
-      
-
-function calcSchedule() { 
-  sccalcbut.text
-} 
-</script>
-      </div>
-    </div>
+      function calcSchedule() {
+        sccalcbut.innerHTML = new Date();
+      }
+    </script>
   </body>
 </html>
