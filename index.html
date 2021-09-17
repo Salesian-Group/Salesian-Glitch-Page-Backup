@@ -64,20 +64,20 @@
     <script>
       var sccalcbut = document.getElementById("schedulecalculate");
 
-      var sched = [["soup", "fat"], "fat"];
+      var sched = [["0000", "Monday Schedule"], ["8:00","8:40","Block 1","0"]];
       // the first set contains schedule basics: [day-of-schedule, event-name]
       // the remaining sets are the periods: [start-time, end-time, period-name, is-transition]
       function encode(msg) {
         var ms = "";
         ms =
         for (i = 1; i < msg.length; i++) {
-          text += cars[i] + "<br>";
+          //
         }
       }
 
       function calcSchedule() {
-        sccalcbut.innerHTML = sched[0];
         var currenttime = new Date();
+        sccalcbut.innerHTML = sched[0];
       }
     </script>
   </body>
