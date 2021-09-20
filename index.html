@@ -57,16 +57,14 @@
       id="schedulecalculate"
       onclick="calcSchedule()"
       type="button"
-      style="position: absolute;width: 90%;height: 90%;top: 5%;left: 5%;transform: translate(0%, 0%);font-size:100px;"
+      style="position: absolute;width: 90%;height: 90%;top: 5%;left: 5%;transform: translate(0%, 0%);font-size:200%;"
     >
       Get Schedule
     </button>
     <script>
       var sccalcbut = document.getElementById("schedulecalculate");
 
-      var specialschedules = [
-        ""
-      ];
+      var specialschedules = [""];
       var selectedschedule = "";
       var weekdayschedules = [
         "",
@@ -127,13 +125,28 @@
         sccalcbut.innerHTML = "none";
         for (i = 1; i < schedule.length; i++) {
           if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
-            sccalcbut.innerHTML = schedule[i][2] + " (" + (schedule[i][1]-currenttime)/60 + "′)";
-            if (schedule[i][3] == "1" || (schedule[i][1]-currenttime)/60 <= 5) {
+            sccalcbut.innerHTML =
+              schedule[i][2] +
+              " (" +
+              (schedule[i][1] - currenttime) / 60 +
+              "′)";
+            if (
+              schedule[i][3] == "1" ||
+              (schedule[i][1] - currenttime) / 60 <= 5
+            ) {
               var schedsave = schedule[i][2];
               for (i2 = schedule.length - 1; i2 > 0; i2--) {
-                if (currenttime < schedule[i2][0] && (schedule[i2][3] == "0" || (schedule[i][1]-currenttime)/60 <= 5)) {
+                if (
+                  currenttime < schedule[i2][0] &&
+                  (schedule[i2][3] == "0" ||
+                    (schedule[i][1] - currenttime) / 60 <= 5)
+                ) {
                   sccalcbut.innerHTML =
-                    schedsave + " (" + (schedule[i][1]-currenttime)/60 + "′), next is " + schedule[i2][2];
+                    schedsave +
+                    " (" +
+                    (schedule[i][1] - currenttime) / 60 +
+                    "′), next is " +
+                    schedule[i2][2];
                 }
               }
             }
@@ -147,7 +160,11 @@
           for (i = schedule.length - 1; i > 0; i--) {
             if (currenttime < schedule[i][0] && schedule[i][3] == "0") {
               sccalcbut.innerHTML =
-                "transitioning to " + schedule[i][2] + " (" + (schedule[i][1]-currenttime)/60 + "′)";
+                "transitioning to " +
+                schedule[i][2] +
+                " (" +
+                (schedule[i][1] - currenttime) / 60 +
+                "′)";
             }
           }
         }
