@@ -126,7 +126,7 @@
           new Date().getMinutes() * 60 +
           new Date().getSeconds();
         var schedule = decode(selectedschedule);
-        sccalcbut.innerHTML = "none";
+        sccalcbut.innerHTML = "Out of Session";
         for (i = 1; i < schedule.length; i++) {
           if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
             sccalcbut.innerHTML =
