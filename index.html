@@ -55,14 +55,21 @@
     <!-- The wrapper and content divs set margins and positioning -->
     <button
       id="schedulecalculate"
-      onclick="calcSchedule()"
       type="button"
-      style="position: absolute;width: 90%;height: 90%;top: 5%;left: 5%;transform: translate(0%, 0%);font-size:200%;"
+      style="position: absolute;width: 50%;height: 90%;top: 5%;left: 45%;transform: translate(0%, 0%);font-size:200%;"
     >
-      Get Schedule
+      Schedule Summary
+    </button>
+    <button
+      id="schedulefulllist"
+      type="button"
+      style="position: absolute;width: 40%;height: 90%;top: 5%;left: 5%;transform: translate(0%, 0%);font-size:200%;"
+    >
+      List
     </button>
     <script>
       var sccalcbut = document.getElementById("schedulecalculate");
+      var sclister = document.getElementById("schedulefulllist");
 
       var specialschedules = [""];
       var weekdayschedules = [
@@ -180,6 +187,7 @@
             }
           }
         }
+        var 
       }
       function refreshloop() {
         setTimeout("refreshloop()", 1000);
