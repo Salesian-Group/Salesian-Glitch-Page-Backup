@@ -189,7 +189,8 @@
         }
         var listtext = '';
         for (i = 1;i<schedule.length;i++){
-          listtext = listtext + "<br>" + schedule[i][0] + " - " + schedule[i][1] + " --- " + schedule[i][2];
+          var h1 = schedule[i][0]/60
+          listtext = listtext + "<br>" + schedule[i][0]/60/60 + ":" + schedule[i][0]/60 + " - " + schedule[i][1] + " --- " + schedule[i][2];
         }
         sclister.innerHTML = listtext;
       }
