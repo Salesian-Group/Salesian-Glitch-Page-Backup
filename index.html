@@ -187,7 +187,10 @@
             }
           }
         }
-        var listtext = 
+        var listtext = '';
+        for (i = 0,i<schedule.length,i++){
+          listtext = listtext + "\n " + schedule[i][0]
+        }
       }
       function refreshloop() {
         setTimeout("refreshloop()", 1000);
