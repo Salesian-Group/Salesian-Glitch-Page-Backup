@@ -56,14 +56,14 @@
     <button
       id="schedulecalculate"
       type="button"
-      style="position: absolute;width: 50%;height: 90%;top: 5%;left: 45%;transform: translate(0%, 0%);font-size:225%;"
+      style="position: absolute;width: 50%;height: 90%;top: 5%;left: 45%;transform: translate(0%, 0%);font-size:500%;"
     >
       Schedule Summary
     </button>
     <button
       id="schedulefulllist"
       type="button"
-      style="position: absolute;width: 40%;height: 90%;top: 5%;left: 5%;transform: translate(0%, 0%);font-size:100%;"
+      style="position: absolute;width: 40%;height: 90%;top: 5%;left: 5%;transform: translate(0%, 0%);font-size:150%;"
     >
       List
     </button>
@@ -188,8 +188,8 @@
           }
         }
         var listtext = '';
-        for (i = 0;i<schedule.length;i++){
-          listtext = listtext + "<br>" + schedule[i][0] + " - " + schedule[i][1] + "   " + schedule[i][2];
+        for (i = 1;i<schedule.length;i++){
+          listtext = listtext + "<br>" + schedule[i][0] + " - " + schedule[i][1] + " --- " + schedule[i][2];
         }
         sclister.innerHTML = listtext;
       }
