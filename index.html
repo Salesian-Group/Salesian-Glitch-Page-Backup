@@ -137,10 +137,12 @@
           new Date().getMinutes() * 60 +
           new Date().getSeconds();
         var schedule = decode(selectedschedule);
+        var activeclass = 'n/a';
         sccalcbut.innerHTML = "Out of Session";
         sccalcbut.style.fontSize = '10vmin';
         for (i = 1; i < schedule.length; i++) {
           if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
+            activeclass = schedule[i][2];
             sccalcbut.innerHTML =
               schedule[i][2] +
               " (" +
@@ -184,6 +186,8 @@
         ) {
           for (i = schedule.length - 1; i > 0; i--) {
             if (currenttime < schedule[i][0] && schedule[i][3] == "0") {
+              activeclass = schedule[i][2];
+              sccalcbut.style.fontSize = '7vmin';
               sccalcbut.innerHTML =
                 "transitioning to<br>" +
                 schedule[i][2] +
@@ -219,18 +223,34 @@
           if (h2 > 12) {
             h2 -= 12;
           }
-          listtext =
-            listtext +
-            "<br>" +
-            h1 +
-            ":" +
-            m1 +
-            " - " +
-            h2 +
-            ":" +
-            m2 +
-            " ─── " +
-            schedule[i][2];
+          if (activeclass == schedule[i][2]){
+            listtext =
+              listtext +
+              "<br><b>↪" +
+              h1 +
+              ":" +
+              m1 +
+              " - " +
+              h2 +
+              ":" +
+              m2 +
+              " ─── " +
+              schedule[i][2] +
+              "↩</b>";
+          } else {
+            listtext =
+              listtext +
+              "<br>" +
+              h1 +
+              ":" +
+              m1 +
+              " - " +
+              h2 +
+              ":" +
+              m2 +
+              " ─── " +
+              schedule[i][2];
+          }
         }
         sclister.innerHTML = listtext;
       }
