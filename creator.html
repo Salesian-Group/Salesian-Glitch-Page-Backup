@@ -300,6 +300,10 @@
           document.getElementById("speriod").value +
           "|b|" +
           trans;
+        document.getElementById("sihour").value = document.getElementById("sfhour").value;
+        document.getElementById("siminute").value = document.getElementById("sfminute").value;
+        document.getElementById("speriod").value = '';
+        document.getElementById("strans").checked = false;
       }
       function setSchedule() {
         sresult.value =
