@@ -9,7 +9,10 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link
+      rel="icon"
+      href="https://pbs.twimg.com/profile_images/1109279524636614656/At7h0SJu_400x400.jpg"
+    />
 
     <!-- 
       This is an HTML comment
@@ -32,10 +35,7 @@
       property="og:description"
       content="A simple website, built with Glitch. Remix it to get your own."
     />
-    <meta
-      property="og:image"
-      content=""
-    />
+    <meta property="og:image" content="" />
     <meta name="twitter:card" content="summary" />
 
     <!-- Import the webpage's stylesheet -->
@@ -71,7 +71,9 @@
       var sccalcbut = document.getElementById("schedulecalculate");
       var sclister = document.getElementById("schedulefulllist");
 
-      var specialschedules = [""];
+      var specialschedules = [
+        "",
+      ];
       var weekdayschedules = [
         "",
         "0000|b|Monday Schedule|a|28200|b|28800|b|Entrance Bell|b|1|a|28800|b|31740|b|Block 1|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 3|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 4|b|0|a|42360|b|45060|b|Block 5|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 6|b|0|a|50580|b|53280|b|Block 7|b|0|a|53280|b|53340|b|End of Schoolday|b|0",
@@ -122,6 +124,8 @@
         for (i = 0; i < msg.length; i++) {
           ms[i] = msg[i].split("|b|");
         }
+        ms = ms.splice(1, 0, [ms[1][0]-600,ms[1][0],'Entrance Bell',1]);
+        ms = ms.splice(ms.length, 0, [ms[ms.length-1][0],ms[ms.length-1][0]+60,'Schoolday Ends',0]);
         return ms;
       }
 
@@ -187,33 +191,44 @@
             }
           }
         }
-        var listtext = '<b>'+schedule[0][1]+'</b>';
-        for (i = 1;i<schedule.length;i++){
-          var h1 = (schedule[i][0]/60/60).toFixed()-1;
-          var m1 = (schedule[i][0]/60) - h1*60;
-          if (m1 >= 60){
-            h1+=1;
-            m1-=60;
+        var listtext = "<b>" + schedule[0][1] + "</b>";
+        for (i = 1; i < schedule.length; i++) {
+          var h1 = (schedule[i][0] / 60 / 60).toFixed() - 1;
+          var m1 = schedule[i][0] / 60 - h1 * 60;
+          if (m1 >= 60) {
+            h1 += 1;
+            m1 -= 60;
           }
-          if(m1 < 10){
-              m1 = m1 + "0";
-            }
-          if (h1 > 12){
-            h1-=12;
+          if (m1 < 10) {
+            m1 = m1 + "0";
           }
-          var h2 = (schedule[i][1]/60/60).toFixed()-1;
-          var m2 = (schedule[i][1]/60) - h2*60;
-          if (m2 >= 60){
-            h2+=1;
-            m2-=60;
+          if (h1 > 12) {
+            h1 -= 12;
           }
-          if(m2 < 10){
-              m2 = m2 + "0";
-            }
-          if (h2>12){
-            h2-=12;
+          var h2 = (schedule[i][1] / 60 / 60).toFixed() - 1;
+          var m2 = schedule[i][1] / 60 - h2 * 60;
+          if (m2 >= 60) {
+            h2 += 1;
+            m2 -= 60;
           }
-          listtext = listtext + "<br>" + h1 + ":" + m1 + " - " + h2 + ":" + m2 +  " ─── " + schedule[i][2];
+          if (m2 < 10) {
+            m2 = m2 + "0";
+          }
+          if (h2 > 12) {
+            h2 -= 12;
+          }
+          listtext =
+            listtext +
+            "<br>" +
+            h1 +
+            ":" +
+            m1 +
+            " - " +
+            h2 +
+            ":" +
+            m2 +
+            " ─── " +
+            schedule[i][2];
         }
         sclister.innerHTML = listtext;
       }
