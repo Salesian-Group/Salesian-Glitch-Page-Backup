@@ -182,3 +182,13 @@ h2 {
 .dipped {
   transform: translateY(5px);
 }
+.credits {
+  display:inline;
+  padding: 5px;
+  margin-left: auto;
+  color:white;
+  border: solid black 2px;
+}
+.credits::hover{
+  
+}
