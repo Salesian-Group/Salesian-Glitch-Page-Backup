@@ -184,11 +184,16 @@ h2 {
 }
 .credits {
   display:inline;
-  padding: 5px;
-  margin-left: auto;
-  color:white;
+  padding: 2px;
+  margin-left: 3px;
+  color:black;
   border: solid black 2px;
+  font-size: 2vmin;
+  transition: background-color 0.5s;
+  transition: color 0.5s;
 }
-.credits::hover{
+.credits:hover{
+  color:#c41230;
+  background: white;
   
 }
