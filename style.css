@@ -197,3 +197,16 @@ h2 {
   background: white;
   
 }
+.credits span{
+  opacity: 0;
+  transition: background-color 0.5s;
+  transition: color 0.5s
+  top:0;
+  left:0;
+  height: 100%
+    width: 100%
+}
+.credits span:hover{
+  opacity:1;
+  color:#c41230;
+}
