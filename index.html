@@ -56,21 +56,20 @@
     <button
       id="schedulecalculate"
       type="button"
-      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);font-size:10vmin;"
+      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);font-size:10vmin;background:#EEEAE2;"
     >
       Schedule Summary
     </button>
     <button
       id="schedulefulllist"
       type="button"
-      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);font-size:4vmin;"
+      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);font-size:4vmin;background:#EEEAE2;"
     >
       List
     </button>
     <script>
       var sccalcbut = document.getElementById("schedulecalculate");
       var sclister = document.getElementById("schedulefulllist");
-      var refreshrate = 30;
 
       // Wednesday Extended Lunch
       // "0000|b|Wednesday (Extended Lunch)|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Extended Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
@@ -143,7 +142,6 @@
         var activeclass = 'n/a';
         sccalcbut.innerHTML = "Out of Session";
         sccalcbut.style.fontSize = '10vmin';
-        refreshrate = 1;
         for (i = 1; i < schedule.length; i++) {
           if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
             activeclass = schedule[i][2];
@@ -152,12 +150,6 @@
               " (" +
               (schedule[i][1] - currenttime) / 60 +
               "′)";
-            if (schedule[i][1]-currenttime <= 100){
-              refreshrate = 1;
-            }
-            if (schedule[i][1]-currenttime <= 30){
-              refreshrate = .5;
-            }
             if (
               schedule[i][3] == "1" ||
               (schedule[i][1] - currenttime) / 60 <= 5
@@ -265,7 +257,6 @@
         sclister.innerHTML = listtext;
       }
       function refreshloop() {
-        //setTimeout("refreshloop()", refreshrate*1000);
         setTimeout("refreshloop()", 1000);
         calcSchedule();
       }

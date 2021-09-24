@@ -16,7 +16,7 @@ to this section's matching END comment to see page-specific styles.
 
 /* Our default values set as CSS variables */
 :root {
-  --color-bg: #c41230;
+  --color-bg: #890D24;
   --color-text-main: #000000;
   --color-primary: #FFFF00;
   --wrapper-height: 87vh;
@@ -191,6 +191,7 @@ h2 {
   font-size: 2vmin;
   transition: background 1s;
   transition: color 1s;
+  background: #EEEAE2;
 }
 .credits:hover{
   color:#c41230;
