@@ -191,7 +191,7 @@ h2 {
   font-size: 2vmin;
   transition: background 1s;
   transition: color 1s;
-  background: #EEEAE2;
+  background: #EDDAB8;
 }
 .credits:hover{
   color:#c41230;
