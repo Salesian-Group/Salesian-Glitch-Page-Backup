@@ -28,7 +28,7 @@
       content="See the bell schedule in realtime"
     />
     <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="Hello World!" />
+    <meta property="og:title" content="Schedulology" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://salesianschedule.glitch.me" />
     <meta
@@ -260,6 +260,7 @@
           }
         }
         sclister.innerHTML = listtext;
+        document.title = sccalcbut.innerHTML.split('<br>')[0];
       }
       function refreshloop() {
         setTimeout("refreshloop()", 1000);
