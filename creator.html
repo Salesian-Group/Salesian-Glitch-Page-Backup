@@ -9,7 +9,10 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link
+      rel="icon"
+      href="https://pbs.twimg.com/profile_images/1109279524636614656/At7h0SJu_400x400.jpg"
+    />
 
     <!-- 
       This is an HTML comment
@@ -19,22 +22,22 @@
     <title>Schedulology</title>
 
     <!-- Meta tags for SEO and social sharing -->
-    <link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
+    <link rel="canonical" href="https://salesianschedule.glitch.me" />
     <meta
       name="description"
-      content="A simple website, built with Glitch. Remix it to get your own."
+      content="See the bell schedule in realtime"
     />
     <meta name="robots" content="index,follow" />
     <meta property="og:title" content="Hello World!" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
+    <meta property="og:url" content="https://salesianschedule.glitch.me" />
     <meta
       property="og:description"
-      content="A simple website, built with Glitch. Remix it to get your own."
+      content="See the bell schedule in realtime"
     />
     <meta
       property="og:image"
-      content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"
+      content="https://pbs.twimg.com/profile_images/1109279524636614656/At7h0SJu_400x400.jpg"
     />
     <meta name="twitter:card" content="summary" />
 
@@ -104,11 +107,11 @@
 
       function appendSchedule() {
         var startsec =
-          document.getElementById("sitime").value * 60 * 60 +
-          document.getElementById("siminute").value * 60;
+          document.getElementById("sitime").value.split(':')[0] * 60 * 60 +
+          document.getElementById("sitime").value.split(':')[1] * 60;
         var endsec =
-          document.getElementById("sfhour").value * 60 * 60 +
-          document.getElementById("sfminute").value * 60;
+          document.getElementById("sftime").value.split(':')[0] * 60 * 60 +
+          document.getElementById("sftime").value.split(':')[1] * 60;
         var trans = 0;
         if (document.getElementById("strans").checked == true) {
           trans = 1;
@@ -123,14 +126,14 @@
           document.getElementById("speriod").value +
           "|b|" +
           trans;
-        document.getElementById("sihour").value = document.getElementById("sfhour").value;
-        document.getElementById("siminute").value = document.getElementById("sfminute").value;
+        document.getElementById("sitime").value = '';
+        document.getElementById("sftime").value = '';
         document.getElementById("speriod").value = '';
         document.getElementById("strans").checked = false;
       }
       function setSchedule() {
         sresult.value =
-          document.getElementById("sdate").value +
+          document.getElementById("sdate").value.split('/')[1] + document.getElementById("sdate").value.split('/')[0] +
           "|b|" +
           document.getElementById("sidentifier").value;
       }
