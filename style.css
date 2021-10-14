@@ -183,21 +183,27 @@ h2 {
   transform: translateY(5px);
 }
 .credits {
-  position:absolute;
-  top: 1%;
-  padding: 0px 1px;
-  border: solid black 2px;
-  font-size: 0.8em;
-  transition: background 1s;
-  transition: color 1s;
-  background: #EDDAB8;
-  text-align: center;
+  display: grid;
+}
+.credits > * {
+ grid-column-start: 1;
+  grid-row-start: 1;
+  align-items:start;
+  justify-items: start;
 }
 .credits:hover{
   color:#c41230;
   background: white;
 }
-.credits
+.credits #first {
+  z-index: 2;
+}
+.credits #second {
+  z-index: 1;
+  font-size: .7em;
+  padding-top: 5px;
+  background: white;
+}
 /*work in progress, trying to get other text to show up after hovering over your name*/
 .credits span{
   position:absolute;
