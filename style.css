@@ -205,10 +205,12 @@ h2 {
   padding-top: 8px;
   color: white;
   transition: 1s;
+  opacity: 0;
 }
 #second:hover {
   color: black;
   background: red;
+  opacity: 1;
 }
 
 /*work in progress, trying to get other text to show up after hovering over your name*/
