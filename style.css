@@ -196,9 +196,9 @@ h2 {
 }
 .credits #first {
   z-index: 1;
-  background: #DFD3BA;
+  background: rgb(237, 218, 184);
   border-radius: 3px;
-  border: 2px solid #c1a975;
+  border: 2px solid black;
 }
 .credits #second {
   z-index: 2;
