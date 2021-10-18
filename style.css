@@ -16,7 +16,7 @@ to this section's matching END comment to see page-specific styles.
 
 /* Our default values set as CSS variables */
 :root {
-  --color-bg: #890D24;
+  --color-bg: #a6192e;
   --color-text-main: #000000;
   --color-primary: #FFFF00;
   --wrapper-height: 87vh;
@@ -196,7 +196,9 @@ h2 {
 }
 .credits #first {
   z-index: 1;
-  background: white;
+  background: #DFD3BA;
+  border-radius: 3px;
+  border: 2px solid #c1a975;
 }
 .credits #second {
   z-index: 2;
@@ -209,20 +211,8 @@ h2 {
 }
 #second:hover {
   color: black;
-  background: #c41230;
+  background: #a6192e;
   opacity: 1;
 }
 
-/*work in progress, trying to get other text to show up after hovering over your name*/
-.credits span{
-  position:absolute;
-  top: 0;
-  opacity: 0;
-  transition: background-color 0.5s;
-  transition: color 0.5s
-}
-.credits hover{
-  transition: opacity 0.5s;
-  opacity: 1;
-  color:#c41230;
-}
+
