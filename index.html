@@ -150,14 +150,18 @@
       if(schedule[0][3] !== undefined){
         if (schedule[0][3].includes('!full!')){
           sccalcbut.style.backgroundSize = '100% 100%';
-          sclister.style.backgroundSize = '100% 100%';
         }
         sccalcbut.style.backgroundImage = 'url(https://'+schedule[0][3].replace('!full!','')+')';
-        sclister.style.backgroundImage = 'url(https://'+schedule[0][3].replace('!full!','')+')';
       }
       if(schedule[0][4] !== undefined){
-        sccalcbut.style.color = '#'+schedule[0][4];
-        sclister.style.color = '#'+schedule[0][4];
+        if (schedule[0][4].includes('!full!')){
+          sclister.style.backgroundSize = '100% 100%';
+        }
+        sclister.style.backgroundImage = 'url(https://'+schedule[0][4].replace('!full!','')+')';
+      }
+      if(schedule[0][5] !== undefined){
+        sccalcbut.style.color = '#'+schedule[0][5];
+        sclister.style.color = '#'+schedule[0][5];
       }
 
       function calcSchedule() {
