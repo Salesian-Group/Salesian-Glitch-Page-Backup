@@ -139,6 +139,14 @@
         ]);
         return ms;
       }
+      
+      var schedule = decode(selectedschedule);
+      if(schedule[0][2] !== undefined){
+        document.getElementById("mainbody").style.backgroundImage = 'url('+schedule[0][2]+')';
+      }
+      if(schedule[0][3] !== undefined){
+        sccalcbut.style.backgroundImage = 'url('+schedule[0][2]+')';
+      }
 
       function calcSchedule() {
         var currenttime =
@@ -147,16 +155,10 @@
           new Date().getHours() * 60 * 60 +
           new Date().getMinutes() * 60 +
           new Date().getSeconds();
-        var schedule = decode(selectedschedule);
         var activeclass = "n/a";
         sccalcbut.innerHTML = "Out of Session";
         sclister.innerHTML = "<b>" + schedule[0][1] + "</b><br>No Classes";
         sccalcbut.style.fontSize = "10vmin";
-        if(schedule[0][2] !== undefined){
-          document.getElementById("mainbody").style.backgroundImage = 'url('+schedule[0][2]+')';
-        } else {
-          document.getElementById("mainbody").style.backgroundImage = '';
-        }
         if (schedule[2][2] != "noclass") {
           for (i = 1; i < schedule.length; i++) {
             if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
