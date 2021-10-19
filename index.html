@@ -43,7 +43,7 @@
 
     <!-- Import the webpage's javascript file -->
   </head>
-  <body>
+  <body id="mainbody">
     <!--
       This is the body of the page
       Look at the elements and see how they appear in the rendered page on the right
@@ -139,6 +139,19 @@
         ]);
         return ms;
       }
+      
+      var schedule = decode(selectedschedule);
+      if(schedule[0][2] !== undefined){
+        document.getElementById("mainbody").style.backgroundImage = 'url(https://'+schedule[0][2]+')';
+      }
+      if(schedule[0][3] !== undefined){
+        sccalcbut.style.backgroundImage = 'url(https://'+schedule[0][3]+')';
+        sclister.style.backgroundImage = 'url(https://'+schedule[0][3]+')';
+      }
+      if(schedule[0][4] !== undefined){
+        sccalcbut.style.color = '#'+schedule[0][4];
+        sclister.style.color = '#'+schedule[0][4];
+      }
 
       function calcSchedule() {
         var currenttime =
@@ -147,12 +160,10 @@
           new Date().getHours() * 60 * 60 +
           new Date().getMinutes() * 60 +
           new Date().getSeconds();
-        var schedule = decode(selectedschedule);
         var activeclass = "n/a";
         sccalcbut.innerHTML = "Out of Session";
         sclister.innerHTML = "<b>" + schedule[0][1] + "</b><br>No Classes";
         sccalcbut.style.fontSize = "10vmin";
-        console.log(schedule[2][2]);
         if (schedule[2][2] != "noclass") {
           for (i = 1; i < schedule.length; i++) {
             if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
