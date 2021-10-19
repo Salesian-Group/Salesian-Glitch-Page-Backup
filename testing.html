@@ -43,7 +43,7 @@
 
     <!-- Import the webpage's javascript file -->
   </head>
-  <body>
+  <body id="mainbody">
     <!--
       This is the body of the page
       Look at the elements and see how they appear in the rendered page on the right
@@ -152,7 +152,11 @@
         sccalcbut.innerHTML = "Out of Session";
         sclister.innerHTML = "<b>" + schedule[0][1] + "</b><br>No Classes";
         sccalcbut.style.fontSize = "10vmin";
-        console.log(schedule[2][2]);
+        if(schedule[0][2] !== undefined){
+          document.getElementById("mainbody").style.backgroundImage = 'url('+schedule[0][2]+')';
+        } else {
+          document.getElementById("mainbody").style.backgroundImage = '';
+        }
         if (schedule[2][2] != "noclass") {
           for (i = 1; i < schedule.length; i++) {
             if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
