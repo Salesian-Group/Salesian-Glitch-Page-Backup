@@ -77,7 +77,7 @@
       var specialschedules = [
         "",
         "2010|b|Wednesday Early Dismissal|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45300|b|Lunch|b|1|a|45600|b|50400|b|Block 6|b|0",
-        "2710|b|Wednesday (Art Day)|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Lunch & Art Day|b|1|a|48600|b|53400|b|Block 6|b|0",
+        "2710|b|Wednesday (Art Day)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmoreart.png?v=1635364316510|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fartyimage.png?v=1635363996236|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fanotherart.png?v=1635363993209|b||a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Lunch & Art Day|b|1|a|48600|b|53400|b|Block 6|b|0",
       ];
       var weekdayschedules = [
         "0000|b|Sunday Weekend|a|0|b|0|b|noclass|b|0",
@@ -143,7 +143,7 @@
       var schedule = decode(selectedschedule);
       if(schedule[0][2] !== undefined){
         if (schedule[0][2].includes('!full!')){
-          document.getElementById("mainbody").style.backgroundSize = '100% 100%';
+          document.getElementById("mainbody").style.backgroundSize = '100%';
         }
         document.getElementById("mainbody").style.backgroundImage = 'url(https://'+schedule[0][2].replace('!full!','')+')';
       }
