@@ -141,6 +141,7 @@
       }
       
       var schedule = decode(selectedschedule);
+      var countmode = 0;
       if(schedule[0][2] !== undefined){
         if (schedule[0][2].includes('!full!')){
           document.getElementById("mainbody").style.backgroundSize = '100%';
@@ -180,11 +181,7 @@
             if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
               activeclass = schedule[i][2];
               var clocktime = new Date((schedule[i][1]-exacttime-1) * 1000).toISOString().substr(11, 8)
-              sccalcbut.innerHTML =
-                schedule[i][2] +
-                " (" +
-                clocktime.substr(3,3) +
-                "′)";
+              sccalcbut.innerHTML = schedule[i][2] + " (" + (clocktime.substr(3,2)) + "′"+ (clocktime.substr(6,2)) +"″)";
               if (
                 schedule[i][3] == "1" ||
                 (schedule[i][1] - currenttime) / 60 <= 5
@@ -197,12 +194,7 @@
                       (schedule[i][1] - currenttime) / 60 <= 5)
                   ) {
                     sccalcbut.style.fontSize = "7vmin";
-                    sccalcbut.innerHTML =
-                      schedsave +
-                      " (" +
-                      (schedule[i][1] - currenttime) / 60 +
-                      "′)<br>next is " +
-                      schedule[i2][2];
+                    sccalcbut.innerHTML = sccalcbut.innerHTML + "<br>next is " + schedule[i2][2];
                     if (schedule[i][1] - currenttime <= 60) {
                       sccalcbut.innerHTML =
                         schedsave +
