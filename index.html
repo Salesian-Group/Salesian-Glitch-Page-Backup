@@ -183,7 +183,7 @@
                 schedule[i][2] +
                 " (" +
                 (schedule[i][1] - currenttime) / 60 +
-                "′)";
+                "ᵐⁱⁿ)";
               if (
                 schedule[i][3] == "1" ||
                 (schedule[i][1] - currenttime) / 60 <= 5
@@ -200,14 +200,14 @@
                       schedsave +
                       " (" +
                       (schedule[i][1] - currenttime) / 60 +
-                      "′)<br>next is " +
+                      ")<br>next is " +
                       schedule[i2][2];
                     if (schedule[i][1] - currenttime <= 60) {
                       sccalcbut.innerHTML =
                         schedsave +
                         " (" +
                         (schedule[i][1] - exacttime - 1) +
-                        "″)<br>next is " +
+                        "ˢᵉᶜ)<br>next is " +
                         schedule[i2][2];
                     }
                   }
@@ -229,7 +229,7 @@
                   schedule[i][2] +
                   " (" +
                   (schedule[i][0] - exacttime - 1) +
-                  "″)";
+                  "ˢᵉᶜ)";
               }
             }
           }
@@ -270,7 +270,7 @@
                 h2 +
                 ":" +
                 m2 +
-                " ─── " +
+                " ─"+new Date((schedule[i][1]-exacttime-1) * 1000).toISOString().substr(12, 7)+"─ " +
                 schedule[i][2] +
                 "↩</b>";
             } else {
