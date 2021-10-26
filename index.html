@@ -56,14 +56,14 @@
     <button
       id="schedulecalculate"
       type="button"
-      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);font-size:10vmin;background:#EDDAB8;"
+      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;"
     >
       Schedule Summary
     </button>
     <button
       id="schedulefulllist"
       type="button"
-      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);font-size:3.75vmin;background:#EDDAB8;"
+      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;"
     >
       List
     </button>
@@ -76,7 +76,7 @@
       // "0000|b|Holiday|a|0|b|0|b|noclass|b|0",
       var specialschedules = [
         "",
-        "2710|b|Wednesday (Art Day)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmoreart.png?v=1635364316510|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcrayons.png?v=1634689066035|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fanotherart.png?v=1635363993209|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Lunch & Art Day|b|0|a|48600|b|53400|b|Block 6|b|0",
+        "2710|b|Wednesday (Art Day)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmoreart.png?v=1635364316510|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcrayons.png?v=1634689066035|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fanotherart.png?v=1635363993209|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|44700|b|Lunch|b|0|a|44700|b|46800|b|Art Day (S1)|b|0|a|46800|b|48300|b|Art Day (S2)|b|0|a|48300|b|48300|b|End of Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
       ];
       var weekdayschedules = [
         "0000|b|Sunday Weekend|a|0|b|0|b|noclass|b|0",
@@ -233,7 +233,6 @@
             }
           }
           var listtext = "<b>" + schedule[0][1] + "</b>";
-          var listsiz = 1;
           for (i = 1; i < schedule.length; i++) {
             var h1 = (schedule[i][0] / 60 / 60).toFixed() - 1;
             var m1 = schedule[i][0] / 60 - h1 * 60;
@@ -287,9 +286,7 @@
                 " ─── " +
                 schedule[i][2];
             }
-            listsiz = listsiz + 1;
           }
-          //sclister.style.fontSize = "40lh";
           sclister.innerHTML = listtext;
         }
         document.title = sccalcbut.innerHTML.split("<br>")[0];
