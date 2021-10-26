@@ -63,7 +63,7 @@
     <button
       id="schedulefulllist"
       type="button"
-      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);font-size:3.75vmin;background:#EDDAB8;"
+      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);font-size:3vh;background:#EDDAB8;"
     >
       List
     </button>
@@ -233,6 +233,7 @@
             }
           }
           var listtext = "<b>" + schedule[0][1] + "</b>";
+          var listsiz = 10;
           for (i = 1; i < schedule.length; i++) {
             var h1 = (schedule[i][0] / 60 / 60).toFixed() - 1;
             var m1 = schedule[i][0] / 60 - h1 * 60;
@@ -286,7 +287,9 @@
                 " ─── " +
                 schedule[i][2];
             }
+            listsiz = listsiz - 0.7;
           }
+          //sclister.style.fontSize = listsiz+"vmin";
           sclister.innerHTML = listtext;
         }
         document.title = sccalcbut.innerHTML.split("<br>")[0];
