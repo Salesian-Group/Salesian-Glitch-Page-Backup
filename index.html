@@ -100,9 +100,9 @@
         magnifybutton.hidden = false;
         calendarbutton.hidden = true;
       }
-      if ( screen.width <= 350 || screen.height <= 350 ){
+      if (screen.height <= 400){
         sccalcbut.style = "position: absolute;width: 98%;height: 98%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:8vmin;background:#EDDAB8;";
-        sclister.style = "position: absolute;width: 98%;height: 98%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.5vmin;background:#EDDAB8;";
+        sclister.style = "position: absolute;width: 98%;height: 98%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3vmin;background:#EDDAB8;";
         magnifybutton.hidden = true;
         calendarbutton.hidden = true;
         sclister.hidden = true;
@@ -340,7 +340,8 @@
               h2 -= 12;
             }
             if (activeclass == schedule[i][2]) {
-              listtext =
+              if (schedule[i][2] != "Dismissal"){
+                listtext =
                 listtext +
                 "<br><b>↪" +
                 h1 +
@@ -353,8 +354,20 @@
                 " ─"+new Date((schedule[i][1]-exacttime-1) * 1000).toISOString().substr(12, 7)+"─ " +
                 schedule[i][2] +
                 "↩</b>";
+              } else {
+                listtext =
+                listtext +
+                "<br><b>↪" +
+                h1 +
+                ":" +
+                m1 +
+                " ─── " +
+                schedule[i][2] +
+                "↩</b>";
+              }
             } else {
-              listtext =
+              if (schedule[i][2] != "Dismissal"){
+                listtext =
                 listtext +
                 "<br>" +
                 h1 +
@@ -366,6 +379,16 @@
                 m2 +
                 " ─── " +
                 schedule[i][2];
+              } else {
+                listtext =
+                listtext +
+                "<br>" +
+                h1 +
+                ":" +
+                m1 +
+                " ─── " +
+                schedule[i][2];
+              }
             }
           }
           sclister.innerHTML = listtext;
@@ -378,7 +401,7 @@
       }
       refreshloop();
     </script>
-    <div class="credits">
+    <div class="credits" style="position: absolute;top: -10px;left: 5px;transform: translate(0%, 0%);";>
       <p id="first">
         created by <strong>C.J.F.</strong> '22
       </p>
