@@ -57,6 +57,7 @@
       id="schedulecalculate"
       type="button"
       style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;"
+      onclick="showdetailed()"
     >
       Schedule Summary
     </button>
@@ -64,6 +65,7 @@
       id="schedulefulllist"
       type="button"
       style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;"
+      onclick="showsummary()"
     >
       List
     </button>
@@ -92,13 +94,34 @@
       var magnifybutton = document.getElementById("magnifybutton");
       var calendarbutton = document.getElementById("calendarbutton");
       var minimode = false;
-      if ( window.location !== window.parent.location )
-        {
-          sccalcbut.style = "position: absolute;width: 98%;height: 24%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;";
-          sclister.style = "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;";
-          magnifybutton.hidden = false;
-          calendarbutton.hidden = true;
+      if ( window.location !== window.parent.location ){
+        sccalcbut.style = "position: absolute;width: 98%;height: 24%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;";
+        sclister.style = "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;";
+        magnifybutton.hidden = false;
+        calendarbutton.hidden = true;
+      }
+      document.write(screen.width);
+      document.write(screen.height);
+      if ( screen.width <= 500 || screen.height <= 500 ){
+        sccalcbut.style = "position: absolute;width: 100%;height: 100%;top: 0%;left: 0%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;";
+        sclister.style = "position: absolute;width: 100%;height: 100%;top: 0%;left: 0%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;";
+        magnifybutton.hidden = true;
+        calendarbutton.hidden = true;
+        sclister.hidden = true;
+        minimode = true;
+      }
+      function showsummary(){
+        if (minimode == true){
+          sccalcbut.hidden = false;
+          sclister.hidden = true;
         }
+      }
+      function showdetailed(){
+        if (minimode == true){
+          sccalcbut.hidden = true;
+          sclister.hidden = false;
+        }
+      }
 
       
       // "0000|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48300|b|53400|b|Block 6|b|0",
