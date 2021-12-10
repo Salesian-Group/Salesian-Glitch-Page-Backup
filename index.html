@@ -118,6 +118,16 @@
       </p>
     </div>
     <script>
+      function makeHttpObject() {
+        try {return new XMLHttpRequest();}
+        catch (error) {}
+        try {return new ActiveXObject("Msxml2.XMLHTTP");}
+        catch (error) {}
+        try {return new ActiveXObject("Microsoft.XMLHTTP");}
+        catch (error) {}
+
+        throw new Error("Could not create HTTP request object.");
+      }
       var sccalcbut = document.getElementById("schedulecalculate");
       var sclister = document.getElementById("schedulefulllist");
       var magnifybutton = document.getElementById("magnifybutton");
@@ -126,6 +136,15 @@
       var schedsheet = document.getElementById("schedsheet");
       var creditman = document.getElementById("creditman");
       var minimode = false;
+      var lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
+      var activeversion = "1";
+      var request = makeHttpObject();
+      request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
+      request.send(null);
+      request.onreadystatechange = function() {
+        if (request.readyState == 4)
+          activeversion=request.responseText;
+      };
       if (window.location !== window.parent.location){
         sccalcbut.style = "position: absolute;width: 98%;height: 24%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;color:#000000;";
         sclister.style = "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#000000;";
@@ -445,6 +464,19 @@
           sclister.innerHTML = listtext;
         }
         document.title = sccalcbut.innerHTML.split("<br>")[0];
+        console.log(currenttime-lastcheck);
+        if(lastcheck+59 <= currenttime){
+          lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
+          var request = makeHttpObject();
+          request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
+          request.send(null);
+          request.onreadystatechange = function() {
+            if (request.readyState == 4)
+              if(activeversion!=request.responseText){
+                window.location.replace("https://salesianschedule.glitch.me");
+              }
+          };
+        }
       }
       function refreshloop() {
         setTimeout("refreshloop()", 1000);
