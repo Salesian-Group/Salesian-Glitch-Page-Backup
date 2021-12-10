@@ -137,14 +137,8 @@
       var creditman = document.getElementById("creditman");
       var minimode = false;
       var lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
-      var activeversion = "1";
-      var request = makeHttpObject();
-      request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
-      request.send(null);
-      request.onreadystatechange = function() {
-        if (request.readyState == 4)
-          activeversion=request.responseText;
-      };
+      var activeday = new Date().getDay();
+      var activeversion = "wintertime";
       if (window.location !== window.parent.location){
         sccalcbut.style = "position: absolute;width: 98%;height: 24%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;color:#000000;";
         sclister.style = "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#000000;";
@@ -205,7 +199,7 @@
         "0712|b|Tuesday Studying|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|28800|b|31380|b|Block 1|b|0|a|31620|b|33960|b|Block 2|b|0|a|34200|b|36540|b|Block 3|b|0|a|36540|b|37920|b|Break|b|1|a|38220|b|40560|b|Block 4|b|0|a|40800|b|43140|b|Block 5|b|0|a|43140|b|45240|b|Lunch|b|1|a|45540|b|47880|b|Block 6|b|0|a|48120|b|53400|b|Block 7 Study|b|0",
         "0812|b|Wednesday Studying|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|28800|b|30540|b|Block 3|b|0|a|30780|b|32280|b|Block 2|b|0|a|32520|b|34020|b|Block 4|b|0|a|34020|b|35220|b|Break|b|1|a|35520|b|37020|b|Block 5|b|0|a|37260|b|38760|b|Block 6|b|0|a|39000|b|40500|b|Block 1|b|0|a|40800|b|45600|b|Mass|b|0|a|45600|b|47700|b|Lunch|b|1|a|48000|b|53400|b|Block 7 Study|b|0",
         "0912|b|Thursday (Finals 7)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|28800|b|33840|b|Block 1 Study|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 Study|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 7 Finals|b|0",
-        "1012|b|Friday Studying (new vers.)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|28800|b|33540|b|Block 1 Study|b|0|a|33540|b|34980|b|Break|b|1|a|35280|b|39780|b|Block 2 Study|b|0|a|39780|b|43080|b|Lunch|b|1|a|43380|b|47880|b|Block 3 Study|b|0|a|47880|b|48600|b|Mini-Break|b|1|a|48900|b|53400|b|Block 4 Study|b|0",
+        "1012|b|Friday Studying b(new vers.)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|28800|b|33540|b|Block 1 Study|b|0|a|33540|b|34980|b|Break|b|1|a|35280|b|39780|b|Block 2 Study|b|0|a|39780|b|43080|b|Lunch|b|1|a|43380|b|47880|b|Block 3 Study|b|0|a|47880|b|48600|b|Mini-Break|b|1|a|48900|b|53400|b|Block 4 Study|b|0",
         "1312|b|Monday (Finals 1, 2)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|28800|b|33840|b|Block 1 Final|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 Final|b|0",
         "1412|b|Tuesday Studying|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|28800|b|33840|b|Block 3 Study|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 4 Study|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 5 Study|b|0|a|47580|b|48300|b|Mini-Break|b|1|a|48600|b|53400|b|Block 6 Study|b|0",
         "1512|b|Wednesday (Finals 3, 4)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|28800|b|33840|b|Block 3 Final|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 4 Final|b|0",
@@ -464,8 +458,7 @@
           sclister.innerHTML = listtext;
         }
         document.title = sccalcbut.innerHTML.split("<br>")[0];
-        console.log(currenttime-lastcheck);
-        if(lastcheck+59 <= exacttime){
+        if((lastcheck+299 <= currenttime)&&navigator.onLine==true){
           lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
           var request = makeHttpObject();
           request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
