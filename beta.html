@@ -127,6 +127,7 @@
       var creditman = document.getElementById("creditman");
       var minimode = false;
       var lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
+      var activeversion = 3;
       function makeHttpObject() {
         try {return new XMLHttpRequest();}
         catch (error) {}
@@ -456,8 +457,18 @@
           sclister.innerHTML = listtext;
         }
         document.title = sccalcbut.innerHTML.split("<br>")[0];
-        if(lastcheck+10 <= currenttime){
-          window.href="https://salesianschedule.glitch.me";
+        console.log(currenttime-lastcheck);
+        if(lastcheck+59 <= currenttime){
+          lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
+          var request = makeHttpObject();
+          request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
+          request.send(null);
+          request.onreadystatechange = function() {
+            if (request.readyState == 4)
+              if(request.responseText!=activeversion){
+                window.location.replace("https://salesianschedule.glitch.me");
+              }
+          };
         }
       }
       function refreshloop() {
