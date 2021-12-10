@@ -85,9 +85,30 @@
       type="button"
       style="position: absolute;width: 8vmin;height: 8vmin;top: 25%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
     >
-      <img src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcalenda.png?v=1638915120877" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
+      <img src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fglobe.png?v=1639152822663" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
     </button>
     </a>
+    <button
+      id="viewsheetbutton"
+      type="button"
+      style="position: absolute;width: 8vmin;height: 8vmin;top: 25%;right: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
+      onclick="expanddoc()"
+    >
+      <img src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcalenda.png?v=1638915120877" type="button" onclick="expanddoc()" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
+    </button>
+    <button
+      id="schedsheet"
+      type="button"
+      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#252525"
+      onclick="closedoc()"
+      hidden=true
+    >
+    <img
+      src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Ffinals%20schedule%20winter.jpg?v=1639152876629"
+      style="position: absolute;height: 100%;width:100%;left:0;top:0;transform: translate(0%, 0%);object-fit: contain;"
+      onclick="closedoc()"
+    >
+    </button>
     <div id="creditman" class="credits" style="position: absolute;top: -10px;left: 5px;transform: translate(0%, 0%);";>
       <p id="first">
         created by <strong>C.J.F.</strong> '22
@@ -101,13 +122,17 @@
       var sclister = document.getElementById("schedulefulllist");
       var magnifybutton = document.getElementById("magnifybutton");
       var calendarbutton = document.getElementById("calendarbutton");
+      var viewsheetbutton = document.getElementById("viewsheetbutton");
+      var schedsheet = document.getElementById("schedsheet");
       var creditman = document.getElementById("creditman");
       var minimode = false;
-      if ( window.location !== window.parent.location ){
+      if (window.location !== window.parent.location){
         sccalcbut.style = "position: absolute;width: 98%;height: 24%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;color:#000000;";
         sclister.style = "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#000000;";
         magnifybutton.hidden = false;
         calendarbutton.hidden = true;
+        viewsheetbutton.style = "position: absolute;width: 12vmin;height: 12vmin;top: 25%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;";
+        schedsheet.style="position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);background:#252525";
       }
         let atest = document.createElement('audio');
         let supportsAAC =  !!(atest.canPlayType && atest.canPlayType('audio/mp4; codecs="mp4a.40.2"').replace(/no/, ''));
@@ -117,6 +142,7 @@
         sclister.style = "position: absolute;width: 98%;height: 200%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.5vmin;background:#EDDAB8;";
         magnifybutton.hidden = true;
         calendarbutton.hidden = true;
+        viewsheetbutton.hidden = true;
         sclister.hidden = true;
         creditman.hidden = true;
         minimode = true;
@@ -132,6 +158,12 @@
           sccalcbut.hidden = true;
           sclister.hidden = false;
         }
+      }
+      function expanddoc(){
+        schedsheet.hidden = false;
+      }
+      function closedoc(){
+        schedsheet.hidden = true;
       }
 
       
@@ -258,6 +290,7 @@
         sclister.style.color = '#'+schedule[0][5];
         calendarbutton.style.background = '#'+schedule[0][5];
         magnifybutton.style.background = '#'+schedule[0][5];
+        viewsheetbutton.style.background = '#'+schedule[0][5];
       }
 
       function calcSchedule() {

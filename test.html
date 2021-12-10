@@ -99,7 +99,7 @@
     <button
       id="schedsheet"
       type="button"
-      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8"
+      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#252525"
       onclick="closedoc()"
       hidden=true
     >
@@ -132,6 +132,7 @@
         magnifybutton.hidden = false;
         calendarbutton.hidden = true;
         viewsheetbutton.style = "position: absolute;width: 12vmin;height: 12vmin;top: 25%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;";
+        schedsheet.style="position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);background:#252525";
       }
         let atest = document.createElement('audio');
         let supportsAAC =  !!(atest.canPlayType && atest.canPlayType('audio/mp4; codecs="mp4a.40.2"').replace(/no/, ''));
