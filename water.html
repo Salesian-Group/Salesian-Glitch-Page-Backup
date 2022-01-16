@@ -109,10 +109,18 @@
       onclick="closedoc()"
     >
     </button>
+    <button
+      id="3amcatvideoholder"
+      type="button"
+      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#252525"
+      onclick=""
+      hidden=true
+    >
     <video id="3amcatvideo" loop hidden style="position: absolute;width: 100%;height: 50%;top: 50%;left: 50%;transform: translate(-50%, -50%);">
       <source src="" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
+    </button>
     <div id="creditman" class="credits" style="position: absolute;top: -10px;left: 5px;transform: translate(0%, 0%);">
       <p id="first">
         created by <strong>C.J.F.</strong> '22
@@ -132,10 +140,7 @@
 
         throw new Error("Could not create HTTP request object.");
       }
-      var catvideo = document.getElementById("3amcatvideo");
-      catvideo.hidden = "";
-      catvideo.src = "https://cdn.discordapp.com/attachments/799279690618896414/932294810843349022/reeal.mp4";
-      catvideo.play();
+      
       var sccalcbut = document.getElementById("schedulecalculate");
       var sclister = document.getElementById("schedulefulllist");
       var magnifybutton = document.getElementById("magnifybutton");
@@ -147,6 +152,11 @@
       var lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
       var lastday = new Date().getTime();
       var activeversion = "wintertime2";
+      var catvideo = document.getElementById("3amcatvideo");
+      catvideo.hidden = "";
+      catvideo.src = "https://cdn.discordapp.com/attachments/799279690618896414/932294810843349022/reeal.mp4";
+      catvideo.play();
+      document.getElementById("3amcatvideoholder").hidden = "";
       if (window.location !== window.parent.location){
         sccalcbut.style = "position: absolute;width: 98%;height: 24%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;color:#000000;";
         sclister.style = "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#000000;";
