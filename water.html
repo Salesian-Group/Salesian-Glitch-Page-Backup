@@ -112,10 +112,11 @@
     <button
       id="3amcatvideoholder"
       type="button"
-      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#252525"
+      style="position: absolute;width: 50%;height: 30%;top: 20%;left: 0%;transform: translate(50%, 50%);background:#00CCCC"
       onclick="catvideoplay()"
       hidden=true
     >
+      🐱 click me 🐱
     <video id="3amcatvideo" loop hidden style="position: absolute;width: 100%;height: 100%;top: 50%;left: 50%;transform: translate(-50%, -50%);">
       <source src="" type="video/mp4">
       Your browser does not support HTML5 video.
@@ -153,14 +154,20 @@
       var lastday = new Date().getTime();
       var activeversion = "wintertime2";
       var catvideo = document.getElementById("3amcatvideo");
+      var catvideoframe = document.getElementById("3amcatvideoholder");
       function catvideoplay() {
         if (catvideo.hidden != "") {
           catvideo.hidden = "";
           catvideo.src = "https://cdn.discordapp.com/attachments/799279690618896414/932294810843349022/reeal.mp4";
           catvideo.play();
+          catvideoframe.style = "position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#000000";
+          catvideoframe.style.height = schedsheet.style.height;
+          catvideoframe.style.width = schedsheet.style.width;
+          catvideoframe.style.top = schedsheet.style.top;
+          catvideoframe.style.left = schedsheet.style.left;
         }
       }
-      document.getElementById("3amcatvideoholder").hidden = "";
+      catvideoframe.hidden = "";
       if (window.location !== window.parent.location){
         sccalcbut.style = "position: absolute;width: 98%;height: 24%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;color:#000000;";
         sclister.style = "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#000000;";
