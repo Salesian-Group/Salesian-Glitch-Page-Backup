@@ -45,6 +45,12 @@ to this section's matching END comment to see page-specific styles.
   font-weight: bold;
   src: url("https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
     format("opentype");
+}/
+
+.josefin {
+
+font-family: ‘Josefin Sans Std Light’, arial, serif;
+
 }
 
 /* Our remix on glitch button */
