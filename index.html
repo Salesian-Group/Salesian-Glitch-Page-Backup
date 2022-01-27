@@ -101,7 +101,7 @@
       type="button"
       style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#252525"
       onclick="closedoc()"
-      hidden=true
+      hidden="true"
     >
     <img
       src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/defaultschedule.jpg?v=1641242952935"
@@ -109,13 +109,13 @@
       onclick="closedoc()"
     >
     </button>
-    <img id="sccornergraphic" style="position: absolute;width: 20vmin;height: 20vmin;bottom: 5%;right: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;">
+    <img id="sccornergraphic" hidden="true" style="position: absolute;width: 20vmin;height: 20vmin;bottom: 5%;right: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;">
     <button
       id="3amcatvideoholder"
       type="button"
       style="position: absolute;width: 50%;height: 30%;top: 20%;left: 0%;transform: translate(50%, 50%);background:#00CCCC"
       onclick="catvideoplay()"
-      hidden=true
+      hidden="true"
     >
       care for a cat video? click me!!
     <video id="3amcatvideo" loop hidden style="position: absolute;width: 100%;height: 100%;top: 50%;left: 50%;transform: translate(-50%, -50%);">
@@ -224,7 +224,7 @@
       // "0000|b|Early Start Wednesday|a|28800|b|33840|b|Block 4|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 6|b|0",
       
       var specialschedules = [
-        "2601|b|Wednesday [PRIDE] (Red, Black, White, Gold/Yellow)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Extended Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
+        "2701|b|Thursday [PLAYGROUND] (Athletic wear, sports jerseys, sweatpants)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|28800|b|33840|b|Block 5|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 1|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3|b|0|a|47580|b|48300|b|Mini-Break|b|0|a|48600|b|53400|b|Block 7|b|0",
       ];
       var weekdayschedules = [
         "0000|b|Sunday Weekend|a|0|b|0|b|noclass|b|0",
@@ -311,6 +311,7 @@
           var sp = theba.split('!corner!');
           theba = sp[0];
           sccornergraphic.src = 'https://'+sp[1];
+          sccornergraphic.hidden = '';
         }
         sclister.style.backgroundImage = 'url(https://'+theba.replace('!full!','')+')';
       }
