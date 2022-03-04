@@ -169,8 +169,7 @@
           request.send(null);
           request.onreadystatechange = function() {
             if (request.readyState == 4){
-              console.log(request.responseText);
-              activeversion=request.responseText
+              activeversion = request.responseText
             }
           };
       var catvideo = document.getElementById("3amcatvideo");
@@ -516,9 +515,7 @@
         if (window.location == "https://salesianschedule.glitch.me/beta.html" || window.location == "http://salesianschedule.glitch.me/beta.html"){
           document.getElementById("betaman").hidden = "";
         }
-        console.log((lastcheck+2 <= currenttime));
-        if((lastcheck+2 <= currenttime || lastday+43200000 <= new Date().getTime()) && navigator.onLine==true){
-          console.log("PASS");
+        if((lastcheck+299 <= currenttime || lastday+43200000 <= new Date().getTime()) && navigator.onLine==true){
           lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
           var request = makeHttpObject();
           request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
@@ -526,7 +523,6 @@
           request.onreadystatechange = function() {
             if (request.readyState == 4)
               if(activeversion!=request.responseText){
-                console.log("change");
                 window.location.replace(window.location);
               }
           };
