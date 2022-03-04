@@ -137,11 +137,9 @@
         Salesian College Preparatory
       </p>
     </div>
-    <div id="betaman" hidden="true" class="credits" style="background: #ECE8E0;position: absolute;top: -40px;left: 5px;transform: translate(0%, 0%);">
-      <p id="betafirst">
-        <strong>BETA</strong> build
-      </p>
-    </div>
+    <p id="betaman" hidden="true" class="credits" style="background:#FF6A00;position: absolute;top: 20px;left: 5px;transform: translate(0%, 0%);z-index: 1;border-radius: 3px;border: 2px solid black;">
+        <strong>TEST</strong>build
+    </p>
     <script>
       function makeHttpObject() {
         try {return new XMLHttpRequest();}
@@ -506,8 +504,9 @@
         if(is_iphone){
           sccalcbut.innerHTML = "<b>" + sccalcbut.innerHTML + "</b>";
         }
+        console.log(window.location);
         if (window.location == "https://salesianschedule.glitch.me/beta.html"){
-          document.getElementById("betaman").hidden = false;
+          document.getElementById("betaman").hidden = "";
         }
         if((lastcheck+299 <= currenttime || lastday+43200000 <= new Date().getTime()) && navigator.onLine==true){
           lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
