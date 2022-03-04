@@ -263,7 +263,6 @@
         "2102|b|Presidents Day Holiday|a|0|b|0|b|noclass|b|0",
         "2202|b|2's day Schedule|a|28800|b|31740|b|Block 3|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 4|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 5|b|0|a|42360|b|45060|b|Block 6|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 1|b|0|a|50580|b|53280|b|Block 7|b|0",
         "2302|b|Wednesday African American Heritage Celebration|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0c6c3a15-cdf1-41d4-bd7d-06f99a33a670.image.png?v=1645635010171|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/d6440bb2-7740-41ab-b324-9ea9319a8ed5.image.png?v=1645635150964|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|AA Heritage Celebration|b|0|a|45780|b|48300|b|Lunch|b|1|a|48300|b|53400|b|Block 6|b|0",
-
       ];
       var weekdayschedules = [
         "0000|b|Sunday Weekend|a|0|b|0|b|noclass|b|0",
@@ -379,7 +378,7 @@
           sccalcbut.innerHTML = "🐱";
         }
         sclister.innerHTML = "<b>" + schedule[0][1] + "</b><br>No Classes";
-        sccalcbut.style.fontSize = "10vmin";
+        sccalcbut.style.fontSize = "9.3vmin";
         if (schedule[2][2] != "noclass") {
           for (i = 1; i < schedule.length; i++) {
             if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
@@ -389,18 +388,26 @@
                 " (" +
                 (schedule[i][1] - currenttime) / 60 +
                 "′)";
+              if (schedule[i][2].length >= 12){
+                sccalcbut.style.fontSize = "6vmin";
+              }
               if (
                 schedule[i][3] == "1" ||
                 (schedule[i][1] - currenttime) / 60 <= 5
               ) {
                 var schedsave = schedule[i][2];
+                //theba
                 for (i2 = schedule.length - 1; i2 > 0; i2--) {
                   if (
                     currenttime < schedule[i2][0] &&
                     (schedule[i2][3] == "0" ||
                       (schedule[i][1] - currenttime) / 60 <= 5)
                   ) {
-                    sccalcbut.style.fontSize = "7vmin";
+                    if (schedule[i][2].length >= 12){
+                      sccalcbut.style.fontSize = "5vmin";
+                    } else {
+                      sccalcbut.style.fontSize = "7vmin";
+                    }
                     sccalcbut.innerHTML =
                       schedsave +
                       " (" +
