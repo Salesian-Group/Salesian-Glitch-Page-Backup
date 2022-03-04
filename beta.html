@@ -494,8 +494,9 @@
         }
         
         document.title = sccalcbut.innerHTML.split("<br>")[0];
-        console.log(sccalcbut.innerHTML);
-        sccalcbut.innerHTML = "<b>" + sccalcbut.innerHTML + "</b>";
+        if(is_iphone){
+          sccalcbut.innerHTML = "<b>" + sccalcbut.innerHTML + "</b>";
+        }
         if((lastcheck+299 <= currenttime || lastday+43200000 <= new Date().getTime()) && navigator.onLine==true){
           lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
           var request = makeHttpObject();
