@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="icon"
-      href="https://www.salesian.com/uploaded/favicon_salesian.ico"
+      href="https://pbs.twimg.com/profile_images/1109279524636614656/At7h0SJu_400x400.jpg"
     />
 
     <!-- 
@@ -34,7 +34,7 @@
     />
     <meta
       property="og:image"
-      content="https://www.salesian.com/uploaded/favicon_salesian.ico"
+      content="https://pbs.twimg.com/profile_images/1109279524636614656/At7h0SJu_400x400.jpg"
     />
     <meta name="twitter:card" content="summary" />
 
@@ -111,6 +111,12 @@
     </button>
     <img id="sccornergraphic" hidden="true" style="position: absolute;width: 20vmin;height: 20vmin;bottom: 5%;right: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;">
     <button
+      id="schedsetting"
+      hidden="true"
+      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
+      onclick="closedoc()"
+    ></button>
+    <button
       id="3amcatvideoholder"
       type="button"
       style="position: absolute;width: 50%;height: 30%;top: 20%;left: 0%;transform: translate(50%, 50%);background:#00CCCC"
@@ -131,6 +137,9 @@
         Salesian College Preparatory
       </p>
     </div>
+    <p id="betaman" hidden="true" class="credits" style="width:120px;background:#FF8330;position: absolute;top: -10px;right:5px;transform: translate(0%, 0%);z-index: 1;border-radius: 3px;border: 2px solid black;">
+        <strong>TESTbuild</strong>
+    </p>
     <script>
       function makeHttpObject() {
         try {return new XMLHttpRequest();}
@@ -154,7 +163,15 @@
       var minimode = false;
       var lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
       var lastday = new Date().getTime();
-      var activeversion = "wintertime2";
+      var activeversion = "";
+      var request = makeHttpObject();
+          request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
+          request.send(null);
+          request.onreadystatechange = function() {
+            if (request.readyState == 4){
+              activeversion = request.responseText
+            }
+          };
       var catvideo = document.getElementById("3amcatvideo");
       var catvideoframe = document.getElementById("3amcatvideoholder");
       function catvideoplay() {
@@ -222,7 +239,10 @@
       // "0000|b|Wednesday (Art Day)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmoreart.png?v=1635364316510|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcrayons.png?v=1634689066035|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fanotherart.png?v=1635363993209|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|44700|b|Lunch|b|0|a|44700|b|46800|b|Art Day (S1)|b|0|a|46800|b|48300|b|Art Day (S2)|b|0|a|48300|b|48300|b|End of Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
       // "3110|b|Halloween|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooker.png?v=1635489813683|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspookaba.jpg?v=1635489808887|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooka.jpg?v=1635489811462|b|F06402|a|0|b|0|b|noclass|b|0",
       // "0000|b|Early Start Wednesday|a|28800|b|33840|b|Block 4|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 6|b|0",
-      // "1402|b|Valentines Schedule|b|static.vecteezy.com/system/resources/previews/001/893/870/original/valentine-s-day-red-hearts-background-free-vector.png!full!|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/7887947f-fc64-46fb-b7ac-6f2f20ae3f78.image.png?v=1644856994629|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/ac19611c-c643-4bf9-abd2-ea99f0f4339e.image.png?v=1644857220338|b|A00083|a|28800|b|31740|b|Block 1|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 3|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 4|b|0|a|42360|b|45060|b|Block 5|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 6|b|0|a|50580|b|53280|b|Block 7|b|0",
+      
+      // title|b|background|b|simple|b|detail!corner!icon|b|hexcolor
+      // exclude HTTP from links
+      // !full! anywhere to use full image stretch
       
       var specialschedules = [
         "2701|b|Thursday [PLAYGROUND] (Athletic wear, sports jerseys, sweatpants)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|28800|b|33840|b|Block 5|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 1|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3|b|0|a|47580|b|48300|b|Mini-Break|b|0|a|48600|b|53400|b|Block 7|b|0",
@@ -262,6 +282,10 @@
 
       if (selectedschedule == "") {
         selectedschedule = weekdayschedules[parseInt(new Date().getDay())];
+      }
+      if (window.location == "https://salesianschedule.glitch.me/beta.html" || window.location == "http://salesianschedule.glitch.me/beta.html"){
+        document.getElementById("betaman").hidden = "";
+        //document.getElementById("mainbody").style.background = document.getElementById("betaman").style.background;
       }
 
       // the first set contains schedule basics: [day-of-schedule, event-name]
@@ -471,7 +495,7 @@
                 h2 +
                 ":" +
                 m2 +
-                " ─── " +
+                " ─── " +                                                                           
                 schedule[i][2];
               } else {
                 listtext =
@@ -487,7 +511,11 @@
           }
           sclister.innerHTML = listtext;
         }
+        
         document.title = sccalcbut.innerHTML.split("<br>")[0];
+        if(is_iphone){
+          sccalcbut.innerHTML = "<b>" + sccalcbut.innerHTML + "</b>";
+        }
         if((lastcheck+299 <= currenttime || lastday+43200000 <= new Date().getTime()) && navigator.onLine==true){
           lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
           var request = makeHttpObject();
@@ -496,7 +524,7 @@
           request.onreadystatechange = function() {
             if (request.readyState == 4)
               if(activeversion!=request.responseText){
-                window.location.replace("https://salesianschedule.glitch.me");
+                window.location.replace(window.location);
               }
           };
         }

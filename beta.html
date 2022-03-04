@@ -133,7 +133,7 @@
       <p id="first">
         created by <strong>C.J.F.</strong> '22
       </p>
-      <p id="second">
+      <p id="second" hidden="true">
         Salesian College Preparatory
       </p>
     </div>
@@ -185,6 +185,10 @@
           catvideoframe.style.top = schedsheet.style.top;
           catvideoframe.style.left = schedsheet.style.left;
         }
+      }
+      var specialopenclicks = 0;
+      function detectspecialopen() {
+        specialopenclicks = specialopenclicks + 1;
       }
       if(new Date().getHours() == 3){
         catvideoframe.hidden = "";
@@ -282,6 +286,10 @@
 
       if (selectedschedule == "") {
         selectedschedule = weekdayschedules[parseInt(new Date().getDay())];
+      }
+      if (window.location == "https://salesianschedule.glitch.me/beta.html" || window.location == "http://salesianschedule.glitch.me/beta.html"){
+        document.getElementById("betaman").hidden = "";
+        //document.getElementById("mainbody").style.background = document.getElementById("betaman").style.background;
       }
 
       // the first set contains schedule basics: [day-of-schedule, event-name]
