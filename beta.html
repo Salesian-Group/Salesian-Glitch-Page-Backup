@@ -137,8 +137,8 @@
         Salesian College Preparatory
       </p>
     </div>
-    <p id="betaman" hidden="true" class="credits" style="background:#FF6A00;position: absolute;top: 20px;left: 5px;transform: translate(0%, 0%);z-index: 1;border-radius: 3px;border: 2px solid black;">
-        <strong>TEST</strong>build
+    <p id="betaman" hidden="true" class="credits" style="background:#FF8330;position: absolute;top: 20px;left: 5px;transform: translate(0%, 0%);z-index: 1;border-radius: 3px;border: 2px solid black;">
+        <strong>TESTbuild</strong>
     </p>
     <script>
       function makeHttpObject() {
@@ -163,7 +163,16 @@
       var minimode = false;
       var lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
       var lastday = new Date().getTime();
-      var activeversion = "wintertime2";
+      var activeversion = "";
+      var request = makeHttpObject();
+          request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
+          request.send(null);
+          request.onreadystatechange = function() {
+            if (request.readyState == 4){
+              console.log(request.responseText);
+              activeversion=request.responseText
+            }
+          };
       var catvideo = document.getElementById("3amcatvideo");
       var catvideoframe = document.getElementById("3amcatvideoholder");
       function catvideoplay() {
@@ -504,11 +513,12 @@
         if(is_iphone){
           sccalcbut.innerHTML = "<b>" + sccalcbut.innerHTML + "</b>";
         }
-        console.log(window.location);
-        if (window.location == "https://salesianschedule.glitch.me/beta.html"){
+        if (window.location == "https://salesianschedule.glitch.me/beta.html" || window.location == "http://salesianschedule.glitch.me/beta.html"){
           document.getElementById("betaman").hidden = "";
         }
-        if((lastcheck+299 <= currenttime || lastday+43200000 <= new Date().getTime()) && navigator.onLine==true){
+        console.log((lastcheck+2 <= currenttime));
+        if((lastcheck+2 <= currenttime || lastday+43200000 <= new Date().getTime()) && navigator.onLine==true){
+          console.log("PASS");
           lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
           var request = makeHttpObject();
           request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
@@ -516,7 +526,8 @@
           request.onreadystatechange = function() {
             if (request.readyState == 4)
               if(activeversion!=request.responseText){
-                window.location.replace("https://salesianschedule.glitch.me");
+                console.log("change");
+                window.location.replace(window.location);
               }
           };
         }
