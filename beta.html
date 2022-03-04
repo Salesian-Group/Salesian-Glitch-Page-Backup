@@ -485,7 +485,7 @@
                 h2 +
                 ":" +
                 m2 +
-                " ─── " +
+                " ─── " +                                                                           
                 schedule[i][2];
               } else {
                 listtext =
@@ -505,6 +505,9 @@
         document.title = sccalcbut.innerHTML.split("<br>")[0];
         if(is_iphone){
           sccalcbut.innerHTML = "<b>" + sccalcbut.innerHTML + "</b>";
+        }
+        if (window.location == "https://salesianschedule.glitch.me/beta.html"){
+          document.getElementById("betaman").hidden = false;
         }
         if((lastcheck+299 <= currenttime || lastday+43200000 <= new Date().getTime()) && navigator.onLine==true){
           lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
