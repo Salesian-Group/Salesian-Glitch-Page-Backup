@@ -133,7 +133,7 @@
       <p id="first">
         created by <strong>C.J.F.</strong> '22
       </p>
-      <p id="second">
+      <p id="second" hidden="true">
         Salesian College Preparatory
       </p>
     </div>
@@ -219,7 +219,9 @@
           sclister.hidden = true;
         }
       }
+      var specialopenclicks = 0;
       function showdetailed(){
+        specialopenclicks = specialopenclicks + 1;
         if (minimode == true){
           sccalcbut.hidden = true;
           sclister.hidden = false;
@@ -227,9 +229,14 @@
       }
       function expanddoc(){
         schedsheet.hidden = false;
+        specialopenclicks = 0;
       }
       function closedoc(){
         schedsheet.hidden = true;
+        if(specialopenclicks==3){
+          document.getElementById("mainbody").style.background = document.getElementById("betaman").style.background;
+          window.location.replace("https://salesianschedule.glitch.me/beta.html");
+        }
       }
       
       // "0000|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48300|b|53400|b|Block 6|b|0",
