@@ -255,6 +255,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         "1602|b|Wednesday Early Dismissal|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45300|b|Lunch|b|1|a|45600|b|50400|b|Block 6|b|0",
         "1802|b|Bishop Holiday|a|0|b|0|b|noclass|b|0",
         "2102|b|Presidents Day Holiday|a|0|b|0|b|noclass|b|0",
+        "0104|b|apil fools|a|0|b|0|b|noclass|b|0",
         "2202|b|2's day Schedule|a|28800|b|31740|b|Block 3|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 4|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 5|b|0|a|42360|b|45060|b|Block 6|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 1|b|0|a|50580|b|53280|b|Block 7|b|0",
         "2302|b|Wednesday African American Heritage Celebration|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0c6c3a15-cdf1-41d4-bd7d-06f99a33a670.image.png?v=1645635010171|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/d6440bb2-7740-41ab-b324-9ea9319a8ed5.image.png?v=1645635150964|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|AA Heritage Celebration|b|0|a|45780|b|48300|b|Lunch|b|1|a|48300|b|53400|b|Block 6|b|0",
         "0503|b|UCBerkley PiE Event <a href='https://salesianschedule.glitch.me/pie.html'><button style='background:#AAFFFF;'>PRESS</button></a>|a|0|b|0|b|noclass|b|0",
@@ -288,6 +289,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         document.getElementById("betaman").hidden = "";
         //document.getElementById("mainbody").style.background = document.getElementById("betaman").style.background;
       }
+      
 
       // the first set contains schedule basics: [day-of-schedule, event-name]
       // the remaining sets are the periods: [start-time, end-time, period-name, is-transition]
@@ -359,6 +361,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         magnifybutton.style.background = '#'+schedule[0][5];
         viewsheetbutton.style.background = '#'+schedule[0][5];
       }
+      var thefuture = false;
 
       function calcSchedule() {
         var currenttime =
@@ -371,6 +374,33 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         sccalcbut.innerHTML = "Out of Session";
         if(new Date().getHours() == 3){
           sccalcbut.innerHTML = "🐱";
+        }
+        if(currenttime > schedule[schedule.length-1][0] && new Date().getHours() >= 17 && thefuture == false){
+          selectedschedule = "";
+          var dat = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1, new Date().getHours(), new Date().getMinutes(), new Date().getSeconds());
+          for (i = 0; i < specialschedules.length; i++) {
+            if (
+              parseInt(dat.getMonth()) ==
+                parseInt(specialschedules[i].substring(2, 4)) - 1 &&
+              parseInt(dat.getDate()) ==
+                parseInt(specialschedules[i].substring(0, 2))
+            ) {
+              selectedschedule = specialschedules[i];
+            }
+          }
+
+          if (selectedschedule == "") {
+            selectedschedule = weekdayschedules[parseInt(dat.getDay())];
+          }
+          schedule = decode(selectedschedule);
+          thefuture = true;
+        }
+        if(currenttime < schedule[2][0] && sccalcbut.innerHTML == "Out of Session"){
+          if((Math.trunc((schedule[2][0] - currenttime)/60/60)+1) <= 1){
+            sccalcbut.innerHTML = "Starts in " + (schedule[2][0] - currenttime)/60 + " minutes"
+          } else {
+            sccalcbut.innerHTML = "Starts in " + (Math.trunc((schedule[2][0] - currenttime)/60/60)+1) + " hours"
+          }
         }
         sclister.innerHTML = "<b>" + schedule[0][1] + "</b><br>No Classes";
         sccalcbut.style.fontSize = "9.3vmin";
@@ -522,6 +552,9 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         
         document.title = sccalcbut.innerHTML.split("<br>")[0];
+        if(thefuture==true){
+          sccalcbut.innerHTML = "Tomorrow's Schedule"
+        }
         if(is_iphone){
           sccalcbut.innerHTML = "<b>" + sccalcbut.innerHTML + "</b>";
         }
