@@ -395,8 +395,12 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           schedule = decode(selectedschedule);
           thefuture = true;
         }
-        if(currenttime < schedule[1][0] && sccalcbut.innerHTML == "Out of Session"){
-          sccalcbut.innerHTML = "Starts in " + schedule[1][0] + " hours"
+        if(currenttime < schedule[2][0] && sccalcbut.innerHTML == "Out of Session"){
+          if((Math.trunc((schedule[2][0] - currenttime)/60/60)+1) <= 1){
+            sccalcbut.innerHTML = "Starts in " + (schedule[2][0] - currenttime)/60 + " minutes"
+          } else {
+            sccalcbut.innerHTML = "Starts in " + (Math.trunc((schedule[2][0] - currenttime)/60/60)+1) + " hours"
+          }
         }
         sclister.innerHTML = "<b>" + schedule[0][1] + "</b><br>No Classes";
         sccalcbut.style.fontSize = "9.3vmin";
