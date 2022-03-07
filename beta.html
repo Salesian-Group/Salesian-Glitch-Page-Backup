@@ -376,8 +376,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         if(currenttime >= schedule[schedule.length-1][0] && thefuture == false){//bookmark
           selectedschedule = "";
-          var datt = new Date()
-          var dat = new Date(datt.getYear, datt.getMonth, datt.getDay+1, 1, 1, 1);
+          var datt = new Date();
+          var dat = new Date(datt.getFullYear(), datt.getMonth(), datt.getDay()-1, datt.getHours(), datt.getMinutes(), datt.getSeconds());
           
           for (i = 0; i < specialschedules.length; i++) {
             if (
