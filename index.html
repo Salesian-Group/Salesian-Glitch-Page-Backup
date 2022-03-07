@@ -321,7 +321,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         ms.splice(1, 0, [ms[1][0] - 600, ms[1][0], "Entrance Bell", 1]);
         ms.splice(ms.length, 0, [
           ms[ms.length - 1][1],
-          ms[ms.length - 1][1] - -60,
+          ms[ms.length - 1][1] - -600,
           "Dismissal",
           0
         ]);
@@ -377,7 +377,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         if(new Date().getHours() == 3){
           sccalcbut.innerHTML = "🐱";
         }
-        if(currenttime > schedule[schedule.length-1][0] && new Date().getHours() >= 17 && thefuture == false){
+        if((currenttime > schedule[schedule.length-1][1] || new Date().getHours() >= 17) && thefuture == false){
           selectedschedule = "";
           var dat = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1, new Date().getHours(), new Date().getMinutes(), new Date().getSeconds());
           for (i = 0; i < specialschedules.length; i++) {
