@@ -376,11 +376,14 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         if(currenttime >= schedule[schedule.length-1][0] && thefuture == false){//bookmark
           selectedschedule = "";
+          var datt = new Date()
+          var dat = new Date(datt.getYear, datt.getMonth, datt.getDay+1, 1, 1, 1);
+          
           for (i = 0; i < specialschedules.length; i++) {
             if (
-              parseInt(new Date().getMonth()) ==
+              parseInt(dat.getMonth()) ==
                 parseInt(specialschedules[i].substring(2, 4)) - 1 &&
-              parseInt(new Date().getDate()+1) ==
+              parseInt(dat.getDate()) ==
                 parseInt(specialschedules[i].substring(0, 2))
             ) {
               selectedschedule = specialschedules[i];
@@ -388,7 +391,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           }
 
           if (selectedschedule == "") {
-            selectedschedule = weekdayschedules[parseInt(new Date().getDay()+1)];
+            selectedschedule = weekdayschedules[parseInt(dat.getDay())];
           }
           schedule = decode(selectedschedule);
           thefuture = true;
