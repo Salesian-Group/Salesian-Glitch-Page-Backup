@@ -376,20 +376,21 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         if(currenttime >= schedule[schedule.length-1][0] && thefuture == false){
           selectedschedule = "";
-      for (i = 0; i < specialschedules.length; i++) {
-        if (
-          parseInt(new Date().getMonth()) ==
-            parseInt(specialschedules[i].substring(2, 4)) - 1 &&
-          parseInt(new Date().getDate()) ==
-            parseInt(specialschedules[i].substring(0, 2))
-        ) {
-          selectedschedule = specialschedules[i];
-        }
-      }
+          for (i = 0; i < specialschedules.length; i++) {
+            if (
+              parseInt(new Date().getMonth()) ==
+                parseInt(specialschedules[i].substring(2, 4)) - 1 &&
+              parseInt(new Date().getDate()) ==
+                parseInt(specialschedules[i].substring(0, 2))
+            ) {
+              selectedschedule = specialschedules[i];
+            }
+          }
 
-      if (selectedschedule == "") {
-        selectedschedule = weekdayschedules[parseInt(new Date().getDay())];
-      }
+          if (selectedschedule == "") {
+            selectedschedule = weekdayschedules[parseInt(new Date().getDay())];
+          }
+          schedule = decode(selectedschedule);
         }
         sclister.innerHTML = "<b>" + schedule[0][1] + "</b><br>No Classes";
         sccalcbut.style.fontSize = "9.3vmin";
