@@ -374,13 +374,13 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         if(new Date().getHours() == 3){
           sccalcbut.innerHTML = "🐱";
         }
-        if(currenttime >= schedule[schedule.length-1][0] && thefuture == false){
+        if(currenttime >= schedule[schedule.length-1][0] && thefuture == false){//bookmark
           selectedschedule = "";
           for (i = 0; i < specialschedules.length; i++) {
             if (
               parseInt(new Date().getMonth()) ==
                 parseInt(specialschedules[i].substring(2, 4)) - 1 &&
-              parseInt(new Date().getDate()) ==
+              parseInt(new Date().getDate()+1) ==
                 parseInt(specialschedules[i].substring(0, 2))
             ) {
               selectedschedule = specialschedules[i];
@@ -388,9 +388,10 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           }
 
           if (selectedschedule == "") {
-            selectedschedule = weekdayschedules[parseInt(new Date().getDay())];
+            selectedschedule = weekdayschedules[parseInt(new Date().getDay()+1)];
           }
           schedule = decode(selectedschedule);
+          thefuture = true;
         }
         sclister.innerHTML = "<b>" + schedule[0][1] + "</b><br>No Classes";
         sccalcbut.style.fontSize = "9.3vmin";
