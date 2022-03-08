@@ -102,6 +102,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       hidden="true"
     >
     <img
+      id="schedsheetimg"
       src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/defaultschedule.jpg?v=1641242952935"
       style="position: absolute;height: 100%;width:100%;left:0;top:0;transform: translate(0%, 0%);object-fit: contain;"
       onclick="closedoc()"
@@ -157,7 +158,9 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       var magnifybutton = document.getElementById("magnifybutton");
       var calendarbutton = document.getElementById("calendarbutton");
       var viewsheetbutton = document.getElementById("viewsheetbutton");
+      var dresscodebutton = document.getElementById("dresscodebutton");
       var schedsheet = document.getElementById("schedsheet");
+      var schedsheetimg = document.getElementById("schedsheetimg");
       var creditman = document.getElementById("creditman");
       var minimode = false;
       var lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
@@ -196,6 +199,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         viewsheetbutton.style = "position: absolute;width: 12vmin;height: 12vmin;top: 25%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;";
         sccornergraphic.style="position: absolute;width: 20vmin;height: 20vmin;bottom: 1%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;";
         schedsheet.style="position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);background:#252525";
+        dresscodebutton.style = "position: absolute;width: 17vmin;height: 17vmin;bottom: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
       }
         let atest = document.createElement('audio');
         let supportsAAC =  !!(atest.canPlayType && atest.canPlayType('audio/mp4; codecs="mp4a.40.2"').replace(/no/, ''));
@@ -227,8 +231,14 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
       }
       function expanddoc(){
+        schedsheetimg.src = schedulesheet
         schedsheet.hidden = false;
         specialopenclicks = 0;
+      }
+      function clothesdoc(){
+        schedsheetimg.src = clothessheet
+        schedsheet.hidden = false;
+        specialopenclicks = 1000;
       }
       function closedoc(){
         schedsheet.hidden = true;
@@ -280,6 +290,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         "0000|b|Friday Schedule|a|28800|b|31740|b|Block 6|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 1|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 3|b|0|a|42360|b|45060|b|Block 4|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 5|b|0|a|50580|b|53280|b|Block 7|b|0",
         "0000|b|Saturday Weekend|a|0|b|0|b|noclass|b|0",
       ];
+      var schedulesheet = "https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/defaultschedule.jpg?v=1641242952935";
 
       var selectedschedule = "";
       for (i = 0; i < specialschedules.length; i++) {
@@ -337,13 +348,22 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         return ms;
       }
       
+      var clothessheet = "";
       var schedule = decode(selectedschedule);
       if(schedule[0][2] !== undefined){
+        var theba = schedule[0][2]
         if (schedule[0][2].includes('!full!')){
           document.getElementById("mainbody").style.backgroundSize = '100% 100vh';
         }
-        document.getElementById("mainbody").style.backgroundImage = 'url(https://'+schedule[0][2].replace('!full!','')+')';
         //document.getElementById("mainbody").style.background = "#000000";
+        if (schedule[0][1].includes('!dress!')){
+          sclister.style.backgroundSize = '100% 100%';
+          var sp = theba.split('!dress!');
+          theba = sp[0];
+          sccornergraphic.src = 'https://'+sp[1];
+          sccornergraphic.hidden = '';
+        }
+        document.getElementById("mainbody").style.backgroundImage = 'url(https://'+theba.replace('!full!','')+')';
       }
       if(schedule[0][3] !== undefined){
         if (schedule[0][3].includes('!full!')){
