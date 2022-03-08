@@ -366,6 +366,12 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         viewsheetbutton.style.background = '#'+schedule[0][5];
       }
       var thefuture = false;
+      var openstamp =
+          new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
+        var exacttime =
+          new Date().getHours() * 60 * 60 +
+          new Date().getMinutes() * 60 +
+          new Date().getSeconds();
 
       function calcSchedule() {
         var currenttime =
@@ -375,12 +381,11 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           new Date().getMinutes() * 60 +
           new Date().getSeconds();
         var activeclass = "n/a";
-        var noclass = true;
         sccalcbut.innerHTML = "Out of Session";
         if(new Date().getHours() == 3){
           sccalcbut.innerHTML = "🐱";
         }
-        if((currenttime >= schedule[schedule.length-1][1] || new Date().getHours() >= 17) && thefuture == false){
+        if((schedule[2][2]currenttime >= schedule[schedule.length-1][1] || new Date().getHours() >= 17) && thefuture == false && currenttime - openstamp >= 3){
           selectedschedule = "";
           var dat = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1, new Date().getHours(), new Date().getMinutes(), new Date().getSeconds());
           for (i = 0; i < specialschedules.length; i++) {
@@ -410,7 +415,6 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         sclister.innerHTML = "<b>" + schedule[0][1] + "</b><br>No Classes";
         sccalcbut.style.fontSize = "9.3vmin";
         if (schedule[2][2] != "noclass") {
-          noclass = false;
           for (i = 1; i < schedule.length; i++) {
             if (currenttime >= schedule[i][0] && currenttime < schedule[i][1]) {
               activeclass = schedule[i][2];
