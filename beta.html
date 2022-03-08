@@ -561,11 +561,11 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         if(sccalcbut.innerHTML.split("<br>")[0] == "transitioning to"){
           document.title = sccalcbut.innerHTML.split("<br>")[0];
         } else {
-          document.title = sccalcbut.innerHTML.split("<br>")[0];
+          document.title = sccalcbut.innerHTML.split("<br>")[1] + " next";
         }
         if(thefuture==true){
           sccalcbut.innerHTML = "Tomorrow's Schedule"
-          document.title =
+          document.title = "Schedulology";
         }
         if(is_iphone){
           sccalcbut.innerHTML = "<b>" + sccalcbut.innerHTML + "</b>";
