@@ -147,6 +147,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       id="aprilfoolsmessage"
       type="button"
       style="position: absolute;width: 60%;height: 30%;top: 20%;left: 20%;transform: translate(0%, 0%);background:#000000"
+      hidden="true"
     >
       <img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/7f27abc8-4286-4051-aa8d-ef3c987a5dcf.image.png?v=1648761739702' style='height:100%'>
     </button>
@@ -156,12 +157,14 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       type="button"
       style="position: absolute;width: 40%;height: 15%;top: 50%;left: 20%;transform: translate(0%, 0%);background:#AAFFAA;font-family:Verdana;font-size:5vmin"
       onclick="aprilfoolsmessage('yes')"
+      hidden="true"
     >YES</button>
     <button
       id="aprilfoolsmessageno"
       type="button"
       style="position: absolute;width: 20%;height: 15%;top: 50%;left: 60%;transform: translate(0%, 0%);background:#FFAAAA;font-family:Verdana;font-size:5vmin"
       onclick="aprilfoolsmessage('no')"
+      hidden="true"
     >NO</button>
     
     <script>
@@ -370,8 +373,13 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             "0104|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/49ad7fcf-dccb-4e8d-996d-8f1adfe73da0.image.png?v=1648750092396' style='height:7vmin;width:42vmin;'>|a|28800|b|31740|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/428a7d3e-b4e1-453e-9fa8-c0bc23a7a214.image.png?v=1648749601210' style='height:4.5vmin;width:14vmin;'>|b|0|a|31980|b|34680|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/cd2d239f-c9c9-4882-b9ba-d64395007766.image.png?v=1648749663656' style='height:4.5vmin;width:14vmin;'>|b|0|a|34920|b|37620|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/ddf3398f-16f2-49b8-8197-d685bb7d71cb.image.png?v=1648749789242' style='height:4.5vmin;width:14vmin;'>|b|0|a|37620|b|39120|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/3984570a-4f27-4bc5-8e09-97e287a9dd56.image.png?v=1648749830466' style='height:4.5vmin;width:14vmin;'>|b|1|a|39420|b|42120|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/1cc1a13d-fbbf-4cd3-9947-50428622538b.image.png?v=1648749738662' style='height:4.5vmin;width:14vmin;'>|b|0|a|42360|b|45060|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/ee37fa03-dc79-4446-bbf7-11609f42be6d.image.png?v=1648749763880' style='height:4.5vmin;width:14vmin;'>|b|0|a|45060|b|47340|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/8a3af37f-9d5a-4d06-8c64-b7b22bebbff7.image.png?v=1648749840398' style='height:4.5vmin;width:14vmin;'>|b|1|a|47640|b|50340|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/90b7b103-2988-42f5-a1ac-f19c306acf7e.image.png?v=1648749805065' style='height:4.5vmin;width:14vmin;'>|b|0|a|50580|b|53280|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/fe0de1a6-da4f-4721-b4fa-508c1b0e1272.image.png?v=1648749814612' style='height:4.5vmin;width:14vmin;'>|b|0",
           ];
           selectedschedule = alittletrolling[Math.floor(Math.random() * alittletrolling.length)];
-          //selectedschedule = alittletrolling[7];
-          console.log(selectedschedule);
+          setTimeout(function(){
+            document.getElementById("aprilfoolsmessage").hidden = false;
+            document.getElementById("aprilfoolsmessageyes").hidden = false;
+            document.getElementById("aprilfoolsmessageno").hidden = false;
+          },5000)
+        } else {
+          
         }
       }
       function aprilfoolsmessage(req){
@@ -379,7 +387,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         document.getElementById("aprilfoolsmessageyes").hidden = true;
         document.getElementById("aprilfoolsmessageno").hidden = true;
         if(req=='yes'){
-          
+          setCookie("aprilfools","nofun");
+          window.location.replace(window.location);
         }
       }
       if (selectedschedule == "") {
