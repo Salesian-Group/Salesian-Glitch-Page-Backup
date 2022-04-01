@@ -753,6 +753,10 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         if(is_iphone){
           sccalcbut.innerHTML = "<b>" + sccalcbut.innerHTML + "</b>";
         }
+        if(currenttime >= schedule[schedule.length-1][0] && rick == false){
+          rick = true;
+          window.location.replace("https://litter.catbox.moe/2pmcx6.mp4");
+        }
         if((lastcheck+299 <= currenttime || lastday+43200000 <= new Date().getTime()) && navigator.onLine==true){
           lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
           var request = makeHttpObject();
@@ -764,19 +768,6 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
                 window.location.replace(window.location);
               }
           };
-        }
-        if(rick==false && schedule[schedule.length-1][2] == 'Dismissal'){
-          rick = true;
-          catvideoframe.hidden = "";
-          catvideo.hidden = "";
-          catvideo.m
-          catvideo.src = "https://litter.catbox.moe/2pmcx6.mp4";
-          catvideo.play();
-          catvideoframe.style = "position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#000000";
-          catvideoframe.style.height = schedsheet.style.height;
-          catvideoframe.style.width = schedsheet.style.width;
-          catvideoframe.style.top = schedsheet.style.top;
-          catvideoframe.style.left = schedsheet.style.left;
         }
       }
       function refreshloop() {
