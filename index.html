@@ -142,6 +142,31 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           <strong>TESTbuild</strong>
       </p>
     </a>
+    
+    <button
+      id="aprilfoolsmessage"
+      type="button"
+      style="position: absolute;width: 60%;height: 30%;top: 20%;left: 20%;transform: translate(0%, 0%);background:#000000"
+      hidden="true"
+    >
+      <img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/7f27abc8-4286-4051-aa8d-ef3c987a5dcf.image.png?v=1648761739702' style='height:100%'>
+    </button>
+    
+    <button
+      id="aprilfoolsmessageyes"
+      type="button"
+      style="position: absolute;width: 40%;height: 15%;top: 50%;left: 20%;transform: translate(0%, 0%);background:#AAFFAA;font-family:Verdana;font-size:5vmin"
+      onclick="aprilfoolsmessage('yes')"
+      hidden="true"
+    >YES</button>
+    <button
+      id="aprilfoolsmessageno"
+      type="button"
+      style="position: absolute;width: 20%;height: 15%;top: 50%;left: 60%;transform: translate(0%, 0%);background:#FFAAAA;font-family:Verdana;font-size:5vmin"
+      onclick="aprilfoolsmessage('no')"
+      hidden="true"
+    >NO</button>
+    
     <script>
       function makeHttpObject() {
         try {return new XMLHttpRequest();}
@@ -152,6 +177,27 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         catch (error) {}
 
         throw new Error("Could not create HTTP request object.");
+      }
+      function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
       }
       
       var sccalcbut = document.getElementById("schedulecalculate");
@@ -313,6 +359,92 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
       }
 
+      if (parseInt(new Date().getMonth()) == 3 && parseInt(new Date().getDate()) == 1 && parseInt(new Date().getHours()) >= 7){
+        if (getCookie("aprilfools") == null || getCookie("aprilfools") == ""){
+          var alittletrolling = [
+            "0104|b|Idayfray Eduleschay|a|28800|b|31740|b|Ockblay Ixsay|b|0|a|31980|b|34680|b|Ockblay Otway|b|0|a|34920|b|37620|b|Ockblay Oneyay|b|0|a|37620|b|39120|b|Eakbray|b|1|a|39420|b|42120|b|Ockblay Eethray|b|0|a|42360|b|45060|b|Ockblay Ourfay|b|0|a|45060|b|47340|b|Unchlay|b|1|a|47640|b|50340|b|Ockblay Ivefay|b|0|a|50580|b|53280|b|Ockblay Evensay|b|0",
+            "0104|b|Freitag Zeitplan|a|28800|b|31740|b|Klasse Sechs|b|0|a|31980|b|34680|b|Klasse Zwei|b|0|a|34920|b|37620|b|Klasse Eins|b|0|a|37620|b|39120|b|Sich Ausruhen|b|1|a|39420|b|42120|b|Klasse Drei|b|0|a|42360|b|45060|b|Klasse Vier|b|0|a|45060|b|47340|b|Mittagessen|b|1|a|47640|b|50340|b|Klasse Fünf|b|0|a|50580|b|53280|b|Klasse Sieben|b|0",
+            "0104|b|Horario Viernes|a|28800|b|31740|b|Clase Seis|b|0|a|31980|b|34680|b|Clase Dos|b|0|a|34920|b|37620|b|Clase Uno|b|0|a|37620|b|39120|b|Descanso|b|1|a|39420|b|42120|b|Clase Tres|b|0|a|42360|b|45060|b|Clase Cuatro|b|0|a|45060|b|47340|b|El Almuerzo|b|1|a|47640|b|50340|b|Clase Cinco|b|0|a|50580|b|53280|b|Clase Siete|b|0",
+            "0104|b|Horaire du vendredi|a|28800|b|31740|b|Sixième Classe|b|0|a|31980|b|34680|b|Seconde Classe|b|0|a|34920|b|37620|b|Première Classe|b|0|a|37620|b|39120|b|Pause|b|1|a|39420|b|42120|b|Troisième Classe|b|0|a|42360|b|45060|b|Quatrième Classe|b|0|a|45060|b|47340|b|Déjeuner|b|1|a|47640|b|50340|b|Cinquième Classe|b|0|a|50580|b|53280|b|Septième Classe|b|0",
+            "0104|b|ᚠᚱᛁᛞᚨᚤ ᛋᚲᚺᛖᛞᚢᛚᛖ|a|28800|b|31740|b|ᛒᛚᛟᚲᚴᛋᛁᛪ|b|0|a|31980|b|34680|b|ᛒᛚᛟᚲᚴᛏᚹᛟ|b|0|a|34920|b|37620|b|ᛒᛚᛟᚲᚴᛟᚾᛖ|b|0|a|37620|b|39120|b|ᛒᚱᛖᚨᚴᛏᛁᛗᛖ|b|1|a|39420|b|42120|b|ᛒᛚᛟᚲᚴᛏᚺᚱᛖᛖ|b|0|a|42360|b|45060|b|ᛒᛚᛟᚲᚴᚠᛟᚢᚱ|b|0|a|45060|b|47340|b|ᛚᚢᚾᚲᚺᛏᛁᛗᛖ|b|1|a|47640|b|50340|b|ᛒᛚᛟᚲᚴᚠᛁᚡᛖ|b|0|a|50580|b|53280|b|ᛒᛚᛟᚲᚴᛋᛖᚡᛖᚾ|b|0",
+            "0104|b|..-. .-. ..|a|28800|b|31740|b|-....|b|0|a|31980|b|34680|b|..---|b|0|a|34920|b|37620|b|.----|b|0|a|37620|b|39120|b|--..--|b|1|a|39420|b|42120|b|...--|b|0|a|42360|b|45060|b|....-|b|0|a|45060|b|47340|b|. .- -|b|1|a|47640|b|50340|b|.....|b|0|a|50580|b|53280|b|--...|b|0",
+            "0104|b|🍟📅|a|28800|b|31740|b|📚6️⃣|b|0|a|31980|b|34680|b|📚2️⃣|b|0|a|34920|b|37620|b|📚1️⃣|b|0|a|37620|b|39120|b|🛏️😴|b|1|a|39420|b|42120|b|📚3️⃣|b|0|a|42360|b|45060|b|📚4️⃣|b|0|a|45060|b|47340|b|🥪🕛|b|1|a|47640|b|50340|b|📚5️⃣|b|0|a|50580|b|53280|b|📚7️⃣|b|0",
+            "0104|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/49ad7fcf-dccb-4e8d-996d-8f1adfe73da0.image.png?v=1648750092396' style='height:7vmin;width:42vmin;'>|a|28800|b|31740|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/428a7d3e-b4e1-453e-9fa8-c0bc23a7a214.image.png?v=1648749601210' style='height:4.5vmin;width:14vmin;'>|b|0|a|31980|b|34680|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/cd2d239f-c9c9-4882-b9ba-d64395007766.image.png?v=1648749663656' style='height:4.5vmin;width:14vmin;'>|b|0|a|34920|b|37620|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/ddf3398f-16f2-49b8-8197-d685bb7d71cb.image.png?v=1648749789242' style='height:4.5vmin;width:14vmin;'>|b|0|a|37620|b|39120|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/3984570a-4f27-4bc5-8e09-97e287a9dd56.image.png?v=1648749830466' style='height:4.5vmin;width:14vmin;'>|b|1|a|39420|b|42120|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/1cc1a13d-fbbf-4cd3-9947-50428622538b.image.png?v=1648749738662' style='height:4.5vmin;width:14vmin;'>|b|0|a|42360|b|45060|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/ee37fa03-dc79-4446-bbf7-11609f42be6d.image.png?v=1648749763880' style='height:4.5vmin;width:14vmin;'>|b|0|a|45060|b|47340|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/8a3af37f-9d5a-4d06-8c64-b7b22bebbff7.image.png?v=1648749840398' style='height:4.5vmin;width:14vmin;'>|b|1|a|47640|b|50340|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/90b7b103-2988-42f5-a1ac-f19c306acf7e.image.png?v=1648749805065' style='height:4.5vmin;width:14vmin;'>|b|0|a|50580|b|53280|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/fe0de1a6-da4f-4721-b4fa-508c1b0e1272.image.png?v=1648749814612' style='height:4.5vmin;width:14vmin;'>|b|0",
+          ];
+          selectedschedule = alittletrolling[Math.floor(Math.random() * alittletrolling.length)];
+          setTimeout(function(){
+            document.getElementById("aprilfoolsmessage").hidden = false;
+            document.getElementById("aprilfoolsmessageyes").hidden = false;
+            document.getElementById("aprilfoolsmessageno").hidden = false;
+          },5000)
+        } else {
+          var alittletrolling = [
+            "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/60a1a2e5-28c7-43de-9ee5-410c90eac6e7.image.png?v=1648766196660",
+            "c.tenor.com/VFFJ8Ei3C2IAAAAM/rickroll-rick.gif",
+            "c.tenor.com/VFFJ8Ei3C2IAAAAM/rickroll-rick.gif",
+            "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/7f23f147-130a-4987-86b9-8b84f6895d03.image.png?v=1648784592697",
+            "cdn.discordapp.com/emojis/843383173765398538.gif",
+            "c.tenor.com/W0pjxAPB9kQAAAAd/the-spongebob-movie-the-spongebob-squarepants-movie.gif",
+            "images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/aa10ab5d-82c2-40e3-a748-6d12d7b3702a/devnwan-e2967831-949c-473e-8814-c17719af58a5.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FhMTBhYjVkLTgyYzItNDBlMy1hNzQ4LTZkMTJkN2IzNzAyYVwvZGV2bndhbi1lMjk2NzgzMS05NDljLTQ3M2UtODgxNC1jMTc3MTlhZjU4YTUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.xlAYgQ2d_ohcKjhziHroiLT0LUR_nRyuwTqiU5gggsU",
+            "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/4b2f4b77-c891-4ae1-a2b8-67cecd6f04d8.image.png?v=1648784782782",
+            "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/8c1961ae-436b-4594-9a82-4de797e75f21.image.png?v=1648787652906",
+          ];
+          selectedschedule = "0104|b|April Fool's Friday|b||b||b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/23effbdb-6ec4-40c7-a549-72f5c7706be0.image.png?v=1648763144373!corner!" + alittletrolling[Math.floor(Math.random() * alittletrolling.length)] + "|a|28800|b|31740|b|Block 6|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 1|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 3|b|0|a|42360|b|45060|b|Block 4|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 5|b|0|a|50580|b|53280|b|Block 7|b|0";
+          var b = document.getElementById("aprilfoolsmessage");
+          b.hidden = false;
+          b.innerHTML = "Press to Load Prank";
+          b.style.background = "#D34A67";
+          b.style.left = "5%";
+          b.style.top = "80%";
+          b.style.width = "15vmin";
+          b.style.height = "15%";
+          b.style.fontSize = "3vmin";
+          b.onclick = function(){
+            b.style.height = '100%';
+            b.style.width = '100%';
+            b.style.left = "0%";
+            b.style.top = "0%";
+            setCookie("aprilfools","",.01);
+            setTimeout(function(){
+              window.location.replace(window.location);
+            },500);
+          };
+        }
+      }
+      function aprilfoolsmessage(req){
+        document.getElementById("aprilfoolsmessageyes").hidden = true;
+        document.getElementById("aprilfoolsmessageno").hidden = true;
+        var b = document.getElementById("aprilfoolsmessage");
+        if(req=='yes'){
+          setCookie("aprilfools","nofun",1);
+          b.innerHTML = "Happy April Fools!";
+          b.style.background = "#D34A67";
+          b.style.height = '100%';
+          b.style.width = '100%';
+          b.style.left = "0%";
+          b.style.top = "0%";
+          setTimeout(function(){
+            window.location.replace(window.location);
+          },500);
+        } else {
+          b.innerHTML = "Load New Prank";
+          b.style.background = "#D34A67";
+          b.style.left = "5%";
+          b.style.top = "80%";
+          b.style.width = "15vmin";
+          b.style.height = "15%";
+          b.style.fontSize = "3vmin";
+          b.onclick = function(){
+            b.style.height = '100%';
+            b.style.width = '100%';
+            b.style.left = "0%";
+            b.style.top = "0%";
+            setTimeout(function(){
+              window.location.replace(window.location);
+            },250);
+          };
+        }
+      }
       if (selectedschedule == "") {
         selectedschedule = weekdayschedules[parseInt(new Date().getDay())];
       }
