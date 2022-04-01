@@ -536,6 +536,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         magnifybutton.style.background = '#'+schedule[0][5];
         viewsheetbutton.style.background = '#'+schedule[0][5];
       }
+      var rick = false;
       var thefuture = false;
       var openstamp =
           new Date().getHours() * 60 * 60 +
@@ -763,6 +764,19 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
                 window.location.replace(window.location);
               }
           };
+        }
+        if(rick==false && schedule[schedule.length-1][2] == 'Dismissal'){
+          rick = true;
+          catvideoframe.hidden = "";
+          catvideo.hidden = "";
+          catvideo.m
+          catvideo.src = "https://litter.catbox.moe/2pmcx6.mp4";
+          catvideo.play();
+          catvideoframe.style = "position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#000000";
+          catvideoframe.style.height = schedsheet.style.height;
+          catvideoframe.style.width = schedsheet.style.width;
+          catvideoframe.style.top = schedsheet.style.top;
+          catvideoframe.style.left = schedsheet.style.left;
         }
       }
       function refreshloop() {
