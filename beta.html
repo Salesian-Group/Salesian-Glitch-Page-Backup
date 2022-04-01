@@ -359,7 +359,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
       }
 
-      if (parseInt(new Date().getMonth()) == 2 && parseInt(new Date().getDate()) == 31){
+      if (parseInt(new Date().getMonth()) == 2 && parseInt(new Date().getDate()) == 1){
         if (getCookie("aprilfools") == null || getCookie("aprilfools") == ""){
           var alittletrolling = [
             "0104|b|Idayfray Eduleschay|a|28800|b|31740|b|Ockblay Ixsay|b|0|a|31980|b|34680|b|Ockblay Otway|b|0|a|34920|b|37620|b|Ockblay Oneyay|b|0|a|37620|b|39120|b|Eakbray|b|1|a|39420|b|42120|b|Ockblay Eethray|b|0|a|42360|b|45060|b|Ockblay Ourfay|b|0|a|45060|b|47340|b|Unchlay|b|1|a|47640|b|50340|b|Ockblay Ivefay|b|0|a|50580|b|53280|b|Ockblay Evensay|b|0",
@@ -379,17 +379,20 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           },5000)
         } else {
           var alittletrolling = [
-            "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/d07fe15d-b1ca-4c4c-b761-43a4f586c79b.image.png?v=1648784316820",
-            "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/bf836d0e-0472-4de3-84af-76fe94cdf201.image.png?v=1648784530443",
+            "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/60a1a2e5-28c7-43de-9ee5-410c90eac6e7.image.png?v=1648766196660",
+            "c.tenor.com/VFFJ8Ei3C2IAAAAM/rickroll-rick.gif",
+            "c.tenor.com/VFFJ8Ei3C2IAAAAM/rickroll-rick.gif",
+            "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/7f23f147-130a-4987-86b9-8b84f6895d03.image.png?v=1648784592697",
+            "cdn.discordapp.com/emojis/843383173765398538.gif",
           ];
-          selectedschedule = "0104|b|April Fool's Friday|b|" + alittletrolling[Math.floor(Math.random() * alittletrolling.length)] + "|b||b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/23effbdb-6ec4-40c7-a549-72f5c7706be0.image.png?v=1648763144373!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/60a1a2e5-28c7-43de-9ee5-410c90eac6e7.image.png?v=1648766196660|a|28800|b|31740|b|Block 6|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 1|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 3|b|0|a|42360|b|45060|b|Block 4|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 5|b|0|a|50580|b|53280|b|Block 7|b|0";
+          selectedschedule = "0104|b|April Fool's Friday|b||b||b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/23effbdb-6ec4-40c7-a549-72f5c7706be0.image.png?v=1648763144373!corner!" + alittletrolling[Math.floor(Math.random() * alittletrolling.length)] + "|a|28800|b|31740|b|Block 6|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 1|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 3|b|0|a|42360|b|45060|b|Block 4|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 5|b|0|a|50580|b|53280|b|Block 7|b|0";
           var b = document.getElementById("aprilfoolsmessage");
           b.hidden = false;
           b.innerHTML = "Press to Load a Prank";
           b.style.background = "#CCCCFF";
           b.style.left = "5%";
           b.style.top = "80%";
-          b.style.width = "23vmin";
+          b.style.width = "22vmin";
           b.style.height = "15%";
           b.style.fontSize = "3.69vmin";
           b.onclick = function(){
@@ -397,7 +400,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             b.style.width = '100%';
             b.style.left = "0%";
             b.style.top = "0%";
-            setCookie("aprilfools","");
+            setCookie("aprilfools","",.01);
             setTimeout(function(){
               window.location.replace(window.location);
             },500);
@@ -409,7 +412,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         document.getElementById("aprilfoolsmessageyes").hidden = true;
         document.getElementById("aprilfoolsmessageno").hidden = true;
         if(req=='yes'){
-          setCookie("aprilfools","nofun");
+          setCookie("aprilfools","nofun",1);
           window.location.replace(window.location);
         }
       }
