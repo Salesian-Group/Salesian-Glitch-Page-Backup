@@ -152,10 +152,12 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         <select name="theme selection" id="themeselector">
           <option value="auto">Automatic</option>
           <option value="none">Salesian Default</option>
-          <option value="hallowseve">Halloween</option>
-          <option value="solstice">Winter</option>
-          <option value="dark">M i d n i g h t</option>
-          <option value="hotdog">HOTDOG</option>
+          <option value="dark">MIDNIGHT</option>
+          <option value="hallowseve">Halloween 2021</option>
+          <option value="solstice">Winter 2021</option>
+          <option value="artday">Art Day 2021</option>
+          <option value="bosco">Don Bosco 2022</option>
+          <option value="hotdog">hotdog...</option>
         </select><br><br>
         <input type="submit" onclick="savethemes()" value="Save and Refresh">
         <input type="submit" onclick="refreshpage()" value="Exit">
@@ -414,7 +416,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         "0804|b|Salesian Service Day|b||b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|28800|b|29400|b|Meet with Faith Families|b|0|a|29400|b|46800|b|Service Day!|b|0",
         "1104|b|Monday Early Dismissal|a|28800|b|31380|b|Block 1|b|0|a|31620|b|33960|b|Block 2|b|0|a|34200|b|36540|b|Block 3|b|0|a|36540|b|37920|b|Break|b|1|a|38220|b|40560|b|Block 4|b|0|a|40800|b|43140|b|Block 5|b|0|a|43140|b|45240|b|Lunch|b|1|a|45540|b|47880|b|Block 6|b|0|a|48120|b|50460|b|Block 7|b|0",
         "1204|b|Tuesday Earth Day|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/earthyimage.jpg?v=1649720346992!dress!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/IMG_6057.jpg?v=1649720484755|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/leafgreen.png?v=1649723289516|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/leafgreen.png?v=1649723289516!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/earthdaypin.png?v=1649722288768|b|103800!textonly!|a|28800|b|31440|b|Block 3|b|0|a|31680|b|34080|b|Block 6|b|0|a|34320|b|36720|b|Block 4|b|0|a|36720|b|38040|b|Break|b|1|a|38340|b|40740|b|Block 5|b|0|a|40980|b|43380|b|Block 2|b|0|a|43380|b|46140|b|Earth Day Assembly in Gym|b|0|a|46140|b|48060|b|Lunch|b|1|a|48360|b|50760|b|Block 1|b|0|a|51000|b|53400|b|Block 7|b|0",
-        "1404|b|Wednesday Schedule|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45300|b|Lunch|b|1|a|45600|b|50400|b|Block 6|b|0|a|50700|b|53400|b|Community Time|b|0",
+        "1404|b|Early Wednesday|a|28800|b|33840|b|Block 4|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 6|b|0",
         "1304|b|Thursday Schedule|a|28800|b|33840|b|Block 5|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 1|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3|b|0|a|47580|b|48300|b|Mini-Break|b|0|a|48600|b|53400|b|Block 7|b|0",
         "1504|b|Good Friday|a|0|b|0|b|noclass|b|0",
       ];
@@ -615,7 +617,18 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             schedule[0][4] = "!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463";
             schedule[0][5] = "8FD3CF";
           }
-          cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmoreart.png?v=1635364316510|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcrayons.png?v=1634689066035|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fanotherart.png?v=1635363993209
+          if(getCookie("thempref") == "artday"){
+            schedule[0][2] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmoreart.png?v=1635364316510";
+            schedule[0][3] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcrayons.png?v=1634689066035";
+            schedule[0][4] = "!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fanotherart.png?v=1635363993209";
+            schedule[0][5] = "000000!textonly!";
+          }
+          if(getCookie("thempref") == "bosco"){
+            schedule[0][2] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581";
+            schedule[0][3] = "!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428";
+            schedule[0][4] = "!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642";
+            schedule[0][5] = "000000!textonly!";
+          }
           if(getCookie("thempref") == "dark"){
             schedule[0][2] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/darkbackback.png?v=1649881660401";
             schedule[0][3] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/darkback.png?v=1649881660401";
