@@ -141,7 +141,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         <label for="aliasb7" style="font-family:Verdana;font-size:2vmin;color:#FFFFFF;">Block 7 Alias: </label>
         <input type="text" id="aliasb7" name="aliasb7" style="font-family:Verdana;font-size:2vmin;color:#000000;"><br><br>
         <input type="submit" onclick="savealiases()" value="Save and Refresh">//bookmark
-        <input type="submit" onclick="resetaliases()" value="Reset to Default (3)">
+        <input type="submit" id="aliasresetbutton" onclick="resetaliases()" value="Reset to Default (3)">
 
       </button>
     </button>
@@ -340,15 +340,17 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         window.location.replace(window.location);
       }
+      var aliasresetbuttoncount = 3;
       function resetaliases(){
-        for (let i = 1; i <= 7; i++) {
-          if(document.getElementById("aliasb"+i.toString()).value == ""){
+        aliasresetbuttoncount -= 1;
+        aliasresetbutton.value = 'Reset to Default ('+aliasresetbuttoncount.toString()+')';
+        if(aliasresetbuttoncount <= 0){
+          for (let i = 1; i <= 7; i++) {
             setCookie("ba"+i.toString(),"Block "+i.toString());
-          } else {
-            setCookie("ba"+i.toString(),document.getElementById("aliasb"+i.toString()).value);
           }
+          window.location.replace(window.location);
         }
-        window.location.replace(window.location);
+        
       }//bookmark
       
       // "0000|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
@@ -401,11 +403,14 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
       }
       
+      var exponentnumbers = ['⁰','¹','²','³','⁴','⁵','⁶','⁷']
       for (let i = 1; i <= 7; i++) {
         if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
           setCookie("ba"+i.toString(),"Block "+i.toString());
         }
-        selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString()));
+        if(getCookie("ba"+i.toString())!="Block "+i.toString()){
+          selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
+        }
         document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
       }
 
