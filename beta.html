@@ -118,9 +118,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
     <button
       id="schedsetting"
       hidden="true"
-      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525;font-family:Verdana;font-size:6vmin;color:#FFFFFF"
-      onclick="opensettings()"
-    >[Press for Settings]
+      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525;font-family:Verdana;font-size:5vmin;color:#FFFFFF"
+    ><a onclick="opensettings()">[Edit]</a> [Themes]
       <button
       id="schedsettingpage"
       hidden="true"
@@ -229,6 +228,9 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         return "";
       }
+      function refreshpage() {
+        window.location.replace(window.location)
+      }
       
       var sccalcbut = document.getElementById("schedulecalculate");
       var sclister = document.getElementById("schedulefulllist");
@@ -329,8 +331,10 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           schedsettingpage.style.width = "90%";
           schedsettingpage.style.height = "90%";
         },0);
-        window.open(window.location,'_blank');
-        window.location.replace("https://salesianschedule.glitch.me/beta.html");
+        if (window.location !== window.parent.location){
+          window.open(window.location,'_blank');
+          window.location.replace("https://salesianschedule.glitch.me/beta.html");
+        }
         //bookmarks
         //"position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
       }
@@ -342,7 +346,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             setCookie("ba"+i.toString(),document.getElementById("aliasb"+i.toString()).value);
           }
         }
-        window.location.replace(window.location);
+        refreshpage();
       }
       var aliasresetbuttoncount = 3;
       function resetaliases(){
@@ -352,7 +356,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           for (let i = 1; i <= 7; i++) {
             setCookie("ba"+i.toString(),"Block "+i.toString());
           }
-          window.location.replace(window.location);
+          refreshpage();
         }
         
       }//bookmark
@@ -407,15 +411,17 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
       }
       
-      var exponentnumbers = ['⁰','¹','²','³','⁴','⁵','⁶','⁷']
-      for (let i = 1; i <= 7; i++) {
-        if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
-          setCookie("ba"+i.toString(),"Block "+i.toString());
+      if (window.location == window.parent.location){
+        var exponentnumbers = ['⁰','¹','²','³','⁴','⁵','⁶','⁷']
+        for (let i = 1; i <= 7; i++) {
+          if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
+            setCookie("ba"+i.toString(),"Block "+i.toString());
+          }
+          if(getCookie("ba"+i.toString())!="Block "+i.toString()){
+            selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
+          }
+          document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
         }
-        if(getCookie("ba"+i.toString())!="Block "+i.toString()){
-          selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
-        }
-        document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
       }
 
       if (parseInt(new Date().getMonth()) == 3 && parseInt(new Date().getDate()) == 1 && parseInt(new Date().getHours()) >= 8){
@@ -465,7 +471,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             b.style.top = "0%";
             setCookie("aprilfools","",.01);
             setTimeout(function(){
-              window.location.replace(window.location);
+              refreshpage();
             },500);
           };
         }
@@ -486,7 +492,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             if (window.location !== window.parent.location){
               window.open("https://salesianschedule.glitch.me/noaprils.html",'_blank');
             } else {
-              window.location.replace(window.location);
+              refreshpage();
             }
           },500);
         } else {
@@ -503,7 +509,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             b.style.left = "0%";
             b.style.top = "0%";
             setTimeout(function(){
-              window.location.replace(window.location);
+              refreshpage();
             },250);
           };
         }
@@ -518,7 +524,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       
 
       // the first set contains schedule basics: [day-of-schedule, event-name]
-      // the remaining sets are the periods: [start-time, end-time, period-name, is-transition]
+      // the remaining sets are the periods: [start-time, end-time, period-name, always-show-next]
       function encode(sched) {
         var ms = "";
         ms = sched[0][0] + "|b|" + sched[0][1];
@@ -829,7 +835,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           request.onreadystatechange = function() {
             if (request.readyState == 4)
               if(activeversion!=request.responseText){
-                window.location.replace(window.location);
+                refreshpage();
               }
           };
         }
