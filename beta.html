@@ -124,7 +124,25 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       id="schedsettingpage"
       hidden="true"
       style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
-      ></button>
+      >
+
+  <label for="aliasb1">Block 1 Alias: </label>
+  <input type="text" id="aliasb1" name="aliasb1"><br><br>
+  <label for="aliasb2">Block 2 Alias: </label>
+  <input type="text" id="aliasb2" name="aliasb2"><br><br>
+  <label for="aliasb3">Block 3 Alias: </label>
+  <input type="text" id="aliasb3" name="aliasb3"><br><br>
+  <label for="aliasb4">Block 4 Alias: </label>
+  <input type="text" id="aliasb4" name="aliasb4"><br><br>
+  <label for="aliasb5">Block 5 Alias: </label>
+  <input type="text" id="aliasb5" name="aliasb5"><br><br>
+  <label for="aliasb6">Block 6 Alias: </label>
+  <input type="text" id="aliasb6" name="aliasb6"><br><br>
+  <label for="aliasb7">Block 7 Alias: </label>
+  <input type="text" id="aliasb7" name="aliasb7"><br><br>
+  <input type="submit" value="Submit">
+
+      </button>
     </button>
     <button
       id="3amcatvideoholder"
@@ -212,14 +230,6 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       
       var sccalcbut = document.getElementById("schedulecalculate");
       var sclister = document.getElementById("schedulefulllist");
-      var sccornergraphic = document.getElementById("sccornergraphic");
-      var magnifybutton = document.getElementById("magnifybutton");
-      var calendarbutton = document.getElementById("calendarbutton");
-      var viewsheetbutton = document.getElementById("viewsheetbutton");
-      var dresscodebutton = document.getElementById("dresscodebutton");
-      var schedsheet = document.getElementById("schedsheet");
-      var schedsheetimg = document.getElementById("schedsheetimg");
-      var creditman = document.getElementById("creditman");
       var minimode = false;
       var lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
       var lastday = new Date().getTime();
@@ -316,7 +326,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         setTimeout(function(){
           schedsettingpage.style.width = "90%";
           schedsettingpage.style.height = "90%";
-        },1);
+        },0);
         //"position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
       }
       
