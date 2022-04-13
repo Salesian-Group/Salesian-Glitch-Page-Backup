@@ -331,14 +331,24 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         //"position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
       }
       function savealiases(){
-        if(getCookie("ba1") == null || getCookie("ba1") == ""){
-          setCookie("ba1","Block 1");
-        }
         for (let i = 1; i <= 7; i++) {
-          if(getCookie("ba"+toString(i)) == null || getCookie("ba"+toString(i)) == ""){
-            setCookie("ba"+toString(i),"Block "+toString(i));
+          if(document.getElementById("aliasb"+i.toString()).value == ""){
+            setCookie("ba"+i.toString(),"Block "+i.toString());
+          } else {
+            setCookie("ba"+i.toString(),document.getElementById("aliasb"+i.toString()).value);
           }
         }
+        window.location.replace(window.location);
+      }
+      function resetaliases(){
+        for (let i = 1; i <= 7; i++) {
+          if(document.getElementById("aliasb"+i.toString()).value == ""){
+            setCookie("ba"+i.toString(),"Block "+i.toString());
+          } else {
+            setCookie("ba"+i.toString(),document.getElementById("aliasb"+i.toString()).value);
+          }
+        }
+        window.location.replace(window.location);
       }//bookmark
       
       // "0000|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
@@ -392,10 +402,11 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       }
       
       for (let i = 1; i <= 7; i++) {
-        if(getCookie("ba"+toString(i)) == null || getCookie("ba"+toString(i)) == ""){
-          setCookie("ba"+toString(i),"Block "+toString(i));
+        if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
+          setCookie("ba"+i.toString(),"Block "+i.toString());
         }
-        selectedschedule = selectedschedule.replace("Block "+toString(i),getCookie("ba"+toString(i)));
+        selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString()));
+        document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
       }
 
       if (parseInt(new Date().getMonth()) == 3 && parseInt(new Date().getDate()) == 1 && parseInt(new Date().getHours()) >= 8){
