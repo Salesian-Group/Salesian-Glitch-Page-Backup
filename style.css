@@ -221,8 +221,6 @@ h2 {
   opacity: 1;
 }
 .bimg {
-  display: grid;
-  width: 180px;
-  text-align:center;
-  
+  height:4.5vmin;
+  width:14vmin;
 }
