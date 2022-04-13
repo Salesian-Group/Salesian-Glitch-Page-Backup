@@ -118,8 +118,14 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       id="schedsetting"
       hidden="true"
       style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
-      onclick="closedoc()"
-    ></button>
+      onclick="opensettings()"
+    >
+      <button
+      id="schedsettingpage"
+      hidden="true"
+      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
+      ></button>
+    </button>
     <button
       id="3amcatvideoholder"
       type="button"
@@ -285,6 +291,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       function expanddoc(){
         schedsheetimg.src = schedulesheet
         schedsheet.hidden = false;
+        schedsetting.hidden = false;
         specialopenclicks = 0;
       }
       function clothesdoc(){
@@ -294,6 +301,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       }
       function closedoc(){
         schedsheet.hidden = true;
+        schedsetting.hidden = true;
         if(specialopenclicks==3){
           document.getElementById("mainbody").style.background = document.getElementById("betaman").style.background;
           window.location.replace("https://salesianschedule.glitch.me/beta.html");
@@ -302,6 +310,14 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           catvideoframe.hidden = "";
           catvideoplay();
         }
+      }
+      function opensettings(){
+        schedsettingpage.hidden = false;
+        setTimeout(function(){
+          schedsettingpage.style.width = "90%";
+          schedsettingpage.style.height = "90%";
+        },1);
+        //"position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
       }
       
       // "0000|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
