@@ -37,7 +37,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
     <meta property="og:url" content="https://salesianschedule.glitch.me" />
     <meta
       property="og:description"
-      content="See the bell schedule in realtime"
+      content="See the bell schedule in real-time"
     />
     <meta
       property="og:image"
@@ -79,7 +79,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       type="button"
       style="position: absolute;width: 10vmin;height: 10vmin;top: 25%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
     >
-      <img src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fglobe.png?v=1639152822663" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
+      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/globe.png?v=1649877795205" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
     </button>
     </a>
     <button
@@ -113,14 +113,14 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       style="position: absolute;height: 100%;width:100%;left:0;top:0;transform: translate(0%, 0%);object-fit: contain;"
       onclick="closedoc()"
     >
-    <img src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcalenda.png?v=1638915120877" type="button" onclick="expanddoc()" style="position: absolute;width: 10vmin;height: 10vmin;top: 0%;right: 0%;transform: translate(0%, 0%)">
+    <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/whiteback.png?v=1649878082626" type="button" onclick="expanddoc()" style="position: absolute;width: 10vmin;height: 10vmin;top: 0%;right: 0%;transform: translate(0%, 0%)">
     </button>
     <button
       id="schedsetting"
       hidden="true"
       style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525;font-family:Verdana;font-size:6vmin;color:#FFFFFF"
       onclick="opensettings()"
-    >Press here to open Settings
+    >[Press for Settings]
       <button
       id="schedsettingpage"
       hidden="true"
@@ -329,6 +329,9 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           schedsettingpage.style.width = "90%";
           schedsettingpage.style.height = "90%";
         },0);
+        window.open(window.location,'_blank');
+        window.location.replace("https://salesianschedule.glitch.me/beta.html");
+        //bookmarks
         //"position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
       }
       function savealiases(){
@@ -481,8 +484,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           b.style.top = "0%";
           setTimeout(function(){
             if (window.location !== window.parent.location){
-              var url = "https://salesianschedule.glitch.me/noaprils.html"
-              window.open(url,'_blank');
+              window.open("https://salesianschedule.glitch.me/noaprils.html",'_blank');
             } else {
               window.location.replace(window.location);
             }
