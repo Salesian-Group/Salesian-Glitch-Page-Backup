@@ -119,7 +119,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       id="schedsetting"
       hidden="true"
       style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525;font-family:Verdana;font-size:5vmin;color:#FFFFFF"
-    ><a onclick="opensettings()">[Edit]</a> [Themes]
+    ><a onclick="opensettings()">[Classes]</a> <a onclick="openthemes()">[Themes]</a> <a onclick="openthemes()">[<img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/cat.png?v=1649879673929" style="width:5vmin;height:5vmin">]</a>
       <button
       id="schedsettingpage"
       hidden="true"
@@ -142,6 +142,16 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         <input type="text" id="aliasb7" name="aliasb7" style="font-family:Verdana;font-size:2vmin;color:#000000;"><br><br>
         <input type="submit" onclick="savealiases()" value="Save and Refresh">
         <input type="submit" id="aliasresetbutton" onclick="resetaliases()" value="Reset to Default (3)">
+        <input type="submit" onclick="refreshpage()" value="Exit">
+
+      </button>
+      <button
+      id="schedthemespage"
+      hidden="true"
+      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
+      >
+
+        
 
       </button>
     </button>
@@ -295,8 +305,10 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
       }
       var specialopenclicks = 0;
-      function showdetailed(){
+      function catpress(){
         specialopenclicks = specialopenclicks + 1;
+      }
+      function showdetailed(){
         if (minimode == true){
           sccalcbut.hidden = true;
           sclister.hidden = false;
@@ -335,8 +347,17 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           window.open(window.location,'_blank');
           window.location.replace("https://salesianschedule.glitch.me/beta.html");
         }
-        //bookmarks
-        //"position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
+      }
+      function openthemes(){
+        schedthemespage.hidden = false;
+        setTimeout(function(){
+          schedthemespage.style.width = "90%";
+          schedthemespage.style.height = "90%";
+        },0);
+        if (window.location !== window.parent.location){
+          window.open(window.location,'_blank');
+          window.location.replace("https://salesianschedule.glitch.me/beta.html");
+        }
       }
       function savealiases(){
         for (let i = 1; i <= 7; i++) {
