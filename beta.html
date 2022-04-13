@@ -150,7 +150,6 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
       >
         <select name="theme selection" id="themeselector">
-          <option value="auto">Automatic</option>
           <option value="none">Salesian Default</option>
           <option value="dark">MIDNIGHT</option>
           <option value="hallowseve">Halloween 2021</option>
@@ -158,6 +157,10 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           <option value="artday">Art Day 2021</option>
           <option value="bosco">Don Bosco 2022</option>
           <option value="hotdog">hotdog...</option>
+        </select><br><br>
+        <select name="theme force" id="themeforceselector">
+          <option value="off">Theme Override [OFF]</option>
+          <option value="on">Theme Override [ON]</option>
         </select><br><br>
         <input type="submit" onclick="savethemes()" value="Save and Refresh">
         <input type="submit" onclick="refreshpage()" value="Exit">
@@ -390,6 +393,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       }
       function savethemes(){
         setCookie("thempref",themeselector.value);
+        setCookie("themforce",themeforceselector.value);
         refreshpage();
       }
       
@@ -455,9 +459,13 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
         }
         if(getCookie("thempref") == null || getCookie("thempref") == ""){
-          setCookie("thempref","auto");
+          setCookie("thempref","none");
+        }
+        if(getCookie("themforce") == null || getCookie("themforce") == ""){
+          setCookie("themforce","off");
         }
         themeselector.value = getCookie("thempref");
+        themeforceselector.value = getCookie("themforce");
       }
 
       if (parseInt(new Date().getMonth()) == 3 && parseInt(new Date().getDate()) == 1 && parseInt(new Date().getHours()) >= 8){
@@ -597,14 +605,18 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       var clothessheet = "";
       var schedule = decode(selectedschedule);
       if (window.location == window.parent.location){
-        if(getCookie("thempref") != "auto"){
+        if(getCookie("themforce") == "on" || schedule[0][2] == undefined){
+          if (schedule[0][2] != undefined && schedule[0][2].includes('!dress!')){
+            var sp = schedule[0][2].split('!dress!');
+            clothessheet = 'https://'+sp[1];
+            dresscodebutton.hidden = '';
+          }
           if(getCookie("thempref") == "none"){
             schedule[0][2] = "";
             schedule[0][3] = "";
             schedule[0][4] = "";
             schedule[0][5] = "";
           }
-          
           if(getCookie("thempref") == "hallowseve"){
             schedule[0][2] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooker.png?v=1635489813683";
             schedule[0][3] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspookaba.jpg?v=1635489808887";
