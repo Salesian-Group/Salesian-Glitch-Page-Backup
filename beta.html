@@ -79,7 +79,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       type="button"
       style="position: absolute;width: 10vmin;height: 10vmin;top: 25%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
     >
-      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/globe.png?v=1649877795205" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
+      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/globe.png?v=1649881910304" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
     </button>
     </a>
     <button
@@ -152,8 +152,11 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         <select name="theme selection" id="themeselector">
           <option value="auto">Automatic</option>
           <option value="none">Salesian Default</option>
+          <option value="dark">Dark Mode</option>
+          <option value="light">Light Mode</option>
           <option value="hallowseve">Halloween</option>
           <option value="solstice">Winter</option>
+          <option value="hotdog">Hotdog</option>
         </select><br><br>
         <input type="submit" onclick="savethemes()" value="Save and Refresh">
         <input type="submit" onclick="refreshpage()" value="Exit">
@@ -600,6 +603,18 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             schedule[0][4] = "";
             schedule[0][5] = "";
           }
+          if(getCookie("thempref") == "dark"){
+            schedule[0][2] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/darkbackback.png?v=1649881660401";
+            schedule[0][3] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/darkback.png?v=1649881660401";
+            schedule[0][4] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/darkback.png?v=1649881660401";
+            schedule[0][5] = "DDCCDD!textonly!";
+          }
+          if(getCookie("thempref") == "light"){
+            schedule[0][2] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooker.png?v=1635489813683";
+            schedule[0][3] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspookaba.jpg?v=1635489808887";
+            schedule[0][4] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooka.jpg?v=1635489811462";
+            schedule[0][5] = "000000";
+          }
           if(getCookie("thempref") == "hallowseve"){
             schedule[0][2] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooker.png?v=1635489813683";
             schedule[0][3] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspookaba.jpg?v=1635489808887";
@@ -607,10 +622,10 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             schedule[0][5] = "F06402";
           }
           if(getCookie("thempref") == "solstice"){
-            schedule[0][2] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooker.png?v=1635489813683";
-            schedule[0][3] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspookaba.jpg?v=1635489808887";
-            schedule[0][4] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooka.jpg?v=1635489811462";
-            schedule[0][5] = "F06402";
+            schedule[0][2] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784";
+            schedule[0][3] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125";
+            schedule[0][4] = "!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463";
+            schedule[0][5] = "8FD3CF";
           }
         }
       }
