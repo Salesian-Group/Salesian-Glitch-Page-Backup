@@ -364,11 +364,15 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
       }
       function savealiases(){
-        for (let i = 1; i <= 7; i++) {
-          if(document.getElementById("aliasb"+i.toString()).value == ""){
-            setCookie("ba"+i.toString(),"Block "+i.toString());
-          } else {
-            setCookie("ba"+i.toString(),document.getElementById("aliasb"+i.toString()).value);
+        if(aliasb1.value=="up up"&&aliasb2.value=="down down"&&aliasb3.value=="left right"&&aliasb4.value=="left right"&&aliasb5.value=="b"&&aliasb6.value=="a"&&aliasb7.value=="start"){
+          setCookie("thempref","retro");
+        } else {
+          for (let i = 1; i <= 7; i++) {
+            if(document.getElementById("aliasb"+i.toString()).value == ""){
+              setCookie("ba"+i.toString(),"Block "+i.toString());
+            } else {
+              setCookie("ba"+i.toString(),document.getElementById("aliasb"+i.toString()).value);
+            }
           }
         }
         refreshpage();
@@ -662,8 +666,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             schedule[0][3] = "";
             schedule[0][4] = "";
             schedule[0][5] = "000000!textonly!";
-            sccalcbut.style.background = "rgba(0,0,0,0)";
-            sclister.style.background = "rgba(0,0,0,0)";
+            sccalcbut.style.fontFamily = "'Press Start 2P'";
+            sclister.style.fontFamily = "'Press Start 2P'";
             if(!is_iphone){
               backsite.src = 'https://haxiomic.github.io/GPU-Fluid-Experiments/html5/?q=UltraHigh';
               sccalcbut.style.pointerEvents = "none";
