@@ -650,16 +650,22 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             schedule[0][5] = "000000!textonly!";
           }
           if(getCookie("thempref") == "dark"){
-            schedule[0][2] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/darkbackback.png?v=1649881660401";
-            schedule[0][3] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/darkback.png?v=1649881660401";
-            schedule[0][4] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/darkback.png?v=1649881660401";
+            schedule[0][2] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/56de5d1b-b01b-4e52-9a19-a0c1620b272c.image.png?v=1649902757672";
+            schedule[0][3] = "";
+            schedule[0][4] = "";
             schedule[0][5] = "DDCCDD!textonly!";
+            mainbody.style.backgroundColor = "#1D1026";
+            sccalcbut.style.backgroundColor = "#160F19";
+            sclister.style.backgroundColor = "#160F19";
           }
           if(getCookie("thempref") == "hotdog"){
-            schedule[0][2] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/dog.png?v=1649882051494";
-            schedule[0][3] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/hot.png?v=1649882051493";
-            schedule[0][4] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/hot.png?v=1649882051493";
+            schedule[0][2] = "";
+            schedule[0][3] = "";
+            schedule[0][4] = "";
             schedule[0][5] = "FFFF00!textonly!";
+            mainbody.style.backgroundColor = "#FFFF00";
+            sccalcbut.style.backgroundColor = "#FF0000";
+            sclister.style.backgroundColor = "#FF0000";
           }
           if(getCookie("thempref") == "retro"){
             schedule[0][2] = "!wide!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/8bit.jpg?v=1649901491110";
@@ -672,7 +678,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             sclister.style.textShadow = "-2px -2px 1px #000000,2px 2px 1px #000000,-2px 2px 1px #000000,2px -2px 1px #000000";
             sccalcbut.style.background = "rgba(0,0,0,0)";
             sclister.style.background = "rgba(0,0,0,0)";
-            sclister.style.fontSize = "4.5vmin";
+            sclister.style.fontSize = "5vmin";
           }
           if(getCookie("thempref") == "fluidcoder"){ //you have my approval ^w^
             schedule[0][2] = "";
@@ -705,7 +711,6 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         if (schedule[0][2].includes('!wide!')){
           document.getElementById("mainbody").style.backgroundSize = '200vh 100vh';
         }
-        //document.getElementById("mainbody").style.background = "#000000";
         if (schedule[0][2].includes('!dress!')){
           var sp = theba.split('!dress!');
           theba = sp[0];
@@ -829,7 +834,6 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
                 (schedule[i][1] - currenttime) / 60 <= 5
               ) {
                 var schedsave = schedule[i][2];
-                //theba
                 for (i2 = schedule.length - 1; i2 > 0; i2--) {
                   if (
                     currenttime < schedule[i2][0] &&
