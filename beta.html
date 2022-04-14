@@ -662,18 +662,19 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             schedule[0][5] = "FFFF00!textonly!";
           }
           if(getCookie("thempref") == "retro"){
-            schedule[0][2] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/8bit.jpg?v=1649901273804";
+            schedule[0][2] = "!wide!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/8bit.jpg?v=1649901491110";
             schedule[0][3] = "";
             schedule[0][4] = "";
             schedule[0][5] = "FFFFFF!textonly!";
             sccalcbut.style.fontFamily = "'VT323'";
             sclister.style.fontFamily = "'VT323'";
-            sccalcbut.style.textShadow = "-1px -1px 1px #000000,1px 1px 1px #000000,-1px 1px 1px #000000,1px -1px 1px #000000";
-            sclister.style.textShadow = "-1px -1px 1px #000000,1px 1px 1px #000000,-1px 1px 1px #000000,1px -1px 1px #000000";
+            sccalcbut.style.textShadow = "-3px -3px 1px #000000,3px 3px 1px #000000,-3px 3px 1px #000000,3px -3px 1px #000000";
+            sclister.style.textShadow = "-2px -2px 1px #000000,2px 2px 1px #000000,-2px 2px 1px #000000,2px -2px 1px #000000";
             sccalcbut.style.background = "rgba(0,0,0,0)";
             sclister.style.background = "rgba(0,0,0,0)";
+            sclister.style.fontSize = "4.5vmin";
           }
-          if(getCookie("thempref") == "fluidcoder"){
+          if(getCookie("thempref") == "fluidcoder"){ //you have my approval ^w^
             schedule[0][2] = "";
             schedule[0][3] = "";
             schedule[0][4] = "";
@@ -701,6 +702,9 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         if (schedule[0][2].includes('!full!')){
           document.getElementById("mainbody").style.backgroundSize = '100% 100vh';
         }
+        if (schedule[0][2].includes('!wide!')){
+          document.getElementById("mainbody").style.backgroundSize = '200vh 100vh';
+        }
         //document.getElementById("mainbody").style.background = "#000000";
         if (schedule[0][2].includes('!dress!')){
           var sp = theba.split('!dress!');
@@ -708,7 +712,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           clothessheet = 'https://'+sp[1];
           dresscodebutton.hidden = '';
         }
-        document.getElementById("mainbody").style.backgroundImage = 'url(https://'+theba.replace('!full!','')+')';
+        document.getElementById("mainbody").style.backgroundImage = 'url(https://'+theba.replace('!full!','').replace('!wide!','')+')';
       }
       if(schedule[0][3] !== undefined){
         if (schedule[0][3].includes('!full!')){
