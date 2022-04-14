@@ -664,7 +664,11 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             backsite.src = 'https://haxiomic.github.io/GPU-Fluid-Experiments/html5/?q=UltraHigh';
             backsite.hidden = '';
             setTimeout(function(){
-              backsite.contentDocument.getElementsByClassName("dg main a")[0].remove();
+              var x = backsite;
+              var y = (x.contentWindow || x.contentDocument);
+              if (y.document)y = y.document;
+              y.body.style.backgroundColor = "red";
+
             },2000);
           }
         }
