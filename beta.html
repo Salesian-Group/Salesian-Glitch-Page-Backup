@@ -654,18 +654,24 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             schedule[0][4] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/hot.png?v=1649882051493";
             schedule[0][5] = "FFFF00!textonly!";
           }
-          if(getCookie("thempref") == "awesome"){
+          if(getCookie("thempref") == "retro"){
             schedule[0][2] = "";
             schedule[0][3] = "";
             schedule[0][4] = "";
             schedule[0][5] = "000000!textonly!";
             sccalcbut.style.background = "rgba(0,0,0,0)";
             sclister.style.background = "rgba(0,0,0,0)";
-            backsite.src = 'https://haxiomic.github.io/GPU-Fluid-Experiments/html5/?q=UltraHigh';
+            if(!is_iphone){
+              backsite.src = 'https://haxiomic.github.io/GPU-Fluid-Experiments/html5/?q=UltraHigh';
+              sccalcbut.style.pointerEvents = "none";
+              sclister.style.pointerEvents = "none";
+            }
             backsite.hidden = '';
             setTimeout(function(){
-              sclister.style.textShadow = "-1px -1px 25px #bb00bb,1px 1px 1px #00ffff,-1px -1px 1px #ff00ff";
-            },1000);
+              sccalcbut.style.textShadow = "0px 0px 50px #7700ff,0px 0px 50px #7700ff,0px 0px 50px #7700ff,1px 1px 1px #00ffff,-1px -1px 1px #ff00ff";
+              sclister.style.textShadow = "0px 0px 50px #7700ff,0px 0px 50px #7700ff,0px 0px 50px #7700ff,1px 1px 1px #00ffff,-1px -1px 1px #ff00ff";
+              
+            },500);
           }
         }
       }
