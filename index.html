@@ -791,9 +791,11 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           if (selectedschedule == "") {
             selectedschedule = weekdayschedules[parseInt(dat.getDay())];
           }
-          for (let i = 1; i <= 7; i++) {
-            if(getCookie("ba"+i.toString())!="Block "+i.toString()){
-              selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
+          if (window.location == window.parent.location){
+            for (let i = 1; i <= 7; i++) {
+              if(getCookie("ba"+i.toString())!="Block "+i.toString()){
+                selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
+              }
             }
           }
           schedule = decode(selectedschedule);
