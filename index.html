@@ -835,11 +835,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
               ) {
                 var schedsave = schedule[i][2];
                 for (i2 = schedule.length - 1; i2 > 0; i2--) {
-                  if (
-                    currenttime < schedule[i2][0] &&
-                    (schedule[i2][3] == "0" ||
-                      (schedule[i][1] - currenttime) / 60 <= 5)
-                  ) {
+                  if (currenttime < schedule[i2][0] && schedule[i2][2] != "Passing Period" && (schedule[i2][3] == "0" || (schedule[i][1] - currenttime) / 60 <= 5)) {
                     if (schedule[i][2].length >= 12){
                       sccalcbut.style.fontSize = "5vmin";
                     } else {
@@ -908,7 +904,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             if (h2 > 12) {
               h2 -= 12;
             }
-            if (activeclass == schedule[i][2] && thefuture == false) {
+            if (activeclass == schedule[i][2] && currenttime >= schedule[i][0] && currenttime < schedule[i][1] && thefuture == false) {
               if (schedule[i][2] != "Dismissal"){
                 listtext =
                 listtext +
@@ -934,7 +930,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
                 schedule[i][2] +
                 "↩</b>";
               }
-            } else {
+            } else { if (schedule[i][2] != "Passing Period"){
               if (schedule[i][2] != "Dismissal"){
                 listtext =
                 listtext +
@@ -958,7 +954,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
                 " ─── " +
                 schedule[i][2];
               }
-            }
+            }}
           }
           sclister.innerHTML = listtext;
         }
