@@ -932,6 +932,30 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
                 schedule[i][2] +
                 "↩</b>";
               }
+            } else { if (activeclass == schedule[i][2] && sccalcbut.innerHTML.includes("transitioning to ") && thefuture == false){
+              if (schedule[i][2] != "Dismissal"){
+                listtext =
+                listtext +
+                "<br>" +
+                h1 +
+                ":" +
+                m1 +
+                " - " +
+                h2 +
+                ":" +
+                m2 +
+                " ─── " +                                                                           
+                schedule[i][2];
+              } else {
+                listtext =
+                listtext +
+                "<br>" +
+                h1 +
+                ":" +
+                m1 +
+                " ─── ⬇" +
+                schedule[i][2];
+              }
             } else { if (schedule[i][2] != "Passing Period"){
               if (schedule[i][2] != "Dismissal"){
                 listtext =
@@ -956,7 +980,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
                 " ─── " +
                 schedule[i][2];
               }
-            }}
+            }}}
           }
           sclister.innerHTML = listtext;
         }
