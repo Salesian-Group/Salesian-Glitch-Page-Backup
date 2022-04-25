@@ -837,7 +837,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
               ) {
                 var schedsave = schedule[i][2];
                 for (i2 = schedule.length - 1; i2 > 0; i2--) {
-                  if (currenttime < schedule[i2][0] && schedule[i2][2] != "Passing Period" && (schedule[i2][3] == "0" || (schedule[i][1] - currenttime) / 60 <= 5)) {
+                  if (currenttime < schedule[i2][0] && (schedule[i2][3] == "0" || (schedule[i][1] - currenttime) / 60 <= 5)) {// && schedule[i2][2] != "Passing Period"
                     if (schedule[i][2].length >= 12){
                       sccalcbut.style.fontSize = "5vmin";
                     } else {
