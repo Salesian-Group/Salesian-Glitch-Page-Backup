@@ -454,9 +454,9 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           selectedschedule = specialschedules[i];
         }
       }
-      
+      var exponentnumbers = ['⁰','¹','²','³','⁴','⁵','⁶','⁷']
       if (window.location == window.parent.location){
-        var exponentnumbers = ['⁰','¹','²','³','⁴','⁵','⁶','⁷']
+        
         for (let i = 1; i <= 7; i++) {
           if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
             setCookie("ba"+i.toString(),"Block "+i.toString());
