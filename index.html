@@ -454,27 +454,6 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           selectedschedule = specialschedules[i];
         }
       }
-      
-      if (window.location == window.parent.location){
-        var exponentnumbers = ['⁰','¹','²','³','⁴','⁵','⁶','⁷']
-        for (let i = 1; i <= 7; i++) {
-          if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
-            setCookie("ba"+i.toString(),"Block "+i.toString());
-          }
-          if(getCookie("ba"+i.toString())!="Block "+i.toString()){
-            selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
-          }
-          document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
-        }
-        if(getCookie("thempref") == null || getCookie("thempref") == ""){
-          setCookie("thempref","none");
-        }
-        if(getCookie("themforce") == null || getCookie("themforce") == ""){
-          setCookie("themforce","off");
-        }
-        themeselector.value = getCookie("thempref");
-        themeforceselector.value = getCookie("themforce");
-      }
 
       if (parseInt(new Date().getMonth()) == 3 && parseInt(new Date().getDate()) == 1 && parseInt(new Date().getHours()) >= 8){
         if (getCookie("aprilfools") == null || getCookie("aprilfools") == ""){
@@ -572,6 +551,27 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       if (window.location == "https://salesianschedule.glitch.me/beta.html" || window.location == "http://salesianschedule.glitch.me/beta.html"){
         document.getElementById("betaman").hidden = "";
         //document.getElementById("mainbody").style.background = document.getElementById("betaman").style.background;
+      }
+      var exponentnumbers = ['⁰','¹','²','³','⁴','⁵','⁶','⁷']
+      if (window.location == window.parent.location){
+        
+        for (let i = 1; i <= 7; i++) {
+          if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
+            setCookie("ba"+i.toString(),"Block "+i.toString());
+          }
+          if(getCookie("ba"+i.toString())!="Block "+i.toString()){
+            selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
+          }
+          document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
+        }
+        if(getCookie("thempref") == null || getCookie("thempref") == ""){
+          setCookie("thempref","none");
+        }
+        if(getCookie("themforce") == null || getCookie("themforce") == ""){
+          setCookie("themforce","off");
+        }
+        themeselector.value = getCookie("thempref");
+        themeforceselector.value = getCookie("themforce");
       }
       
 
