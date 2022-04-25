@@ -906,7 +906,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             if (h2 > 12) {
               h2 -= 12;
             }
-            if (activeclass == schedule[i][2] && currenttime >= schedule[i][0] && currenttime < schedule[i][1] && thefuture == false) {
+            if (activeclass == schedule[i][2] && ((currenttime >= schedule[i][0] && currenttime < schedule[i][1]) || (sccalcbut.innerHTML.includes("transition")&&sccalcbut.innerHTML.includes(schedule[i][2]))) && thefuture == false) {
               if (schedule[i][2] != "Dismissal"){
                 listtext =
                 listtext +
