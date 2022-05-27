@@ -23,7 +23,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link
       rel="icon"
       href="https://pbs.twimg.com/profile_images/1109279524636614656/At7h0SJu_400x400.jpg"
@@ -103,7 +103,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
     >
       <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/ad5c456b-6950-4079-89e4-ffa76478d8e0.image.png?v=1646769988451" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
     </button>
-    <select name="schedule selection" id="scheduleswapper" onchange="scheduleswapperchange()" style="position: absolute;width: 50%;height: 5%;top: 25%;left: 25%;transform: translate(0%, 0%);font-family:Verdana;text-align:center;font-size:2vmin;background:#EDDAB8;color:#000000;">
+    <select name="schedule selection" id="scheduleswapper" hidden="True" onchange="scheduleswapperchange()" style="position: absolute;width: 50%;height: 5%;top: 25%;left: 25%;transform: translate(0%, 0%);font-family:Verdana;text-align:center;font-size:2vmin;background:#EDDAB8;color:#000000;">
     </select>
     <img id="sccornergraphic" hidden="true" style="position: absolute;width: 20vmin;height: 20vmin;bottom: 5%;right: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;">
     <button
@@ -408,6 +408,17 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       }
       function scheduleswapperchange(){
         currentschedule = activeschedules[scheduleswapper.value];
+        if (window.location == window.parent.location){
+          for (let i = 1; i <= 7; i++) {
+            if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
+              setCookie("ba"+i.toString(),"Block "+i.toString());
+            }
+            if(getCookie("ba"+i.toString())!="Block "+i.toString()){
+              currentschedule = currentschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
+            }
+            document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
+          }
+        }
         schedule = decode(currentschedule);
       }
       
@@ -469,11 +480,14 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           selectedschedule = activeschedules[0];
         }
       }
-      for (i2 = 0; i2 < activeschedules.length; i2++) {
-        var option = document.createElement("option");
-        option.text = decode(activeschedules[i2])[0][1];
-        option.value = i2
-        scheduleswapper.add(option);
+      if (activeschedules.length > 1) {
+        for (i2 = 0; i2 < activeschedules.length; i2++) {
+          var option = document.createElement("option");
+          option.text = decode(activeschedules[i2])[0][1];
+          option.value = i2
+          scheduleswapper.add(option);
+        }
+        scheduleswapper.hidden = '';
       }
 
       if (parseInt(new Date().getMonth()) == 3 && parseInt(new Date().getDate()) == 1 && parseInt(new Date().getHours()) >= 8){
@@ -776,6 +790,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         sccalcbut.style.color = theba
         sclister.style.color = theba
+        scheduleswapper  .style.color = theba
+        scheduleswapper.style.backgroundColor = 'rgba(0,0,0,0)'
       }
       var thefuture = false;
       var openstamp =
