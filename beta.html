@@ -454,7 +454,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         "2505|b|EARLY Wednesday Finals 1/2|a|28800|b|33840|b|Block 1 AW|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 AW|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3 AW|b|0|a|47580|b|48300|b|Break²|b|1|a|48600|b|53400|b|Block 4 AW|b|0|a|53400|b|53400|b|Dismissal, Seniors to CAFETERIA|b|0",
         "2605|b|Thursday, End of Semester Assessment (EOSA)|a|28800|b|33840|b|Block 1 EOSA (Final)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 EOSA (Final)|b|0",
         "2705|b|Friday, Assessment Workshops (AW)|a|28800|b|33840|b|Block 3 AW|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 4 AW|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 5 AW|b|0|a|47580|b|48300|b|Break²|b|1|a|48600|b|53400|b|Block 6 AW|b|0",
-        "2705|b|EARLY Wednesday Finals 1/2|a|28800|b|33840|b|Block 1 AW|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 AW|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3 AW|b|0|a|47580|b|48300|b|Break²|b|1|a|48600|b|53400|b|Block 4 AW|b|0|a|53400|b|53400|b|Dismissal, Seniors to CAFETERIA|b|0",
+        "3005|b|Memorial Day|a|0|b|0|b|noclass|b|0",
+        "2705|b|Senior Skip Day (Testing)|a|0|b|0|b|noclass|b|0",
       ];
       var weekdayschedules = [
         "0000|b|Sunday Weekend|a|0|b|0|b|noclass|b|0",
@@ -790,8 +791,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         sccalcbut.style.color = theba
         sclister.style.color = theba
-        scheduleswapper  .style.color = theba
         scheduleswapper.style.backgroundColor = 'rgba(0,0,0,0)'
+        scheduleswapper.style.color = theba
       }
       var thefuture = false;
       var openstamp =
@@ -1000,6 +1001,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         document.title = "Schedulology";
         if(thefuture==true){
           sccalcbut.innerHTML = "Tomorrow's Schedule"
+          scheduleswapper.hidden = 'True';
         }
         if(document.hidden){
           if(sccalcbut.innerHTML.split("<br>")[0] != "transitioning to"){

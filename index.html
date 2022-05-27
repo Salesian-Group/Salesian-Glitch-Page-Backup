@@ -23,7 +23,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link
       rel="icon"
       href="https://pbs.twimg.com/profile_images/1109279524636614656/At7h0SJu_400x400.jpg"
@@ -72,50 +72,51 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       id="magnifybutton"
       type="button"
       hidden="true";
-      style="position: absolute;width: 12vmin;height: 12vmin;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
+      style="position: absolute;width: 17vmin;height: 17vmin;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;"
     >
-      <img src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmagnifying.png?v=1638913374253" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
+      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/zoombutton.png?v=1653681299887" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
     </button>
     </a>
     <a href="https://www.salesian.com/calendars" target="_blank">
     <button
       id="calendarbutton"
       type="button"
-      style="position: absolute;width: 10vmin;height: 10vmin;top: 25%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
+      style="position: absolute;width: 15vmin;height: 15vmin;top: 25%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;"
     >
-      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/globe.png?v=1649881910304" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
+      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/websitebutton.png?v=1653681299963" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
     </button>
     </a>
     <button
       id="viewsheetbutton"
       type="button"
-      style="position: absolute;width: 10vmin;height: 10vmin;top: 25%;right: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
+      style="position: absolute;width: 15vmin;height: 15vmin;top: 25%;right: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;"
       onclick="expanddoc()"
     >
-      <img src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcalenda.png?v=1638915120877" type="button" onclick="expanddoc()" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
+      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheetbutton.png?v=1653681299928" type="button" onclick="expanddoc()" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
     </button>
     <button
       id="dresscodebutton"
       type="button"
-      style="position: absolute;width: 15vmin;height: 15vmin;bottom: 5%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
+      style="position: absolute;width: 15vmin;height: 15vmin;bottom: 5%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;"
       onclick="clothesdoc()"
       hidden="true"
     >
       <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/ad5c456b-6950-4079-89e4-ffa76478d8e0.image.png?v=1646769988451" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
     </button>
+    <select name="schedule selection" id="scheduleswapper" hidden="True" onchange="scheduleswapperchange()" style="position: absolute;width: 50%;height: 5%;top: 25%;left: 25%;transform: translate(0%, 0%);font-family:Verdana;text-align:center;font-size:2vmin;background:#EDDAB8;color:#000000;">
+    </select>
     <img id="sccornergraphic" hidden="true" style="position: absolute;width: 20vmin;height: 20vmin;bottom: 5%;right: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;">
     <button
       id="schedsheet"
       type="button"
-      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#252525"
+      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#252525;cursor:pointer"
       onclick="closedoc()"
       hidden="true"
     >
     <img
       id="schedsheetimg"
       src="https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/defaultschedule.jpg?v=1641242952935"
-      style="position: absolute;height: 100%;width:100%;left:0;top:0;transform: translate(0%, 0%);object-fit: contain;"
-      onclick="closedoc()"
+      style="position: absolute;height: 100%;width:100%;left:0;top:0;transform: translate(0%, 0%);object-fit: contain;pointer-events:'none'"
     >
     <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/whiteback.png?v=1649878082626" type="button" onclick="expanddoc()" style="position: absolute;width: 10vmin;height: 10vmin;top: 0%;right: 0%;transform: translate(0%, 0%)">
     </button>
@@ -163,10 +164,10 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           <option value="hotdog">hotdog...</option>
         </select><br><br>
         <select name="theme force" id="themeforceselector">
-          <option value="off">Theme Override [OFF]</option>
-          <option value="on">Theme Override [ON]</option>
+          <option value="off">Allow Event Themes [OFF]</option>
+          <option value="on">Ignore Event Themes [ON]</option>
         </select><br><br>
-        <input type="submit" onclick="savethemes()" style="font-family:Verdana;font-size:2vmin;color:#000000;" value="Save and Refresh">
+        <input type="submit" onclick="savethemes()" style="font-family:Verdana;font-size:2vmin;color:#000000;" value="Save and Apply">
         <input type="submit" onclick="refreshpage()" style="font-family:Verdana;font-size:2vmin;color:#000000;" value="Exit">
       </button>
     </button>
@@ -259,6 +260,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       
       var sccalcbut = document.getElementById("schedulecalculate");
       var sclister = document.getElementById("schedulefulllist");
+      var scheduleswapper = document.getElementById("scheduleswapper");
       var minimode = false;
       var lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
       var lastday = new Date().getTime();
@@ -293,10 +295,10 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         sclister.style = "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#000000;";
         magnifybutton.hidden = false;
         calendarbutton.hidden = true;
-        viewsheetbutton.style = "position: absolute;width: 12vmin;height: 12vmin;top: 25%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;";
+        viewsheetbutton.style = "position: absolute;width: 17vmin;height: 17vmin;top: 25%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;";
         sccornergraphic.style="position: absolute;width: 20vmin;height: 20vmin;bottom: 1%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;";
         schedsheet.style="position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);background:#252525";
-        dresscodebutton.style = "position: absolute;width: 17vmin;height: 17vmin;bottom: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
+        dresscodebutton.style = "position: absolute;width: 17vmin;height: 17vmin;bottom: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;"
       }
         let atest = document.createElement('audio');
         let supportsAAC =  !!(atest.canPlayType && atest.canPlayType('audio/mp4; codecs="mp4a.40.2"').replace(/no/, ''));
@@ -360,7 +362,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         },0);
         if (window.location !== window.parent.location){
           window.open(window.location,'_blank');
-          window.location.replace("https://salesianschedule.glitch.me/beta.html");
+          window.location.replace("https://salesianschedule.glitch.me");
         }
       }
       function savealiases(){
@@ -404,6 +406,21 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         setCookie("themforce",themeforceselector.value);
         refreshpage();
       }
+      function scheduleswapperchange(){
+        currentschedule = activeschedules[scheduleswapper.value];
+        if (window.location == window.parent.location){
+          for (let i = 1; i <= 7; i++) {
+            if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
+              setCookie("ba"+i.toString(),"Block "+i.toString());
+            }
+            if(getCookie("ba"+i.toString())!="Block "+i.toString()){
+              currentschedule = currentschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
+            }
+            document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
+          }
+        }
+        schedule = decode(currentschedule);
+      }
       
       // "0000|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
       // "0000|b|Wednesday (Extended Lunch)|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Extended Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
@@ -437,6 +454,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         "2505|b|EARLY Wednesday Finals 1/2|a|28800|b|33840|b|Block 1 AW|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 AW|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3 AW|b|0|a|47580|b|48300|b|Break²|b|1|a|48600|b|53400|b|Block 4 AW|b|0|a|53400|b|53400|b|Dismissal, Seniors to CAFETERIA|b|0",
         "2605|b|Thursday, End of Semester Assessment (EOSA)|a|28800|b|33840|b|Block 1 EOSA (Final)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 EOSA (Final)|b|0",
         "2705|b|Friday, Assessment Workshops (AW)|a|28800|b|33840|b|Block 3 AW|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 4 AW|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 5 AW|b|0|a|47580|b|48300|b|Break²|b|1|a|48600|b|53400|b|Block 6 AW|b|0",
+        "3005|b|Memorial Day|a|0|b|0|b|noclass|b|0",
       ];
       var weekdayschedules = [
         "0000|b|Sunday Weekend|a|0|b|0|b|noclass|b|0",
@@ -450,6 +468,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       var schedulesheet = "https://cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/defaultschedule.jpg?v=1641242952935";
 
       var selectedschedule = "";
+      var activeschedules = [];
       for (i = 0; i < specialschedules.length; i++) {
         if (
           parseInt(new Date().getMonth()) ==
@@ -457,8 +476,18 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           parseInt(new Date().getDate()) ==
             parseInt(specialschedules[i].substring(0, 2))
         ) {
-          selectedschedule = specialschedules[i];
+          activeschedules.push(specialschedules[i]);
+          selectedschedule = activeschedules[0];
         }
+      }
+      if (activeschedules.length > 1) {
+        for (i2 = 0; i2 < activeschedules.length; i2++) {
+          var option = document.createElement("option");
+          option.text = decode(activeschedules[i2])[0][1];
+          option.value = i2
+          scheduleswapper.add(option);
+        }
+        scheduleswapper.hidden = '';
       }
 
       if (parseInt(new Date().getMonth()) == 3 && parseInt(new Date().getDate()) == 1 && parseInt(new Date().getHours()) >= 8){
@@ -761,6 +790,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         sccalcbut.style.color = theba
         sclister.style.color = theba
+        scheduleswapper.style.backgroundColor = 'rgba(0,0,0,0)'
+        scheduleswapper.style.color = theba
       }
       var thefuture = false;
       var openstamp =
@@ -969,6 +1000,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         document.title = "Schedulology";
         if(thefuture==true){
           sccalcbut.innerHTML = "Tomorrow's Schedule"
+          scheduleswapper.hidden = 'True';
         }
         if(document.hidden){
           if(sccalcbut.innerHTML.split("<br>")[0] != "transitioning to"){
