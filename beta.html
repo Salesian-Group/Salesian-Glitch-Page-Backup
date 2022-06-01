@@ -460,6 +460,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         "3105|b|Tuesday, EOSA 4 Only|a|35580|b|40380|b|Block 4 (EOSA)|b|0",
         "3105|b|Tuesday, No EOSA for 3,4|a|0|b|0|b|noclass|b|0",
         "0106|b|Wednesday, Assessment Workshops|a|28800|b|33840|b|Block 5 (AW)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 6 (AW)|b|0",
+        "0206|b|Thursday, EOSA (NON-SENIORS) (press button to change)|a|28800|b|33840|b|Block 5 (EOSA)|b|0",
+        "0206|b|Thursday, EOSA (SENIORS) (press button to change)|a|28800|b|33840|b|Block 5 (EOSA)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 6 (EOSA)|b|0",
       ];
       var weekdayschedules = [
         "0000|b|Sunday Weekend|a|0|b|0|b|noclass|b|0",
@@ -818,6 +820,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         if((schedule[2][2] == "noclass" || currenttime >= schedule[schedule.length-1][1] || new Date().getHours() >= 17) && thefuture == false && exacttime - openstamp > 2){
           selectedschedule = "";
+          var prevactive = activeschedules.length;
           var dat = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1, new Date().getHours(), new Date().getMinutes(), new Date().getSeconds());
           for (i = 0; i < specialschedules.length; i++) {
             if (
@@ -826,10 +829,19 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
               parseInt(dat.getDate()) ==
                 parseInt(specialschedules[i].substring(0, 2))
             ) {
-              selectedschedule = specialschedules[i];
+              activeschedules.push(specialschedules[i]);
+              selectedschedule = activeschedules[prevactive];
             }
           }
-
+          if (activeschedules.length > 1) {
+            for (i2 = 0; i2 < activeschedules.length; i2++) {
+              var option = document.createElement("option");
+              option.text = "(TOMORROW) "+decode(activeschedules[i2])[0][1];
+              option.value = i2
+              scheduleswapper.add(option);
+            }
+            scheduleswapper.hidden = '';
+          }
           if (selectedschedule == "") {
             selectedschedule = weekdayschedules[parseInt(dat.getDay())];
           }
