@@ -408,6 +408,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       }
       function scheduleswapperchange(){
         currentschedule = activeschedules[scheduleswapper.value];
+        thefuture = false;
         if (window.location == window.parent.location){
           for (let i = 1; i <= 7; i++) {
             if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
@@ -460,6 +461,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         "3105|b|Tuesday, EOSA 4 Only|a|35580|b|40380|b|Block 4 (EOSA)|b|0",
         "3105|b|Tuesday, No EOSA for 3,4|a|0|b|0|b|noclass|b|0",
         "0106|b|Wednesday, Assessment Workshops|a|28800|b|33840|b|Block 5 (AW)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 6 (AW)|b|0",
+        "0106|b|Wednesday, Assessment Workshops|a|28800|b|33840|b|Block 5 (AW)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|403800|b|Block 6 (AW)|b|0",
         "0206|b|Thursday, EOSA (NON-SENIORS) (press button to change)|a|28800|b|33840|b|Block 5 (EOSA)|b|0",
         "0206|b|Thursday, EOSA (SENIORS) (press button to change)|a|28800|b|33840|b|Block 5 (EOSA)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 6 (EOSA)|b|0",
       ];
@@ -487,13 +489,13 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           selectedschedule = activeschedules[0];
         }
       }
+      for (i2 = 0; i2 < activeschedules.length; i2++) {
+        var option = document.createElement("option");
+        option.text = decode(activeschedules[i2])[0][1];
+        option.value = i2
+        scheduleswapper.add(option);
+      }
       if (activeschedules.length > 1) {
-        for (i2 = 0; i2 < activeschedules.length; i2++) {
-          var option = document.createElement("option");
-          option.text = decode(activeschedules[i2])[0][1];
-          option.value = i2
-          scheduleswapper.add(option);
-        }
         scheduleswapper.hidden = '';
       }
 
@@ -832,14 +834,15 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
               activeschedules.push(specialschedules[i]);
               selectedschedule = activeschedules[prevactive];
             }
+          }//bookmark
+          for (i2 = prevactive; i2 < activeschedules.length; i2++) {
+            var option = document.createElement("option");
+            option.text = "(TOMORROW) "+decode(activeschedules[i2])[0][1];
+            option.value = i2
+            scheduleswapper.add(option);
           }
+          scheduleswapper.value = prevactive
           if (activeschedules.length > 1) {
-            for (i2 = 0; i2 < activeschedules.length; i2++) {
-              var option = document.createElement("option");
-              option.text = "(TOMORROW) "+decode(activeschedules[i2])[0][1];
-              option.value = i2
-              scheduleswapper.add(option);
-            }
             scheduleswapper.hidden = '';
           }
           if (selectedschedule == "") {
@@ -1017,7 +1020,6 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         document.title = "Schedulology";
         if(thefuture==true){
           sccalcbut.innerHTML = "Tomorrow's Schedule"
-          scheduleswapper.hidden = 'True';
         }
         if(document.hidden){
           if(sccalcbut.innerHTML.split("<br>")[0] != "transitioning to"){
