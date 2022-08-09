@@ -23,14 +23,20 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
     <link
       rel="icon"
       href="https://pbs.twimg.com/profile_images/1109279524636614656/At7h0SJu_400x400.jpg"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <title>Schedulology</title>
     <link rel="canonical" href="https://salesianschedule.glitch.me" />
     <meta name="description" content="See the bell schedule in realtime" />
@@ -50,11 +56,35 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body id="mainbody">
-    <iframe id="backsite" hidden="true" style="position: absolute;width: 100%;height: 100%;top: 0%;left: 0%;border-color:rgba(0,0,0,0);transform: translate(0%, 0%);background:#000000"></iframe>
+    <iframe
+      id="backsite"
+      hidden="true"
+      style="
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        border-color: rgba(0, 0, 0, 0);
+        transform: translate(0%, 0%);
+        background: #000000;
+      "
+    ></iframe>
     <button
       id="schedulecalculate"
       type="button"
-      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:9.3vmin;background:#EDDAB8;color:#000000;"
+      style="
+        position: absolute;
+        width: 90%;
+        height: 20%;
+        top: 5%;
+        left: 5%;
+        transform: translate(0%, 0%);
+        font-family: Verdana;
+        font-size: 9.3vmin;
+        background: #eddab8;
+        color: #000000;
+      "
       onclick="showdetailed()"
     >
       Schedulology
@@ -62,97 +92,369 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
     <button
       id="schedulefulllist"
       type="button"
-      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#000000;"
+      style="
+        position: absolute;
+        width: 90%;
+        height: 70%;
+        top: 25%;
+        left: 5%;
+        transform: translate(0%, 0%);
+        font-family: Verdana;
+        font-size: 3.75vmin;
+        background: #eddab8;
+        color: #000000;
+      "
       onclick="showsummary()"
     >
-      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/7b165f20-0f8b-45f6-a543-8afcfa49e5f5.image.png?v=1648656683589">
+      <img
+        src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/7b165f20-0f8b-45f6-a543-8afcfa49e5f5.image.png?v=1648656683589"
+      />
     </button>
     <a href="https://salesianschedule.glitch.me/" target="_blank">
-    <button
-      id="magnifybutton"
-      type="button"
-      hidden="true";
-      style="position: absolute;width: 17vmin;height: 17vmin;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;"
-    >
-      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/zoombutton.png?v=1653681299887" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
-    </button>
+      <button
+        id="magnifybutton"
+        type="button"
+        hidden="true"
+        ;
+        style="
+          position: absolute;
+          width: 17vmin;
+          height: 17vmin;
+          top: 25%;
+          left: 1%;
+          transform: translate(0%, 0%);
+          font-family: Verdana;
+          font-size: 3.75vmin;
+          background: #eddab8;
+          color: #ff0000;
+          cursor: pointer;
+        "
+      >
+        <img
+          src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/zoombutton.png?v=1653681299887"
+          style="
+            top: 0%;
+            left: 0%;
+            transform: translate(0%, 0%);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          "
+        />
+      </button>
     </a>
     <a href="https://www.salesian.com/calendars" target="_blank">
-    <button
-      id="calendarbutton"
-      type="button"
-      style="position: absolute;width: 15vmin;height: 15vmin;top: 25%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;"
-    >
-      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/websitebutton.png?v=1653681299963" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
-    </button>
+      <button
+        id="calendarbutton"
+        type="button"
+        style="
+          position: absolute;
+          width: 15vmin;
+          height: 15vmin;
+          top: 25%;
+          left: 5%;
+          transform: translate(0%, 0%);
+          font-family: Verdana;
+          font-size: 3.75vmin;
+          background: #eddab8;
+          color: #ff0000;
+          cursor: pointer;
+        "
+      >
+        <img
+          src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/websitebutton.png?v=1653681299963"
+          style="
+            top: 0%;
+            left: 0%;
+            transform: translate(0%, 0%);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          "
+        />
+      </button>
     </a>
     <button
       id="viewsheetbutton"
       type="button"
-      style="position: absolute;width: 15vmin;height: 15vmin;top: 25%;right: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;"
+      style="
+        position: absolute;
+        width: 15vmin;
+        height: 15vmin;
+        top: 25%;
+        right: 5%;
+        transform: translate(0%, 0%);
+        font-family: Verdana;
+        font-size: 3.75vmin;
+        background: #eddab8;
+        color: #ff0000;
+        cursor: pointer;
+      "
       onclick="expanddoc()"
     >
-      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheetbutton.png?v=1653681299928" type="button" onclick="expanddoc()" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
+      <img
+        src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheetbutton.png?v=1653681299928"
+        type="button"
+        onclick="expanddoc()"
+        style="
+          top: 0%;
+          left: 0%;
+          transform: translate(0%, 0%);
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        "
+      />
     </button>
     <button
       id="dresscodebutton"
       type="button"
-      style="position: absolute;width: 15vmin;height: 15vmin;bottom: 5%;left: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;"
+      style="
+        position: absolute;
+        width: 15vmin;
+        height: 15vmin;
+        bottom: 5%;
+        left: 5%;
+        transform: translate(0%, 0%);
+        font-family: Verdana;
+        font-size: 3.75vmin;
+        background: #eddab8;
+        color: #ff0000;
+        cursor: pointer;
+      "
       onclick="clothesdoc()"
       hidden="true"
     >
-      <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/dressbutton.png?v=1653681300188" style="top: 0%;left: 0%;transform: translate(0%, 0%);position: absolute;width: 100%;height: 100%">
+      <img
+        src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/dressbutton.png?v=1653681300188"
+        style="
+          top: 0%;
+          left: 0%;
+          transform: translate(0%, 0%);
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        "
+      />
     </button>
-    <select name="schedule selection" id="scheduleswapper" hidden="True" onchange="scheduleswapperchange()" style="position: absolute;width: 50%;height: 5%;top: 25%;left: 25%;transform: translate(0%, 0%);font-family:Verdana;text-align:center;font-size:2vmin;background:#EDDAB8;color:#000000;">
-    </select>
-    <img id="sccornergraphic" hidden="true" style="position: absolute;width: 20vmin;height: 20vmin;bottom: 5%;right: 5%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;">
+    <select
+      name="schedule selection"
+      id="scheduleswapper"
+      hidden="True"
+      onchange="scheduleswapperchange()"
+      style="
+        position: absolute;
+        width: 50%;
+        height: 5%;
+        top: 25%;
+        left: 25%;
+        transform: translate(0%, 0%);
+        font-family: Verdana;
+        text-align: center;
+        font-size: 2vmin;
+        background: #eddab8;
+        color: #000000;
+      "
+    ></select>
+    <img
+      id="sccornergraphic"
+      hidden="true"
+      style="
+        position: absolute;
+        width: 20vmin;
+        height: 20vmin;
+        bottom: 5%;
+        right: 5%;
+        transform: translate(0%, 0%);
+        font-family: Verdana;
+        font-size: 3.75vmin;
+      "
+    />
     <button
       id="schedsheet"
       type="button"
-      style="position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#252525;cursor:pointer"
+      style="
+        position: absolute;
+        width: 90%;
+        height: 70%;
+        top: 25%;
+        left: 5%;
+        transform: translate(0%, 0%);
+        background: #252525;
+        cursor: pointer;
+      "
       onclick="closedoc()"
       hidden="true"
     >
-    <img
-      id="schedsheetimg"
-      src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/default-schedule-22.png?v=1659998740072"
-      style="position: absolute;height: 100%;width:100%;left:0;top:0;transform: translate(0%, 0%);object-fit: contain;pointer-events:'none'"
-    >
-    <img src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/whiteback.png?v=1649878082626" type="button" onclick="expanddoc()" style="position: absolute;width: 10vmin;height: 10vmin;top: 0%;right: 0%;transform: translate(0%, 0%)">
+      <img
+        id="schedsheetimg"
+        src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/default-schedule-22.png?v=1659998740072"
+        style="
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          transform: translate(0%, 0%);
+          object-fit: contain;
+          pointer-events: 'none';
+        "
+      />
+      <img
+        src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/whiteback.png?v=1649878082626"
+        type="button"
+        onclick="expanddoc()"
+        style="
+          position: absolute;
+          width: 10vmin;
+          height: 10vmin;
+          top: 0%;
+          right: 0%;
+          transform: translate(0%, 0%);
+        "
+      />
     </button>
     <button
       id="schedsetting"
       hidden="true"
-      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525;font-family:Verdana;font-size:5vmin;color:#FFFFFF"
+      style="
+        position: absolute;
+        width: 90%;
+        height: 20%;
+        top: 5%;
+        left: 5%;
+        transform: translate(0%, 0%);
+        background: #252525;
+        font-family: Verdana;
+        font-size: 5vmin;
+        color: #ffffff;
+      "
       onclick="catpress()"
-    ><a onclick="opensettings()">[Classes]</a> <a onclick="openthemes()">[Themes]</a>
+    >
+      <a onclick="opensettings()">[Classes]</a>
+      <a onclick="openthemes()">[Themes]</a>
       <button
-      id="schedsettingpage"
-      hidden="true"
-      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
+        id="schedsettingpage"
+        hidden="true"
+        style="
+          position: absolute;
+          width: 90%;
+          height: 20%;
+          top: 5%;
+          left: 5%;
+          transform: translate(0%, 0%);
+          background: #252525;
+        "
       >
-        <label for="aliasb1" style="font-family:Verdana;font-size:2vmin;color:#FFFFFF;">Block 1 Alias: </label>
-        <input type="text" id="aliasb1" name="aliasb1" style="font-family:Verdana;font-size:2vmin;color:#000000;"><br><br>
-        <label for="aliasb2" style="font-family:Verdana;font-size:2vmin;color:#FFFFFF;">Block 2 Alias: </label>
-        <input type="text" id="aliasb2" name="aliasb2" style="font-family:Verdana;font-size:2vmin;color:#000000;"><br><br>
-        <label for="aliasb3" style="font-family:Verdana;font-size:2vmin;color:#FFFFFF;">Block 3 Alias: </label>
-        <input type="text" id="aliasb3" name="aliasb3" style="font-family:Verdana;font-size:2vmin;color:#000000;"><br><br>
-        <label for="aliasb4" style="font-family:Verdana;font-size:2vmin;color:#FFFFFF;">Block 4 Alias: </label>
-        <input type="text" id="aliasb4" name="aliasb4" style="font-family:Verdana;font-size:2vmin;color:#000000;"><br><br>
-        <label for="aliasb5" style="font-family:Verdana;font-size:2vmin;color:#FFFFFF;">Block 5 Alias: </label>
-        <input type="text" id="aliasb5" name="aliasb5" style="font-family:Verdana;font-size:2vmin;color:#000000;"><br><br>
-        <label for="aliasb6" style="font-family:Verdana;font-size:2vmin;color:#FFFFFF;">Block 6 Alias: </label>
-        <input type="text" id="aliasb6" name="aliasb6" style="font-family:Verdana;font-size:2vmin;color:#000000;"><br><br>
-        <label for="aliasb7" style="font-family:Verdana;font-size:2vmin;color:#FFFFFF;">Block 7 Alias: </label>
-        <input type="text" id="aliasb7" name="aliasb7" style="font-family:Verdana;font-size:2vmin;color:#000000;"><br><br>
-        <input type="submit" onclick="savealiases()" style="font-family:Verdana;font-size:2vmin;color:#000000;" value="Save and Refresh">
-        <input type="submit" id="aliasresetbutton" onclick="resetaliases()" style="font-family:Verdana;font-size:2vmin;color:#000000;" value="Reset to Default (3)">
-        <input type="submit" onclick="refreshpage()" style="font-family:Verdana;font-size:2vmin;color:#000000;" value="Exit">
+        <label
+          for="aliasb1"
+          style="font-family: Verdana; font-size: 2vmin; color: #ffffff"
+          >Block 1 Alias:
+        </label>
+        <input
+          type="text"
+          id="aliasb1"
+          name="aliasb1"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+        /><br /><br />
+        <label
+          for="aliasb2"
+          style="font-family: Verdana; font-size: 2vmin; color: #ffffff"
+          >Block 2 Alias:
+        </label>
+        <input
+          type="text"
+          id="aliasb2"
+          name="aliasb2"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+        /><br /><br />
+        <label
+          for="aliasb3"
+          style="font-family: Verdana; font-size: 2vmin; color: #ffffff"
+          >Block 3 Alias:
+        </label>
+        <input
+          type="text"
+          id="aliasb3"
+          name="aliasb3"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+        /><br /><br />
+        <label
+          for="aliasb4"
+          style="font-family: Verdana; font-size: 2vmin; color: #ffffff"
+          >Block 4 Alias:
+        </label>
+        <input
+          type="text"
+          id="aliasb4"
+          name="aliasb4"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+        /><br /><br />
+        <label
+          for="aliasb5"
+          style="font-family: Verdana; font-size: 2vmin; color: #ffffff"
+          >Block 5 Alias:
+        </label>
+        <input
+          type="text"
+          id="aliasb5"
+          name="aliasb5"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+        /><br /><br />
+        <label
+          for="aliasb6"
+          style="font-family: Verdana; font-size: 2vmin; color: #ffffff"
+          >Block 6 Alias:
+        </label>
+        <input
+          type="text"
+          id="aliasb6"
+          name="aliasb6"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+        /><br /><br />
+        <label
+          for="aliasb7"
+          style="font-family: Verdana; font-size: 2vmin; color: #ffffff"
+          >Block 7 Alias:
+        </label>
+        <input
+          type="text"
+          id="aliasb7"
+          name="aliasb7"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+        /><br /><br />
+        <input
+          type="submit"
+          onclick="savealiases()"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+          value="Save and Refresh"
+        />
+        <input
+          type="submit"
+          id="aliasresetbutton"
+          onclick="resetaliases()"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+          value="Reset to Default (3)"
+        />
+        <input
+          type="submit"
+          onclick="refreshpage()"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+          value="Exit"
+        />
       </button>
       <button
-      id="schedthemespage"
-      hidden="true"
-      style="position: absolute;width: 90%;height: 20%;top: 5%;left: 5%;transform: translate(0%, 0%);background:#252525"
+        id="schedthemespage"
+        hidden="true"
+        style="
+          position: absolute;
+          width: 90%;
+          height: 20%;
+          top: 5%;
+          left: 5%;
+          transform: translate(0%, 0%);
+          background: #252525;
+        "
       >
         <select name="theme selection" id="themeselector">
           <option value="none">Salesian Default</option>
@@ -161,91 +463,179 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           <option value="solstice">Winter 2021</option>
           <option value="artday">Art Day 2021</option>
           <option value="bosco">Don Bosco 2022</option>
-          <option value="hotdog">hotdog...</option>
-        </select><br><br>
+          <option value="hotdog">hotdog...</option></select
+        ><br /><br />
         <select name="theme force" id="themeforceselector">
           <option value="off">Allow Event Themes [OFF]</option>
-          <option value="on">Ignore Event Themes [ON]</option>
-        </select><br><br>
-        <input type="submit" onclick="savethemes()" style="font-family:Verdana;font-size:2vmin;color:#000000;" value="Save and Apply">
-        <input type="submit" onclick="refreshpage()" style="font-family:Verdana;font-size:2vmin;color:#000000;" value="Exit">
+          <option value="on">Ignore Event Themes [ON]</option></select
+        ><br /><br />
+        <input
+          type="submit"
+          onclick="savethemes()"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+          value="Save and Apply"
+        />
+        <input
+          type="submit"
+          onclick="refreshpage()"
+          style="font-family: Verdana; font-size: 2vmin; color: #000000"
+          value="Exit"
+        />
       </button>
     </button>
     <button
       id="3amcatvideoholder"
       type="button"
-      style="position: absolute;width: 50%;height: 30%;top: 20%;left: 0%;transform: translate(50%, 50%);background:#00CCCC"
+      style="
+        position: absolute;
+        width: 50%;
+        height: 30%;
+        top: 20%;
+        left: 0%;
+        transform: translate(50%, 50%);
+        background: #00cccc;
+      "
       onclick="catvideoplay()"
       hidden="true"
     >
       care for a cat video? click me!!
-    <video id="3amcatvideo" loop hidden style="position: absolute;width: 100%;height: 100%;top: 50%;left: 50%;transform: translate(-50%, -50%);">
-      <source src="" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
+      <video
+        id="3amcatvideo"
+        loop
+        hidden
+        style="
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        "
+      >
+        <source src="" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
     </button>
-    <div id="creditman" class="credits" style="position: absolute;top: -10px;left: 5px;transform: translate(0%, 0%);">
-      <p id="first">
-        created by <strong>C.J.F.</strong> '22
-      </p>
-      <p id="second" hidden="true">
-        Salesian College Preparatory
-      </p>
+    <div
+      id="creditman"
+      class="credits"
+      style="
+        position: absolute;
+        top: -10px;
+        left: 5px;
+        transform: translate(0%, 0%);
+      "
+    >
+      <p id="first">created by <strong>C.J.F.</strong> '22</p>
+      <p id="second" hidden="true">Salesian College Preparatory</p>
     </div>
     <a href="https://salesianschedule.glitch.me">
-      <p id="betaman" hidden="true" class="credits" style="width:120px;background:#FF8330;position: absolute;top: -10px;right:5px;transform: translate(0%, 0%);z-index: 1;border-radius: 3px;border: 2px solid black;">
-          <strong>TESTbuild</strong>
+      <p
+        id="betaman"
+        hidden="true"
+        class="credits"
+        style="
+          width: 120px;
+          background: #ff8330;
+          position: absolute;
+          top: -10px;
+          right: 5px;
+          transform: translate(0%, 0%);
+          z-index: 1;
+          border-radius: 3px;
+          border: 2px solid black;
+        "
+      >
+        <strong>TESTbuild</strong>
       </p>
     </a>
-    
+
     <button
       id="aprilfoolsmessage"
       type="button"
-      style="position: absolute;width: 60%;height: 30%;top: 20%;left: 20%;transform: translate(0%, 0%);background:#000000"
+      style="
+        position: absolute;
+        width: 60%;
+        height: 30%;
+        top: 20%;
+        left: 20%;
+        transform: translate(0%, 0%);
+        background: #000000;
+      "
       hidden="true"
     >
-      <img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/7f27abc8-4286-4051-aa8d-ef3c987a5dcf.image.png?v=1648761739702' style='height:100%'>
+      <img
+        src="https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/7f27abc8-4286-4051-aa8d-ef3c987a5dcf.image.png?v=1648761739702"
+        style="height: 100%"
+      />
     </button>
-    
+
     <button
       id="aprilfoolsmessageyes"
       type="button"
-      style="position: absolute;width: 40%;height: 15%;top: 50%;left: 20%;transform: translate(0%, 0%);background:#AAFFAA;font-family:Verdana;font-size:5vmin"
+      style="
+        position: absolute;
+        width: 40%;
+        height: 15%;
+        top: 50%;
+        left: 20%;
+        transform: translate(0%, 0%);
+        background: #aaffaa;
+        font-family: Verdana;
+        font-size: 5vmin;
+      "
       onclick="aprilfoolsmessage('yes')"
       hidden="true"
-    >YES</button>
+    >
+      YES
+    </button>
     <button
       id="aprilfoolsmessageno"
       type="button"
-      style="position: absolute;width: 20%;height: 15%;top: 50%;left: 60%;transform: translate(0%, 0%);background:#FFAAAA;font-family:Verdana;font-size:5vmin"
+      style="
+        position: absolute;
+        width: 20%;
+        height: 15%;
+        top: 50%;
+        left: 60%;
+        transform: translate(0%, 0%);
+        background: #ffaaaa;
+        font-family: Verdana;
+        font-size: 5vmin;
+      "
       onclick="aprilfoolsmessage('no')"
       hidden="true"
-    >NO</button>
-    
+    >
+      NO
+    </button>
+
     <script>
       function makeHttpObject() {
-        try {return new XMLHttpRequest();}
-        catch (error) {}
-        try {return new ActiveXObject("Msxml2.XMLHTTP");}
-        catch (error) {}
-        try {return new ActiveXObject("Microsoft.XMLHTTP");}
-        catch (error) {}
+        try {
+          return new XMLHttpRequest();
+        } catch (error) {}
+        try {
+          return new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (error) {}
+        try {
+          return new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (error) {}
 
         throw new Error("Could not create HTTP request object.");
       }
       function setCookie(cname, cvalue, exdays) {
         const d = new Date();
-        d.setTime(d.getTime() + (365*24*60*60*1000));
-        let expires = "expires="+ d.toUTCString();
+        d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+        let expires = "expires=" + d.toUTCString();
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
       }
       function getCookie(cname) {
         let name = cname + "=";
         let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i <ca.length; i++) {
+        let ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
           let c = ca[i];
-          while (c.charAt(0) == ' ') {
+          while (c.charAt(0) == " ") {
             c = c.substring(1);
           }
           if (c.indexOf(name) == 0) {
@@ -255,24 +645,29 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         return "";
       }
       function refreshpage() {
-        window.location.replace(window.location)
+        window.location.replace(window.location);
       }
-      
+
       var sccalcbut = document.getElementById("schedulecalculate");
       var sclister = document.getElementById("schedulefulllist");
       var scheduleswapper = document.getElementById("scheduleswapper");
       var minimode = false;
-      var lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
+      var lastcheck =
+        new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
       var lastday = new Date().getTime();
       var activeversion = "";
       var request = makeHttpObject();
-          request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
-          request.send(null);
-          request.onreadystatechange = function() {
-            if (request.readyState == 4){
-              activeversion = request.responseText
-            }
-          };
+      request.open(
+        "GET",
+        "https://salesianschedule.glitch.me/autoversion",
+        true
+      );
+      request.send(null);
+      request.onreadystatechange = function () {
+        if (request.readyState == 4) {
+          activeversion = request.responseText;
+        }
+      };
       var catvideo = document.getElementById("3amcatvideo");
       var catvideoframe = document.getElementById("3amcatvideoholder");
       function catvideoplay() {
@@ -280,157 +675,198 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           catvideo.hidden = "";
           catvideo.src = "https://files.catbox.moe/vc99dt.mp4";
           catvideo.play();
-          catvideoframe.style = "position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#000000";
+          catvideoframe.style =
+            "position: absolute;width: 90%;height: 70%;top: 25%;left: 5%;transform: translate(0%, 0%);background:#000000";
           catvideoframe.style.height = schedsheet.style.height;
           catvideoframe.style.width = schedsheet.style.width;
           catvideoframe.style.top = schedsheet.style.top;
           catvideoframe.style.left = schedsheet.style.left;
         }
       }
-      if(new Date().getHours() == 3){
+      if (new Date().getHours() == 3) {
         catvideoframe.hidden = "";
       }
-      if (window.location !== window.parent.location){
-        sccalcbut.style = "position: absolute;width: 98%;height: 24%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;color:#000000;";
-        sclister.style = "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#000000;";
+      if (window.location !== window.parent.location) {
+        sccalcbut.style =
+          "position: absolute;width: 98%;height: 24%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:10vmin;background:#EDDAB8;color:#000000;";
+        sclister.style =
+          "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#000000;";
         magnifybutton.hidden = false;
         calendarbutton.hidden = true;
-        viewsheetbutton.style = "position: absolute;width: 17vmin;height: 17vmin;top: 25%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;";
-        sccornergraphic.style="position: absolute;width: 20vmin;height: 20vmin;bottom: 1%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;";
-        schedsheet.style="position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);background:#252525";
-        dresscodebutton.style = "position: absolute;width: 17vmin;height: 17vmin;bottom: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;"
+        viewsheetbutton.style =
+          "position: absolute;width: 17vmin;height: 17vmin;top: 25%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;";
+        sccornergraphic.style =
+          "position: absolute;width: 20vmin;height: 20vmin;bottom: 1%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;";
+        schedsheet.style =
+          "position: absolute;width: 98%;height: 74%;top: 25%;left: 1%;transform: translate(0%, 0%);background:#252525";
+        dresscodebutton.style =
+          "position: absolute;width: 17vmin;height: 17vmin;bottom: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;cursor:pointer;";
       }
-        let atest = document.createElement('audio');
-        let supportsAAC =  !!(atest.canPlayType && atest.canPlayType('audio/mp4; codecs="mp4a.40.2"').replace(/no/, ''));
-        let is_iphone = ['iPhone Simulator','iPhone'].includes(navigator.platform)
-      if (is_iphone && !supportsAAC){
-        sccalcbut.style = "position: absolute;width: 98%;height: 98%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:20vmin;background:#EDDAB8;";
-        sclister.style = "position: absolute;width: 98%;height: 200%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.5vmin;background:#EDDAB8;";
+      let atest = document.createElement("audio");
+      let supportsAAC = !!(
+        atest.canPlayType &&
+        atest.canPlayType('audio/mp4; codecs="mp4a.40.2"').replace(/no/, "")
+      );
+      let is_iphone = ["iPhone Simulator", "iPhone"].includes(
+        navigator.platform
+      );
+      if (is_iphone && !supportsAAC) {
+        sccalcbut.style =
+          "position: absolute;width: 98%;height: 98%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:20vmin;background:#EDDAB8;";
+        sclister.style =
+          "position: absolute;width: 98%;height: 200%;top: 1%;left: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.5vmin;background:#EDDAB8;";
         magnifybutton.hidden = true;
         calendarbutton.hidden = true;
-        viewsheetbutton.style="position: absolute;width: 15vmin;height: 15vmin;top: 1%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;"
-        schedsheet.style="position: absolute;width: 100%;height: 120%;top: 0%;left: 0%;transform: translate(0%, 0%);background:#252525";
+        viewsheetbutton.style =
+          "position: absolute;width: 15vmin;height: 15vmin;top: 1%;right: 1%;transform: translate(0%, 0%);font-family:Verdana;font-size:3.75vmin;background:#EDDAB8;color:#FF0000;";
+        schedsheet.style =
+          "position: absolute;width: 100%;height: 120%;top: 0%;left: 0%;transform: translate(0%, 0%);background:#252525";
         sccornergraphic.hidden = true;
         sclister.hidden = true;
         creditman.hidden = true;
         minimode = true;
       }
-      function showsummary(){
-        if (minimode == true){
+      function showsummary() {
+        if (minimode == true) {
           sccalcbut.hidden = false;
           sclister.hidden = true;
         }
       }
       var specialopenclicks = 0;
-      function catpress(){
+      function catpress() {
         specialopenclicks = specialopenclicks + 1;
       }
-      function showdetailed(){
-        if (minimode == true){
+      function showdetailed() {
+        if (minimode == true) {
           sccalcbut.hidden = true;
           sclister.hidden = false;
         }
       }
-      function expanddoc(){
-        schedsheetimg.src = schedulesheet
+      function expanddoc() {
+        schedsheetimg.src = schedulesheet;
         schedsheet.hidden = false;
         schedsetting.hidden = false;
         specialopenclicks = 0;
       }
-      function clothesdoc(){
-        schedsheetimg.src = clothessheet
+      function clothesdoc() {
+        schedsheetimg.src = clothessheet;
         schedsheet.hidden = false;
         specialopenclicks = 1000;
       }
-      function closedoc(){
+      function closedoc() {
         schedsheet.hidden = true;
         schedsetting.hidden = true;
-        if(specialopenclicks==3){
-          document.getElementById("mainbody").style.background = document.getElementById("betaman").style.background;
-          window.location.replace("https://salesianschedule.glitch.me/beta.html");
+        if (specialopenclicks == 3) {
+          document.getElementById("mainbody").style.background =
+            document.getElementById("betaman").style.background;
+          window.location.replace(
+            "https://salesianschedule.glitch.me/beta.html"
+          );
         }
-        if(specialopenclicks==9){
+        if (specialopenclicks == 9) {
           catvideoframe.hidden = "";
           catvideoplay();
         }
       }
-      function opensettings(){
+      function opensettings() {
         schedsettingpage.hidden = false;
-        setTimeout(function(){
+        setTimeout(function () {
           schedsettingpage.style.width = "90%";
           schedsettingpage.style.height = "90%";
-        },0);
-        if (window.location !== window.parent.location){
-          window.open(window.location,'_blank');
+        }, 0);
+        if (window.location !== window.parent.location) {
+          window.open(window.location, "_blank");
           window.location.replace("https://salesianschedule.glitch.me");
         }
       }
-      function savealiases(){
-        if(aliasb1.value=="up up"&&aliasb2.value=="down down"&&aliasb3.value=="left right"&&aliasb4.value=="left right"&&aliasb5.value=="b"&&aliasb6.value=="a"&&aliasb7.value=="start"){
-          setCookie("thempref","retro");
+      function savealiases() {
+        if (
+          aliasb1.value == "up up" &&
+          aliasb2.value == "down down" &&
+          aliasb3.value == "left right" &&
+          aliasb4.value == "left right" &&
+          aliasb5.value == "b" &&
+          aliasb6.value == "a" &&
+          aliasb7.value == "start"
+        ) {
+          setCookie("thempref", "retro");
         } else {
           for (let i = 1; i <= 7; i++) {
-            if(document.getElementById("aliasb"+i.toString()).value == ""){
-              setCookie("ba"+i.toString(),"Block "+i.toString());
+            if (document.getElementById("aliasb" + i.toString()).value == "") {
+              setCookie("ba" + i.toString(), "Block " + i.toString());
             } else {
-              setCookie("ba"+i.toString(),document.getElementById("aliasb"+i.toString()).value);
+              setCookie(
+                "ba" + i.toString(),
+                document.getElementById("aliasb" + i.toString()).value
+              );
             }
           }
         }
         refreshpage();
       }
       var aliasresetbuttoncount = 3;
-      function resetaliases(){
+      function resetaliases() {
         aliasresetbuttoncount -= 1;
-        aliasresetbutton.value = 'Reset to Default ('+aliasresetbuttoncount.toString()+')';
-        if(aliasresetbuttoncount <= 0){
+        aliasresetbutton.value =
+          "Reset to Default (" + aliasresetbuttoncount.toString() + ")";
+        if (aliasresetbuttoncount <= 0) {
           for (let i = 1; i <= 7; i++) {
-            setCookie("ba"+i.toString(),"Block "+i.toString());
+            setCookie("ba" + i.toString(), "Block " + i.toString());
           }
           refreshpage();
         }
       }
-      function openthemes(){
+      function openthemes() {
         schedthemespage.hidden = false;
-        setTimeout(function(){
+        setTimeout(function () {
           schedthemespage.style.width = "90%";
           schedthemespage.style.height = "90%";
-        },0);
-        if (window.location !== window.parent.location){
-          window.open(window.location,'_blank');
-          window.location.replace("https://salesianschedule.glitch.me/beta.html");
+        }, 0);
+        if (window.location !== window.parent.location) {
+          window.open(window.location, "_blank");
+          window.location.replace(
+            "https://salesianschedule.glitch.me/beta.html"
+          );
         }
       }
-      function savethemes(){
-        setCookie("thempref",themeselector.value);
-        setCookie("themforce",themeforceselector.value);
+      function savethemes() {
+        setCookie("thempref", themeselector.value);
+        setCookie("themforce", themeforceselector.value);
         refreshpage();
       }
-      function scheduleswapperchange(){
+      function scheduleswapperchange() {
         currentschedule = activeschedules[scheduleswapper.value];
-        if (window.location == window.parent.location){
+        if (window.location == window.parent.location) {
           for (let i = 1; i <= 7; i++) {
-            if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
-              setCookie("ba"+i.toString(),"Block "+i.toString());
+            if (
+              getCookie("ba" + i.toString()) == null ||
+              getCookie("ba" + i.toString()) == ""
+            ) {
+              setCookie("ba" + i.toString(), "Block " + i.toString());
             }
-            if(getCookie("ba"+i.toString())!="Block "+i.toString()){
-              currentschedule = currentschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
+            if (getCookie("ba" + i.toString()) != "Block " + i.toString()) {
+              currentschedule = currentschedule.replace(
+                "Block " + i.toString(),
+                getCookie("ba" + i.toString()) + exponentnumbers[i]
+              );
             }
-            document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
+            document.getElementById("aliasb" + i.toString()).value = getCookie(
+              "ba" + i.toString()
+            );
           }
         }
         schedule = decode(currentschedule);
         clothessheet = "";
-        dresscodebutton.hidden = 'true';
-        if(schedule[0][2] !== undefined){
-          if (schedule[0][2].includes('!dress!')){
-            var sp = schedule[0][2].split('!dress!');
-            clothessheet = 'https://'+sp[1];
-            dresscodebutton.hidden = '';
+        dresscodebutton.hidden = "true";
+        if (schedule[0][2] !== undefined) {
+          if (schedule[0][2].includes("!dress!")) {
+            var sp = schedule[0][2].split("!dress!");
+            clothessheet = "https://" + sp[1];
+            dresscodebutton.hidden = "";
           }
         }
       }
-      
+
       // "0000|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
       // "0000|b|Wednesday (Extended Lunch)|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Extended Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
       // "0000|b|Wednesday Early Dismissal|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45300|b|Lunch|b|1|a|45600|b|50400|b|Block 6|b|0",
@@ -439,11 +875,11 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       // "3110|b|Halloween|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooker.png?v=1635489813683|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspookaba.jpg?v=1635489808887|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooka.jpg?v=1635489811462|b|F06402|a|0|b|0|b|noclass|b|0",
       // "0000|b|Early Start Wednesday|a|28800|b|33840|b|Block 4|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 6|b|0",
       // "0000|b|Winter Break|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|0|b|0|b|noclass|b|0",
-      
+
       // title|b|background!dress!specialdresscode|b|simple|b|detail!corner!icon|b|hexcolor
       // exclude HTTP from links
       // !full! anywhere to use full image stretch
-      
+
       var specialschedules = [
         "2701|b|Thursday [PLAYGROUND] (Athletic wear, sports jerseys, sweatpants)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|28800|b|33840|b|Block 5|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 1|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3|b|0|a|47580|b|48300|b|Mini-Break|b|0|a|48600|b|53400|b|Block 7|b|0",
         "2801|b|Friday Bosco Day [FREE DRESS] (with freedress guidelines)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|31500|b|32400|b|Meet Block 6|b|0|a|32400|b|45000|b|Bosco Day!|b|0",
@@ -483,7 +919,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         "0000|b|Summer Break (Resumes August 18th)|a|0|b|0|b|noclass|b|0",
         "0000|b|Summer Break (Resumes August 18th)|a|0|b|0|b|noclass|b|0",
       ];
-      var schedulesheet = "https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/default-schedule-22.png?v=1659998740072";
+      var schedulesheet =
+        "https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/default-schedule-22.png?v=1659998740072";
 
       var selectedschedule = "";
       var activeschedules = [];
@@ -501,15 +938,19 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
       for (i2 = 0; i2 < activeschedules.length; i2++) {
         var option = document.createElement("option");
         option.text = decode(activeschedules[i2])[0][1];
-        option.value = i2
+        option.value = i2;
         scheduleswapper.add(option);
       }
       if (activeschedules.length > 1) {
-        scheduleswapper.hidden = '';
+        scheduleswapper.hidden = "";
       }
 
-      if (parseInt(new Date().getMonth()) == 3 && parseInt(new Date().getDate()) == 1 && parseInt(new Date().getHours()) >= 8){
-        if (getCookie("aprilfools") == null || getCookie("aprilfools") == ""){
+      if (
+        parseInt(new Date().getMonth()) == 3 &&
+        parseInt(new Date().getDate()) == 1 &&
+        parseInt(new Date().getHours()) >= 8
+      ) {
+        if (getCookie("aprilfools") == null || getCookie("aprilfools") == "") {
           var alittletrolling = [
             "0104|b|Idayfray Eduleschay|a|28800|b|31740|b|Ockblay Ixsay|b|0|a|31980|b|34680|b|Ockblay Otway|b|0|a|34920|b|37620|b|Ockblay Oneyay|b|0|a|37620|b|39120|b|Eakbray|b|1|a|39420|b|42120|b|Ockblay Eethray|b|0|a|42360|b|45060|b|Ockblay Ourfay|b|0|a|45060|b|47340|b|Unchlay|b|1|a|47640|b|50340|b|Ockblay Ivefay|b|0|a|50580|b|53280|b|Ockblay Evensay|b|0",
             "0104|b|Freitag Zeitplan|a|28800|b|31740|b|Klasse Sechs|b|0|a|31980|b|34680|b|Klasse Zwei|b|0|a|34920|b|37620|b|Klasse Eins|b|0|a|37620|b|39120|b|Sich Ausruhen|b|1|a|39420|b|42120|b|Klasse Drei|b|0|a|42360|b|45060|b|Klasse Vier|b|0|a|45060|b|47340|b|Mittagessen|b|1|a|47640|b|50340|b|Klasse Fünf|b|0|a|50580|b|53280|b|Klasse Sieben|b|0",
@@ -520,12 +961,13 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             "0104|b|🍟📅|a|28800|b|31740|b|📚6️⃣|b|0|a|31980|b|34680|b|📚2️⃣|b|0|a|34920|b|37620|b|📚1️⃣|b|0|a|37620|b|39120|b|🛏️😴|b|1|a|39420|b|42120|b|📚3️⃣|b|0|a|42360|b|45060|b|📚4️⃣|b|0|a|45060|b|47340|b|🥪🕛|b|1|a|47640|b|50340|b|📚5️⃣|b|0|a|50580|b|53280|b|📚7️⃣|b|0",
             "0104|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/49ad7fcf-dccb-4e8d-996d-8f1adfe73da0.image.png?v=1648750092396' style='height:7vmin;width:42vmin;'>|a|28800|b|31740|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/428a7d3e-b4e1-453e-9fa8-c0bc23a7a214.image.png?v=1648749601210' style='height:4.5vmin;width:14vmin;'>|b|0|a|31980|b|34680|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/cd2d239f-c9c9-4882-b9ba-d64395007766.image.png?v=1648749663656' style='height:4.5vmin;width:14vmin;'>|b|0|a|34920|b|37620|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/ddf3398f-16f2-49b8-8197-d685bb7d71cb.image.png?v=1648749789242' style='height:4.5vmin;width:14vmin;'>|b|0|a|37620|b|39120|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/3984570a-4f27-4bc5-8e09-97e287a9dd56.image.png?v=1648749830466' style='height:4.5vmin;width:14vmin;'>|b|1|a|39420|b|42120|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/1cc1a13d-fbbf-4cd3-9947-50428622538b.image.png?v=1648749738662' style='height:4.5vmin;width:14vmin;'>|b|0|a|42360|b|45060|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/ee37fa03-dc79-4446-bbf7-11609f42be6d.image.png?v=1648749763880' style='height:4.5vmin;width:14vmin;'>|b|0|a|45060|b|47340|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/8a3af37f-9d5a-4d06-8c64-b7b22bebbff7.image.png?v=1648749840398' style='height:4.5vmin;width:14vmin;'>|b|1|a|47640|b|50340|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/90b7b103-2988-42f5-a1ac-f19c306acf7e.image.png?v=1648749805065' style='height:4.5vmin;width:14vmin;'>|b|0|a|50580|b|53280|b|<img src='https://cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/fe0de1a6-da4f-4721-b4fa-508c1b0e1272.image.png?v=1648749814612' style='height:4.5vmin;width:14vmin;'>|b|0",
           ];
-          selectedschedule = alittletrolling[Math.floor(Math.random() * alittletrolling.length)];
-          setTimeout(function(){
+          selectedschedule =
+            alittletrolling[Math.floor(Math.random() * alittletrolling.length)];
+          setTimeout(function () {
             document.getElementById("aprilfoolsmessage").hidden = false;
             document.getElementById("aprilfoolsmessageyes").hidden = false;
             document.getElementById("aprilfoolsmessageno").hidden = false;
-          },5000)
+          }, 5000);
         } else {
           var alittletrolling = [
             "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/60a1a2e5-28c7-43de-9ee5-410c90eac6e7.image.png?v=1648766196660",
@@ -538,7 +980,12 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/4b2f4b77-c891-4ae1-a2b8-67cecd6f04d8.image.png?v=1648784782782",
             "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/8c1961ae-436b-4594-9a82-4de797e75f21.image.png?v=1648787652906",
           ];
-          selectedschedule = "0104|b|April Fool's Friday|b||b||b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/23effbdb-6ec4-40c7-a549-72f5c7706be0.image.png?v=1648763144373!corner!" + alittletrolling[Math.floor(Math.random() * alittletrolling.length)] + "|a|28800|b|31740|b|Block 6|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 1|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 3|b|0|a|42360|b|45060|b|Block 4|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 5|b|0|a|50580|b|53280|b|Block 7|b|0";
+          selectedschedule =
+            "0104|b|April Fool's Friday|b||b||b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/23effbdb-6ec4-40c7-a549-72f5c7706be0.image.png?v=1648763144373!corner!" +
+            alittletrolling[
+              Math.floor(Math.random() * alittletrolling.length)
+            ] +
+            "|a|28800|b|31740|b|Block 6|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 1|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 3|b|0|a|42360|b|45060|b|Block 4|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 5|b|0|a|50580|b|53280|b|Block 7|b|0";
           var b = document.getElementById("aprilfoolsmessage");
           b.hidden = false;
           b.innerHTML = "Press to Load Prank";
@@ -548,37 +995,40 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           b.style.width = "15vmin";
           b.style.height = "15%";
           b.style.fontSize = "3vmin";
-          b.onclick = function(){
-            b.style.height = '100%';
-            b.style.width = '100%';
+          b.onclick = function () {
+            b.style.height = "100%";
+            b.style.width = "100%";
             b.style.left = "0%";
             b.style.top = "0%";
-            setCookie("aprilfools","",.01);
-            setTimeout(function(){
+            setCookie("aprilfools", "", 0.01);
+            setTimeout(function () {
               refreshpage();
-            },500);
+            }, 500);
           };
         }
       }
-      function aprilfoolsmessage(req){
+      function aprilfoolsmessage(req) {
         document.getElementById("aprilfoolsmessageyes").hidden = true;
         document.getElementById("aprilfoolsmessageno").hidden = true;
         var b = document.getElementById("aprilfoolsmessage");
-        if(req=='yes'){
-          setCookie("aprilfools","nofun",1);
+        if (req == "yes") {
+          setCookie("aprilfools", "nofun", 1);
           b.innerHTML = "Happy April Fools!";
           b.style.background = "#D34A67";
-          b.style.height = '100%';
-          b.style.width = '100%';
+          b.style.height = "100%";
+          b.style.width = "100%";
           b.style.left = "0%";
           b.style.top = "0%";
-          setTimeout(function(){
-            if (window.location !== window.parent.location){
-              window.open("https://salesianschedule.glitch.me/noaprils.html",'_blank');
+          setTimeout(function () {
+            if (window.location !== window.parent.location) {
+              window.open(
+                "https://salesianschedule.glitch.me/noaprils.html",
+                "_blank"
+              );
             } else {
               refreshpage();
             }
-          },500);
+          }, 500);
         } else {
           b.innerHTML = "Load New Prank";
           b.style.background = "#D34A67";
@@ -587,46 +1037,55 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           b.style.width = "15vmin";
           b.style.height = "15%";
           b.style.fontSize = "3vmin";
-          b.onclick = function(){
-            b.style.height = '100%';
-            b.style.width = '100%';
+          b.onclick = function () {
+            b.style.height = "100%";
+            b.style.width = "100%";
             b.style.left = "0%";
             b.style.top = "0%";
-            setTimeout(function(){
+            setTimeout(function () {
               refreshpage();
-            },250);
+            }, 250);
           };
         }
       }
       if (selectedschedule == "") {
         selectedschedule = weekdayschedules[parseInt(new Date().getDay())];
       }
-      if (window.location == "https://salesianschedule.glitch.me/beta.html" || window.location == "http://salesianschedule.glitch.me/beta.html"){
+      if (
+        window.location == "https://salesianschedule.glitch.me/beta.html" ||
+        window.location == "http://salesianschedule.glitch.me/beta.html"
+      ) {
         document.getElementById("betaman").hidden = "";
         //document.getElementById("mainbody").style.background = document.getElementById("betaman").style.background;
       }
-      var exponentnumbers = ['⁰','¹','²','³','⁴','⁵','⁶','⁷']
-      if (window.location == window.parent.location){
-        
+      var exponentnumbers = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷"];
+      if (window.location == window.parent.location) {
         for (let i = 1; i <= 7; i++) {
-          if(getCookie("ba"+i.toString()) == null || getCookie("ba"+i.toString()) == ""){
-            setCookie("ba"+i.toString(),"Block "+i.toString());
+          if (
+            getCookie("ba" + i.toString()) == null ||
+            getCookie("ba" + i.toString()) == ""
+          ) {
+            setCookie("ba" + i.toString(), "Block " + i.toString());
           }
-          if(getCookie("ba"+i.toString())!="Block "+i.toString()){
-            selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
+          if (getCookie("ba" + i.toString()) != "Block " + i.toString()) {
+            selectedschedule = selectedschedule.replace(
+              "Block " + i.toString(),
+              getCookie("ba" + i.toString()) + exponentnumbers[i]
+            );
           }
-          document.getElementById("aliasb"+i.toString()).value = getCookie("ba"+i.toString());
+          document.getElementById("aliasb" + i.toString()).value = getCookie(
+            "ba" + i.toString()
+          );
         }
-        if(getCookie("thempref") == null || getCookie("thempref") == ""){
-          setCookie("thempref","none");
+        if (getCookie("thempref") == null || getCookie("thempref") == "") {
+          setCookie("thempref", "none");
         }
-        if(getCookie("themforce") == null || getCookie("themforce") == ""){
-          setCookie("themforce","off");
+        if (getCookie("themforce") == null || getCookie("themforce") == "") {
+          setCookie("themforce", "off");
         }
         themeselector.value = getCookie("thempref");
         themeforceselector.value = getCookie("themforce");
       }
-      
 
       // the first set contains schedule basics: [day-of-schedule, event-name]
       // the remaining sets are the periods: [start-time, end-time, period-name, always-show-next]
@@ -658,52 +1117,68 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           ms[ms.length - 1][1],
           ms[ms.length - 1][1] - -600,
           "Dismissal",
-          0
+          0,
         ]);
         return ms;
       }
-      
+
       var clothessheet = "";
       var schedule = decode(selectedschedule);
-      if (window.location == window.parent.location){
-        if(getCookie("themforce") == "on" || schedule[0][2] == undefined){
-          if (schedule[0][2] != undefined && schedule[0][2].includes('!dress!')){
-            var sp = schedule[0][2].split('!dress!');
-            clothessheet = 'https://'+sp[1];
-            dresscodebutton.hidden = '';
+      if (window.location == window.parent.location) {
+        if (getCookie("themforce") == "on" || schedule[0][2] == undefined) {
+          if (
+            schedule[0][2] != undefined &&
+            schedule[0][2].includes("!dress!")
+          ) {
+            var sp = schedule[0][2].split("!dress!");
+            clothessheet = "https://" + sp[1];
+            dresscodebutton.hidden = "";
           }
-          if(getCookie("thempref") == "none"){
+          if (getCookie("thempref") == "none") {
             schedule[0][2] = "";
             schedule[0][3] = "";
             schedule[0][4] = "";
             schedule[0][5] = "";
           }
-          if(getCookie("thempref") == "hallowseve"){
-            schedule[0][2] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooker.png?v=1635489813683";
-            schedule[0][3] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspookaba.jpg?v=1635489808887";
-            schedule[0][4] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooka.jpg?v=1635489811462";
+          if (getCookie("thempref") == "hallowseve") {
+            schedule[0][2] =
+              "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooker.png?v=1635489813683";
+            schedule[0][3] =
+              "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspookaba.jpg?v=1635489808887";
+            schedule[0][4] =
+              "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooka.jpg?v=1635489811462";
             schedule[0][5] = "F06402";
           }
-          if(getCookie("thempref") == "solstice"){
-            schedule[0][2] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784";
-            schedule[0][3] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125";
-            schedule[0][4] = "!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463";
+          if (getCookie("thempref") == "solstice") {
+            schedule[0][2] =
+              "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784";
+            schedule[0][3] =
+              "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125";
+            schedule[0][4] =
+              "!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463";
             schedule[0][5] = "8FD3CF";
           }
-          if(getCookie("thempref") == "artday"){
-            schedule[0][2] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmoreart.png?v=1635364316510";
-            schedule[0][3] = "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcrayons.png?v=1634689066035";
-            schedule[0][4] = "!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fanotherart.png?v=1635363993209";
+          if (getCookie("thempref") == "artday") {
+            schedule[0][2] =
+              "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmoreart.png?v=1635364316510";
+            schedule[0][3] =
+              "cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcrayons.png?v=1634689066035";
+            schedule[0][4] =
+              "!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fanotherart.png?v=1635363993209";
             schedule[0][5] = "000000!textonly!";
           }
-          if(getCookie("thempref") == "bosco"){
-            schedule[0][2] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581";
-            schedule[0][3] = "!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428";
-            schedule[0][4] = "!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642";
+          if (getCookie("thempref") == "bosco") {
+            schedule[0][2] =
+              "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581";
+            schedule[0][3] =
+              "!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428";
+            schedule[0][4] =
+              "!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642";
             schedule[0][5] = "000000!textonly!";
           }
-          if(getCookie("thempref") == "dark"){
-            schedule[0][2] = "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/18ec011c-8593-45bf-bbc9-3dd24ebe27b7.image.png?v=1649902908688";
+          if (getCookie("thempref") == "dark") {
+            schedule[0][2] =
+              "cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/18ec011c-8593-45bf-bbc9-3dd24ebe27b7.image.png?v=1649902908688";
             schedule[0][3] = "";
             schedule[0][4] = "";
             schedule[0][5] = "DDCCDD!textonly!";
@@ -711,7 +1186,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             sccalcbut.style.backgroundColor = "#160F19";
             sclister.style.backgroundColor = "#160F19";
           }
-          if(getCookie("thempref") == "hotdog"){
+          if (getCookie("thempref") == "hotdog") {
             schedule[0][2] = "";
             schedule[0][3] = "";
             schedule[0][4] = "";
@@ -720,102 +1195,116 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             sccalcbut.style.backgroundColor = "#FF0000";
             sclister.style.backgroundColor = "#FF0000";
           }
-          if(getCookie("thempref") == "retro"){
-            schedule[0][2] = "!wide!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/8bit.jpg?v=1649901491110";
+          if (getCookie("thempref") == "retro") {
+            schedule[0][2] =
+              "!wide!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/8bit.jpg?v=1649901491110";
             schedule[0][3] = "";
             schedule[0][4] = "";
             schedule[0][5] = "FFFFFF!textonly!";
             sccalcbut.style.fontFamily = "'VT323'";
             sclister.style.fontFamily = "'VT323'";
-            sccalcbut.style.textShadow = "-3px -3px 1px #000000,3px 3px 1px #000000,-3px 3px 1px #000000,3px -3px 1px #000000";
-            sclister.style.textShadow = "-2px -2px 1px #000000,2px 2px 1px #000000,-2px 2px 1px #000000,2px -2px 1px #000000";
+            sccalcbut.style.textShadow =
+              "-3px -3px 1px #000000,3px 3px 1px #000000,-3px 3px 1px #000000,3px -3px 1px #000000";
+            sclister.style.textShadow =
+              "-2px -2px 1px #000000,2px 2px 1px #000000,-2px 2px 1px #000000,2px -2px 1px #000000";
             sccalcbut.style.background = "rgba(0,0,0,0)";
             sclister.style.background = "rgba(0,0,0,0)";
             sclister.style.fontSize = "5vmin";
           }
-          if(getCookie("thempref") == "fluidcoder"){ //you have my approval ^w^
+          if (getCookie("thempref") == "fluidcoder") {
+            //you have my approval ^w^
             schedule[0][2] = "";
             schedule[0][3] = "";
             schedule[0][4] = "";
             schedule[0][5] = "000000!textonly!";
             sccalcbut.style.background = "rgba(0,0,0,0)";
             sclister.style.background = "rgba(0,0,0,0)";
-            if(!is_iphone){
-              backsite.src = 'https://haxiomic.github.io/GPU-Fluid-Experiments/html5/?q=UltraHigh';
+            if (!is_iphone) {
+              backsite.src =
+                "https://haxiomic.github.io/GPU-Fluid-Experiments/html5/?q=UltraHigh";
               sccalcbut.style.pointerEvents = "none";
               sclister.style.pointerEvents = "none";
             }
-            backsite.hidden = '';
-            setTimeout(function(){
-              sccalcbut.style.textShadow = "0px 0px 30px #7700ff,0px 0px 30px #7700ff,0px 0px 30px #7700ff,1px 1px 1px #00ffff,-1px -1px 1px #ff00ff";
-              sclister.style.textShadow = "0px 0px 20px #7700ff,0px 0px 20px #7700ff,0px 0px 20px #7700ff,1px 1px 1px #00ffff,-1px -1px 1px #ff00ff";
-              if(is_iphone){
-                sclister.style.color = "#440044"
+            backsite.hidden = "";
+            setTimeout(function () {
+              sccalcbut.style.textShadow =
+                "0px 0px 30px #7700ff,0px 0px 30px #7700ff,0px 0px 30px #7700ff,1px 1px 1px #00ffff,-1px -1px 1px #ff00ff";
+              sclister.style.textShadow =
+                "0px 0px 20px #7700ff,0px 0px 20px #7700ff,0px 0px 20px #7700ff,1px 1px 1px #00ffff,-1px -1px 1px #ff00ff";
+              if (is_iphone) {
+                sclister.style.color = "#440044";
               }
-            },500);
+            }, 500);
           }
         }
       }
-      if(schedule[0][2] !== undefined){
-        var theba = schedule[0][2]
-        if (schedule[0][2].includes('!full!')){
-          document.getElementById("mainbody").style.backgroundSize = '100% 100vh';
+      if (schedule[0][2] !== undefined) {
+        var theba = schedule[0][2];
+        if (schedule[0][2].includes("!full!")) {
+          document.getElementById("mainbody").style.backgroundSize =
+            "100% 100vh";
         }
-        if (schedule[0][2].includes('!wide!')){
-          document.getElementById("mainbody").style.backgroundSize = '200vh 100vh';
+        if (schedule[0][2].includes("!wide!")) {
+          document.getElementById("mainbody").style.backgroundSize =
+            "200vh 100vh";
         }
-        if (schedule[0][2].includes('!dress!')){
-          var sp = theba.split('!dress!');
+        if (schedule[0][2].includes("!dress!")) {
+          var sp = theba.split("!dress!");
           theba = sp[0];
-          clothessheet = 'https://'+sp[1];
-          dresscodebutton.hidden = '';
+          clothessheet = "https://" + sp[1];
+          dresscodebutton.hidden = "";
         }
-        document.getElementById("mainbody").style.backgroundImage = 'url(https://'+theba.replace('!full!','').replace('!wide!','')+')';
+        document.getElementById("mainbody").style.backgroundImage =
+          "url(https://" +
+          theba.replace("!full!", "").replace("!wide!", "") +
+          ")";
       }
-      if(schedule[0][3] !== undefined){
-        if (schedule[0][3].includes('!full!')){
-          sccalcbut.style.backgroundSize = '100% 100%';
+      if (schedule[0][3] !== undefined) {
+        if (schedule[0][3].includes("!full!")) {
+          sccalcbut.style.backgroundSize = "100% 100%";
         }
-        sccalcbut.style.backgroundImage = 'url(https://'+schedule[0][3].replace('!full!','')+')';
+        sccalcbut.style.backgroundImage =
+          "url(https://" + schedule[0][3].replace("!full!", "") + ")";
       }
-      if(schedule[0][4] !== undefined){
+      if (schedule[0][4] !== undefined) {
         var theba = schedule[0][4];
-        if (schedule[0][4].includes('!full!')){
-          sclister.style.backgroundSize = '100% 100%';
+        if (schedule[0][4].includes("!full!")) {
+          sclister.style.backgroundSize = "100% 100%";
         }
-        if (schedule[0][4].includes('!corner!')){
-          var sp = theba.split('!corner!');
+        if (schedule[0][4].includes("!corner!")) {
+          var sp = theba.split("!corner!");
           theba = sp[0];
-          sccornergraphic.src = 'https://'+sp[1];
-          sccornergraphic.hidden = '';
+          sccornergraphic.src = "https://" + sp[1];
+          sccornergraphic.hidden = "";
         }
-        sclister.style.backgroundImage = 'url(https://'+theba.replace('!full!','')+')';
+        sclister.style.backgroundImage =
+          "url(https://" + theba.replace("!full!", "") + ")";
       }
-      if(schedule[0][5] !== undefined){
-        var theba = '#'+schedule[0][5];
-        if(schedule[0][5].includes('!textonly!')){
-          var sp = theba.split('!textonly!');
+      if (schedule[0][5] !== undefined) {
+        var theba = "#" + schedule[0][5];
+        if (schedule[0][5].includes("!textonly!")) {
+          var sp = theba.split("!textonly!");
           theba = sp[0];
-          calendarbutton.style.backgroundColor = 'rgba(0,0,0,0)'
-          magnifybutton.style.backgroundColor = 'rgba(0,0,0,0)'
-          viewsheetbutton.style.backgroundColor = 'rgba(0,0,0,0)'
-          dresscodebutton.style.backgroundColor = 'rgba(0,0,0,0)'
+          calendarbutton.style.backgroundColor = "rgba(0,0,0,0)";
+          magnifybutton.style.backgroundColor = "rgba(0,0,0,0)";
+          viewsheetbutton.style.backgroundColor = "rgba(0,0,0,0)";
+          dresscodebutton.style.backgroundColor = "rgba(0,0,0,0)";
         } else {
-          calendarbutton.style.background = theba
-          magnifybutton.style.background = theba
-          viewsheetbutton.style.background = theba
-          dresscodebutton.style.background = theba
+          calendarbutton.style.background = theba;
+          magnifybutton.style.background = theba;
+          viewsheetbutton.style.background = theba;
+          dresscodebutton.style.background = theba;
         }
-        sccalcbut.style.color = theba
-        sclister.style.color = theba
-        scheduleswapper.style.backgroundColor = 'rgba(0,0,0,0)'
-        scheduleswapper.style.color = theba
+        sccalcbut.style.color = theba;
+        sclister.style.color = theba;
+        scheduleswapper.style.backgroundColor = "rgba(0,0,0,0)";
+        scheduleswapper.style.color = theba;
       }
       var thefuture = false;
       var openstamp =
-          new Date().getHours() * 60 * 60 +
-          new Date().getMinutes() * 60 +
-          new Date().getSeconds();
+        new Date().getHours() * 60 * 60 +
+        new Date().getMinutes() * 60 +
+        new Date().getSeconds();
 
       function calcSchedule() {
         var currenttime =
@@ -826,20 +1315,33 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           new Date().getSeconds();
         var activeclass = "n/a";
         sccalcbut.innerHTML = "Out of Session";
-        if(new Date().getHours() == 3){
+        if (new Date().getHours() == 3) {
           sccalcbut.innerHTML = "🐱";
         }
         var schedulesended = true;
         for (i2 = 0; i2 < activeschedules.length; i2++) {
-          var schedchecker = decode(activeschedules[i2])
-          if (currenttime < schedchecker[schedchecker.length-1][1]) {
+          var schedchecker = decode(activeschedules[i2]);
+          if (currenttime < schedchecker[schedchecker.length - 1][1]) {
             schedulesended = false;
           }
         }
-        if((schedule[2][2] == "noclass" || currenttime >= schedule[schedule.length-1][1]) && schedulesended == true && thefuture == false && exacttime - openstamp > 2){
+        if (
+          (schedule[2][2] == "noclass" ||
+            currenttime >= schedule[schedule.length - 1][1]) &&
+          schedulesended == true &&
+          thefuture == false &&
+          exacttime - openstamp > 2
+        ) {
           selectedschedule = "";
           var prevactive = activeschedules.length;
-          var dat = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1, new Date().getHours(), new Date().getMinutes(), new Date().getSeconds());
+          var dat = new Date(
+            new Date().getFullYear(),
+            new Date().getMonth(),
+            new Date().getDate() + 1,
+            new Date().getHours(),
+            new Date().getMinutes(),
+            new Date().getSeconds()
+          );
           for (i = 0; i < specialschedules.length; i++) {
             if (
               parseInt(dat.getMonth()) ==
@@ -853,41 +1355,51 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           }
           for (i2 = prevactive; i2 < activeschedules.length; i2++) {
             var option = document.createElement("option");
-            option.text = "(TOMORROW) "+decode(activeschedules[i2])[0][1];
-            option.value = i2
+            option.text = "(TOMORROW) " + decode(activeschedules[i2])[0][1];
+            option.value = i2;
             scheduleswapper.add(option);
           }
-          scheduleswapper.value = prevactive
+          scheduleswapper.value = prevactive;
           if (activeschedules.length > 2) {
-            scheduleswapper.hidden = '';
+            scheduleswapper.hidden = "";
           }
           if (selectedschedule == "") {
             selectedschedule = weekdayschedules[parseInt(dat.getDay())];
           }
-          if (window.location == window.parent.location){
+          if (window.location == window.parent.location) {
             for (let i = 1; i <= 7; i++) {
-              if(getCookie("ba"+i.toString())!="Block "+i.toString()){
-                selectedschedule = selectedschedule.replace("Block "+i.toString(),getCookie("ba"+i.toString())+exponentnumbers[i]);
+              if (getCookie("ba" + i.toString()) != "Block " + i.toString()) {
+                selectedschedule = selectedschedule.replace(
+                  "Block " + i.toString(),
+                  getCookie("ba" + i.toString()) + exponentnumbers[i]
+                );
               }
             }
           }
           schedule = decode(selectedschedule);
           clothessheet = "";
-          dresscodebutton.hidden = 'true';
-          if(schedule[0][2] !== undefined){
-            if (schedule[0][2].includes('!dress!')){
-              var sp = schedule[0][2].split('!dress!');
-              clothessheet = 'https://'+sp[1];
-              dresscodebutton.hidden = '';
+          dresscodebutton.hidden = "true";
+          if (schedule[0][2] !== undefined) {
+            if (schedule[0][2].includes("!dress!")) {
+              var sp = schedule[0][2].split("!dress!");
+              clothessheet = "https://" + sp[1];
+              dresscodebutton.hidden = "";
             }
           }
           thefuture = true;
         }
-        if(currenttime < schedule[2][0] && sccalcbut.innerHTML == "Out of Session"){
-          if((Math.trunc((schedule[2][0] - currenttime)/60/60)+1) <= 1){
-            sccalcbut.innerHTML = "Starts in " + (schedule[2][0] - currenttime)/60 + " minutes"
+        if (
+          currenttime < schedule[2][0] &&
+          sccalcbut.innerHTML == "Out of Session"
+        ) {
+          if (Math.trunc((schedule[2][0] - currenttime) / 60 / 60) + 1 <= 1) {
+            sccalcbut.innerHTML =
+              "Starts in " + (schedule[2][0] - currenttime) / 60 + " minutes";
           } else {
-            sccalcbut.innerHTML = "Starts in " + (Math.trunc((schedule[2][0] - currenttime)/60/60)+1) + " hours"
+            sccalcbut.innerHTML =
+              "Starts in " +
+              (Math.trunc((schedule[2][0] - currenttime) / 60 / 60) + 1) +
+              " hours";
           }
         }
         sclister.innerHTML = "<b>" + schedule[0][1] + "</b><br>No Classes";
@@ -901,7 +1413,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
                 " (" +
                 (schedule[i][1] - currenttime) / 60 +
                 "′)";
-              if (schedule[i][2].length >= 12){
+              if (schedule[i][2].length >= 12) {
                 sccalcbut.style.fontSize = "6vmin";
               }
               if (
@@ -910,8 +1422,13 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
               ) {
                 var schedsave = schedule[i][2];
                 for (i2 = schedule.length - 1; i2 > 0; i2--) {
-                  if (currenttime < schedule[i2][0] && (schedule[i2][3] == "0" || (schedule[i][1] - currenttime) / 60 <= 5)) {// && schedule[i2][2] != "Passing Period"
-                    if (schedule[i][2].length >= 12){
+                  if (
+                    currenttime < schedule[i2][0] &&
+                    (schedule[i2][3] == "0" ||
+                      (schedule[i][1] - currenttime) / 60 <= 5)
+                  ) {
+                    // && schedule[i2][2] != "Passing Period"
+                    if (schedule[i][2].length >= 12) {
                       sccalcbut.style.fontSize = "5vmin";
                     } else {
                       sccalcbut.style.fontSize = "7vmin";
@@ -979,82 +1496,110 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
             if (h2 > 12) {
               h2 -= 12;
             }
-            if (activeclass == schedule[i][2] && ((currenttime >= schedule[i][0] && currenttime < schedule[i][1]) || (sccalcbut.innerHTML.includes("transition")&&sccalcbut.innerHTML.includes(schedule[i][2]))) && thefuture == false) {
-              if (schedule[i][2] != "Dismissal" && schedule[i][0] != schedule[i][1]){
+            if (
+              activeclass == schedule[i][2] &&
+              ((currenttime >= schedule[i][0] &&
+                currenttime < schedule[i][1]) ||
+                (sccalcbut.innerHTML.includes("transition") &&
+                  sccalcbut.innerHTML.includes(schedule[i][2]))) &&
+              thefuture == false
+            ) {
+              if (
+                schedule[i][2] != "Dismissal" &&
+                schedule[i][0] != schedule[i][1]
+              ) {
                 listtext =
-                listtext +
-                "<br><b>↪" +
-                h1 +
-                ":" +
-                m1 +
-                " - " +
-                h2 +
-                ":" +
-                m2 +
-                " ─"+new Date((schedule[i][1]-exacttime-1) * 1000).toISOString().substr(12, 7)+"─ " +
-                schedule[i][2] +
-                "↩</b>";
+                  listtext +
+                  "<br><b>↪" +
+                  h1 +
+                  ":" +
+                  m1 +
+                  " - " +
+                  h2 +
+                  ":" +
+                  m2 +
+                  " ─" +
+                  new Date((schedule[i][1] - exacttime - 1) * 1000)
+                    .toISOString()
+                    .substr(12, 7) +
+                  "─ " +
+                  schedule[i][2] +
+                  "↩</b>";
               } else {
                 listtext =
-                listtext +
-                "<br><b>↪" +
-                h1 +
-                ":" +
-                m1 +
-                " ─── " +
-                schedule[i][2] +
-                "↩</b>";
+                  listtext +
+                  "<br><b>↪" +
+                  h1 +
+                  ":" +
+                  m1 +
+                  " ─── " +
+                  schedule[i][2] +
+                  "↩</b>";
               }
-            } else { if (schedule[i][2] != "Passing Period"){
-              if (schedule[i][2] != "Dismissal" && schedule[i][0] != schedule[i][1]){
-                listtext =
-                listtext +
-                "<br>" +
-                h1 +
-                ":" +
-                m1 +
-                " - " +
-                h2 +
-                ":" +
-                m2 +
-                " ─── " +                                                                           
-                schedule[i][2];
-              } else {
-                listtext =
-                listtext +
-                "<br>" +
-                h1 +
-                ":" +
-                m1 +
-                " ─── " +
-                schedule[i][2];
+            } else {
+              if (schedule[i][2] != "Passing Period") {
+                if (
+                  schedule[i][2] != "Dismissal" &&
+                  schedule[i][0] != schedule[i][1]
+                ) {
+                  listtext =
+                    listtext +
+                    "<br>" +
+                    h1 +
+                    ":" +
+                    m1 +
+                    " - " +
+                    h2 +
+                    ":" +
+                    m2 +
+                    " ─── " +
+                    schedule[i][2];
+                } else {
+                  listtext =
+                    listtext +
+                    "<br>" +
+                    h1 +
+                    ":" +
+                    m1 +
+                    " ─── " +
+                    schedule[i][2];
+                }
               }
-            }}
+            }
           }
           sclister.innerHTML = listtext;
         }
         document.title = "Schedulology";
-        if(thefuture==true){
-          sccalcbut.innerHTML = "Tomorrow's Schedule"
+        if (thefuture == true) {
+          sccalcbut.innerHTML = "Tomorrow's Schedule";
         }
-        if(document.hidden){
-          if(sccalcbut.innerHTML.split("<br>")[0] != "transitioning to"){
+        if (document.hidden) {
+          if (sccalcbut.innerHTML.split("<br>")[0] != "transitioning to") {
             document.title = sccalcbut.innerHTML.split("<br>")[0];
           } else {
             document.title = "to " + sccalcbut.innerHTML.split("<br>")[1];
           }
         }
-        if(is_iphone){
+        if (is_iphone) {
           sccalcbut.innerHTML = "<b>" + sccalcbut.innerHTML + "</b>";
         }
-        if((lastcheck+299 <= currenttime || lastday+43200000 <= new Date().getTime()) && navigator.onLine==true){
-          lastcheck = new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
+        if (
+          (lastcheck + 299 <= currenttime ||
+            lastday + 43200000 <= new Date().getTime()) &&
+          navigator.onLine == true
+        ) {
+          lastcheck =
+            new Date().getHours() * 60 * 60 + new Date().getMinutes() * 60;
           var request = makeHttpObject();
-          request.open("GET", "https://salesianschedule.glitch.me/autoversion", true);
+          request.open(
+            "GET",
+            "https://salesianschedule.glitch.me/autoversion",
+            true
+          );
           request.send(null);
-          request.onreadystatechange = function() {
+          request.onreadystatechange = function () {
             if (request.readyState == 4)
-              if(activeversion!=request.responseText){
+              if (activeversion != request.responseText) {
                 refreshpage();
               }
           };
