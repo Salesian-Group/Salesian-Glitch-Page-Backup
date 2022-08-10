@@ -869,49 +869,59 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           }
         }
       }
-
-      // "0000|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
-      // "0000|b|Wednesday (Extended Lunch)|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Extended Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
-      // "0000|b|Wednesday Early Dismissal|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45300|b|Lunch|b|1|a|45600|b|50400|b|Block 6|b|0",
-      // "0000|b|Holiday|a|0|b|0|b|noclass|b|0",
-      // "0000|b|Wednesday (Art Day)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmoreart.png?v=1635364316510|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcrayons.png?v=1634689066035|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fanotherart.png?v=1635363993209|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|44700|b|Lunch|b|0|a|44700|b|46800|b|Art Day (S1)|b|0|a|46800|b|48300|b|Art Day (S2)|b|0|a|48300|b|48300|b|End of Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
-      // "3110|b|Halloween|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooker.png?v=1635489813683|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspookaba.jpg?v=1635489808887|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooka.jpg?v=1635489811462|b|F06402|a|0|b|0|b|noclass|b|0",
-      // "0000|b|Early Start Wednesday|a|28800|b|33840|b|Block 4|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 6|b|0",
-      // "0000|b|Winter Break|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|0|b|0|b|noclass|b|0",
-
-      // title|b|background!dress!specialdresscode|b|simple|b|detail!corner!icon|b|hexcolor
-      // exclude HTTP from links
-      // !full! anywhere to use full image stretch
-
+      /*
+      
+      BELOW ARE SOME COMMON SPECIAL SCHEDULES
+      
+      "0000|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
+      "0000|b|Wednesday (Extended Lunch)|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Extended Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
+      "0000|b|Wednesday Early Dismissal|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45300|b|Lunch|b|1|a|45600|b|50400|b|Block 6|b|0",
+      "0000|b|Holiday|a|0|b|0|b|noclass|b|0",
+      "0000|b|Wednesday (Art Day)|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fmoreart.png?v=1635364316510|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fcrayons.png?v=1634689066035|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fanotherart.png?v=1635363993209|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|44700|b|Lunch|b|0|a|44700|b|46800|b|Art Day (S1)|b|0|a|46800|b|48300|b|Art Day (S2)|b|0|a|48300|b|48300|b|End of Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
+      "3110|b|Halloween|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooker.png?v=1635489813683|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspookaba.jpg?v=1635489808887|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fspooka.jpg?v=1635489811462|b|F06402|a|0|b|0|b|noclass|b|0",
+      "0000|b|Early Start Wednesday|a|28800|b|33840|b|Block 4|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 6|b|0",
+      "0000|b|Winter Break|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|0|b|0|b|noclass|b|0",
+      
+      BELOW ARE SOME SPECIAL SCHEDULES THAT HAVE THEMES
+      
+      "2701|b|Thursday [PLAYGROUND] (Athletic wear, sports jerseys, sweatpants)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|28800|b|33840|b|Block 5|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 1|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3|b|0|a|47580|b|48300|b|Mini-Break|b|0|a|48600|b|53400|b|Block 7|b|0",
+      "2801|b|Friday Bosco Day [FREE DRESS] (with freedress guidelines)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|31500|b|32400|b|Meet Block 6|b|0|a|32400|b|45000|b|Bosco Day!|b|0",
+      "2302|b|Wednesday African American Heritage Celebration|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0c6c3a15-cdf1-41d4-bd7d-06f99a33a670.image.png?v=1645635010171|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/d6440bb2-7740-41ab-b324-9ea9319a8ed5.image.png?v=1645635150964|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|AA Heritage Celebration|b|0|a|45780|b|48300|b|Lunch|b|1|a|48300|b|53400|b|Block 6|b|0",
+      "0503|b|UCBerkley PiE Event <a href='https://salesianschedule.glitch.me/pie.html'><button style='background:#AAFFFF;'>PRESS</button></a>|a|0|b|0|b|noclass|b|0",
+      "0903|b|Wednesday Diversity Club|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/1f9f8b4d-9476-48ab-b1c1-905147f707fe.image.png?v=1646765024073!dress!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0852be4e-3cb5-4b7d-b41a-d2f45c52b43d.image.png?v=1646775031117|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/5b0ec64a-195c-4f57-b53c-e73ce9bb4156.image.png?v=1646769314462|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Extended Lunch (Diversity Club Activities)|b|1|a|48300|b|53400|b|Block 6|b|0",
+      "0604|b|Wednesday Faith Families|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/6df2e454-06a3-4446-afc8-299e2505e84c.image.png?v=1649095894040!dress!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/4d78ffe4-c05a-4436-8ccc-1fa997529c4e.image.png?v=1649197569578|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0363fbdb-a057-4ea7-b2d1-131a725eb24d.image.png?v=1649096162609|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
+      "0804|b|Salesian Service Day|b||b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|28800|b|29400|b|Meet with Faith Families|b|0|a|29400|b|46800|b|Service Day!|b|0",
+      "1104|b|Monday Early Dismissal|a|28800|b|31380|b|Block 1|b|0|a|31620|b|33960|b|Block 2|b|0|a|34200|b|36540|b|Block 3|b|0|a|36540|b|37920|b|Break|b|1|a|38220|b|40560|b|Block 4|b|0|a|40800|b|43140|b|Block 5|b|0|a|43140|b|45240|b|Lunch|b|1|a|45540|b|47880|b|Block 6|b|0|a|48120|b|50460|b|Block 7|b|0",
+      "1204|b|Tuesday Earth Day|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/earthyimage.jpg?v=1649720346992!dress!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/IMG_6057.jpg?v=1649720484755|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/leafgreen.png?v=1649723289516|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/leafgreen.png?v=1649723289516!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/earthdaypin.png?v=1649722288768|b|103800!textonly!|a|28800|b|31440|b|Block 3|b|0|a|31680|b|34080|b|Block 6|b|0|a|34320|b|36720|b|Block 4|b|0|a|36720|b|38040|b|Break|b|1|a|38340|b|40740|b|Block 5|b|0|a|40980|b|43380|b|Block 2|b|0|a|43380|b|46140|b|Earth Day Assembly in Gym|b|0|a|46140|b|48060|b|Lunch|b|1|a|48360|b|50760|b|Block 1|b|0|a|51000|b|53400|b|Block 7|b|0",
+      "1105|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
+      "1705|b|Tuesday End of Day Assembly|a|28800|b|31560|b|Block 3|b|0|a|31800|b|34320|b|Block 2|b|0|a|34560|b|37080|b|Block 4|b|0|a|37080|b|38580|b|Break|b|1|a|38880|b|41400|b|Block 5|b|0|a|41640|b|44160|b|Block 6|b|0|a|44160|b|46500|b|Lunch|b|1|a|46800|b|49320|b|Block 1|b|0|a|49560|b|52080|b|Block 7|b|0|a|52200|b|53400|b|Assembly in Gym|b|0",
+      "1805|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
+      "2005|b|Friday (AW) 7|a|28800|b|31380|b|Block 6|b|0|a|31620|b|33960|b|Block 2|b|0|a|34200|b|36540|b|Block 1|b|0|a|36540|b|37920|b|Break|b|1|a|38220|b|40560|b|Block 3|b|0|a|40800|b|43140|b|Block 4|b|0|a|43140|b|45240|b|Lunch|b|1|a|45540|b|47880|b|Block 5|b|0|a|48120|b|53400|b|Block 7 AW|b|0",
+      "2305|b|Monday Finals 1/2|a|28800|b|31380|b|Block 1|b|0|a|31620|b|33960|b|Block 2|b|0|a|34200|b|36540|b|Block 3|b|0|a|36540|b|37920|b|Break|b|1|a|38220|b|40560|b|Block 4|b|0|a|40800|b|43140|b|Block 5|b|0|a|43140|b|45240|b|Lunch|b|1|a|45540|b|47880|b|Block 6|b|0|a|48120|b|53400|b|Block 7 AW|b|0",
+      "2405|b|Tuesday Finals 1/2|a|28800|b|33840|b|Block 1 Workshop|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Mary Help of Christians Mass|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 2 Workshop|b|0|a|47580|b|48900|b|Break²|b|1|a|49200|b|54000|b|Block 7 Final|b|0",
+      "2505|b|EARLY Wednesday Finals 1/2|a|28800|b|33840|b|Block 1 AW|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 AW|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3 AW|b|0|a|47580|b|48300|b|Break²|b|1|a|48600|b|53400|b|Block 4 AW|b|0|a|53400|b|53400|b|Dismissal, Seniors to CAFETERIA|b|0",
+      "2605|b|Thursday, End of Semester Assessment (EOSA)|a|28800|b|33840|b|Block 1 EOSA (Final)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 EOSA (Final)|b|0",
+      "2705|b|Friday, Assessment Workshops (AW)|a|28800|b|33840|b|Block 3 AW|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 4 AW|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 5 AW|b|0|a|47580|b|48300|b|Break²|b|1|a|48600|b|53400|b|Block 6 AW|b|0",
+      "3005|b|Memorial Day|a|0|b|0|b|noclass|b|0",
+      "3105|b|Tuesday, End of Semester Assessments|a|28800|b|33840|b|Block 3 (EOSA)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 4 (EOSA)|b|0",
+      "3105|b|Tuesday, EOSA 3 Only|a|28800|b|33840|b|Block 3 (EOSA)|b|0",
+      "3105|b|Tuesday, EOSA 4 Only|a|35580|b|40380|b|Block 4 (EOSA)|b|0",
+      "3105|b|Tuesday, No EOSA for 3,4|a|0|b|0|b|noclass|b|0",
+      "0106|b|Wednesday, Assessment Workshops|a|28800|b|33840|b|Block 5 (AW)|b|0|a|33840|b|35280|b|Break|b|1",
+      "0206|b|Thursday, EOSA (9th-11th Grades) (press dropdown to change)|a|28800|b|33840|b|Block 5 (EOSA)|b|0",
+      "0206|b|Thursday, EOSA (SENIORS) (press dropdown to change)|a|28800|b|33840|b|Block 5 (EOSA)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 6 (EOSA)|b|0",
+      "0306|b|Friday, EOSA 6 (9th-11th Grades)|a|32400|b|37440|b|Block 6 (EOSA)|b|0|a|37440|b|38940|b|Break|b|1|a|39600|b|45000|b|Seniors '22 Farewell|b|0",
+      "0306|b|Friday, (SENIORS)|a|39600|b|45000|b|Seniors '22 Farewell|b|0",
+      
+      FORMAT FOR A SCHEDULE THEME
+      
+      title|b|background!dress!specialdresscode|b|simple|b|detail!corner!icon|b|hexcolor
+      exclude HTTP from links
+      !full! anywhere to use full image stretch
+      
+      */
       var specialschedules = [
-        "2701|b|Thursday [PLAYGROUND] (Athletic wear, sports jerseys, sweatpants)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|28800|b|33840|b|Block 5|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 1|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3|b|0|a|47580|b|48300|b|Mini-Break|b|0|a|48600|b|53400|b|Block 7|b|0",
-        "2801|b|Friday Bosco Day [FREE DRESS] (with freedress guidelines)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|31500|b|32400|b|Meet Block 6|b|0|a|32400|b|45000|b|Bosco Day!|b|0",
-        "2302|b|Wednesday African American Heritage Celebration|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0c6c3a15-cdf1-41d4-bd7d-06f99a33a670.image.png?v=1645635010171|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/d6440bb2-7740-41ab-b324-9ea9319a8ed5.image.png?v=1645635150964|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|AA Heritage Celebration|b|0|a|45780|b|48300|b|Lunch|b|1|a|48300|b|53400|b|Block 6|b|0",
-        "0503|b|UCBerkley PiE Event <a href='https://salesianschedule.glitch.me/pie.html'><button style='background:#AAFFFF;'>PRESS</button></a>|a|0|b|0|b|noclass|b|0",
-        "0903|b|Wednesday Diversity Club|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/1f9f8b4d-9476-48ab-b1c1-905147f707fe.image.png?v=1646765024073!dress!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0852be4e-3cb5-4b7d-b41a-d2f45c52b43d.image.png?v=1646775031117|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/5b0ec64a-195c-4f57-b53c-e73ce9bb4156.image.png?v=1646769314462|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Extended Lunch (Diversity Club Activities)|b|1|a|48300|b|53400|b|Block 6|b|0",
-        "0604|b|Wednesday Faith Families|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/6df2e454-06a3-4446-afc8-299e2505e84c.image.png?v=1649095894040!dress!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/4d78ffe4-c05a-4436-8ccc-1fa997529c4e.image.png?v=1649197569578|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0363fbdb-a057-4ea7-b2d1-131a725eb24d.image.png?v=1649096162609|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
-        "0804|b|Salesian Service Day|b||b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|28800|b|29400|b|Meet with Faith Families|b|0|a|29400|b|46800|b|Service Day!|b|0",
-        "1104|b|Monday Early Dismissal|a|28800|b|31380|b|Block 1|b|0|a|31620|b|33960|b|Block 2|b|0|a|34200|b|36540|b|Block 3|b|0|a|36540|b|37920|b|Break|b|1|a|38220|b|40560|b|Block 4|b|0|a|40800|b|43140|b|Block 5|b|0|a|43140|b|45240|b|Lunch|b|1|a|45540|b|47880|b|Block 6|b|0|a|48120|b|50460|b|Block 7|b|0",
-        "1204|b|Tuesday Earth Day|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/earthyimage.jpg?v=1649720346992!dress!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/IMG_6057.jpg?v=1649720484755|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/leafgreen.png?v=1649723289516|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/leafgreen.png?v=1649723289516!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/earthdaypin.png?v=1649722288768|b|103800!textonly!|a|28800|b|31440|b|Block 3|b|0|a|31680|b|34080|b|Block 6|b|0|a|34320|b|36720|b|Block 4|b|0|a|36720|b|38040|b|Break|b|1|a|38340|b|40740|b|Block 5|b|0|a|40980|b|43380|b|Block 2|b|0|a|43380|b|46140|b|Earth Day Assembly in Gym|b|0|a|46140|b|48060|b|Lunch|b|1|a|48360|b|50760|b|Block 1|b|0|a|51000|b|53400|b|Block 7|b|0",
-        "1105|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
-        "1705|b|Tuesday End of Day Assembly|a|28800|b|31560|b|Block 3|b|0|a|31800|b|34320|b|Block 2|b|0|a|34560|b|37080|b|Block 4|b|0|a|37080|b|38580|b|Break|b|1|a|38880|b|41400|b|Block 5|b|0|a|41640|b|44160|b|Block 6|b|0|a|44160|b|46500|b|Lunch|b|1|a|46800|b|49320|b|Block 1|b|0|a|49560|b|52080|b|Block 7|b|0|a|52200|b|53400|b|Assembly in Gym|b|0",
-        "1805|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
-        "2005|b|Friday (AW) 7|a|28800|b|31380|b|Block 6|b|0|a|31620|b|33960|b|Block 2|b|0|a|34200|b|36540|b|Block 1|b|0|a|36540|b|37920|b|Break|b|1|a|38220|b|40560|b|Block 3|b|0|a|40800|b|43140|b|Block 4|b|0|a|43140|b|45240|b|Lunch|b|1|a|45540|b|47880|b|Block 5|b|0|a|48120|b|53400|b|Block 7 AW|b|0",
-        "2305|b|Monday Finals 1/2|a|28800|b|31380|b|Block 1|b|0|a|31620|b|33960|b|Block 2|b|0|a|34200|b|36540|b|Block 3|b|0|a|36540|b|37920|b|Break|b|1|a|38220|b|40560|b|Block 4|b|0|a|40800|b|43140|b|Block 5|b|0|a|43140|b|45240|b|Lunch|b|1|a|45540|b|47880|b|Block 6|b|0|a|48120|b|53400|b|Block 7 AW|b|0",
-        "2405|b|Tuesday Finals 1/2|a|28800|b|33840|b|Block 1 Workshop|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Mary Help of Christians Mass|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 2 Workshop|b|0|a|47580|b|48900|b|Break²|b|1|a|49200|b|54000|b|Block 7 Final|b|0",
-        "2505|b|EARLY Wednesday Finals 1/2|a|28800|b|33840|b|Block 1 AW|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 AW|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3 AW|b|0|a|47580|b|48300|b|Break²|b|1|a|48600|b|53400|b|Block 4 AW|b|0|a|53400|b|53400|b|Dismissal, Seniors to CAFETERIA|b|0",
-        "2605|b|Thursday, End of Semester Assessment (EOSA)|a|28800|b|33840|b|Block 1 EOSA (Final)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2 EOSA (Final)|b|0",
-        "2705|b|Friday, Assessment Workshops (AW)|a|28800|b|33840|b|Block 3 AW|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 4 AW|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 5 AW|b|0|a|47580|b|48300|b|Break²|b|1|a|48600|b|53400|b|Block 6 AW|b|0",
-        "3005|b|Memorial Day|a|0|b|0|b|noclass|b|0",
-        "3105|b|Tuesday, End of Semester Assessments|a|28800|b|33840|b|Block 3 (EOSA)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 4 (EOSA)|b|0",
-        "3105|b|Tuesday, EOSA 3 Only|a|28800|b|33840|b|Block 3 (EOSA)|b|0",
-        "3105|b|Tuesday, EOSA 4 Only|a|35580|b|40380|b|Block 4 (EOSA)|b|0",
-        "3105|b|Tuesday, No EOSA for 3,4|a|0|b|0|b|noclass|b|0",
-        "0106|b|Wednesday, Assessment Workshops|a|28800|b|33840|b|Block 5 (AW)|b|0|a|33840|b|35280|b|Break|b|1",
-        "0206|b|Thursday, EOSA (9th-11th Grades) (press dropdown to change)|a|28800|b|33840|b|Block 5 (EOSA)|b|0",
-        "0206|b|Thursday, EOSA (SENIORS) (press dropdown to change)|a|28800|b|33840|b|Block 5 (EOSA)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 6 (EOSA)|b|0",
-        "0306|b|Friday, EOSA 6 (9th-11th Grades)|a|32400|b|37440|b|Block 6 (EOSA)|b|0|a|37440|b|38940|b|Break|b|1|a|39600|b|45000|b|Seniors '22 Farewell|b|0",
-        "0306|b|Friday, (SENIORS)|a|39600|b|45000|b|Seniors '22 Farewell|b|0",
+        
       ];
       var weekdayschedules = [
         "0000|b|Summer Break (Resumes August 18th)|a|0|b|0|b|noclass|b|0",
@@ -1581,7 +1591,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         document.title = "Schedulology";
         if (thefuture == true) {
-          sccalcbut.innerHTML = "Welcome Back students! School Starts August 18th";
+          sccalcbut.innerHTML = "Tomorrow's Schedule";
         }
         if (document.hidden) {
           if (sccalcbut.innerHTML.split("<br>")[0] != "transitioning to") {
