@@ -608,7 +608,7 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
     >
       NO
     </button>
-
+    
     <script>
       function makeHttpObject() {
         try {
@@ -1106,6 +1106,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         }
         return ms;
       }
+      
+      //Decoding creator string into separate blocks and periods
       function decode(sched) {
         var msg = sched.split("|a|");
         var ms = [];
@@ -1121,9 +1123,12 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
         ]);
         return ms;
       }
-
+      //Decoding creator string into separate blocks and periods
+      
       var clothessheet = "";
       var schedule = decode(selectedschedule);
+      
+      //Theme selector preferences
       if (window.location == window.parent.location) {
         if (getCookie("themforce") == "on" || schedule[0][2] == undefined) {
           if (
@@ -1238,6 +1243,8 @@ Isthay isyay ouyay. Ouyay areyay ayay eakysnay ittlelay atcay eekingpay intoyay 
           }
         }
       }
+      //Theme selector preferences
+      
       if (schedule[0][2] !== undefined) {
         var theba = schedule[0][2];
         if (schedule[0][2].includes("!full!")) {
