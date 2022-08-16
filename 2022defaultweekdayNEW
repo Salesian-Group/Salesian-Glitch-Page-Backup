@@ -1,16 +1,6 @@
-var weekdayschedules = [
+  var weekdayschedules = [
         "0000|b|Sunday Weekend|a|0|b|0|b|noclass|b|0",
-        "0000|b|Monday Schedule|a|28800|b|31740|b|Block 1|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 3|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 4|b|0|a|42360|b|45060|b|Block 5|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 6|b|0|a|50580|b|53280|b|Block 7|b|0",
-        "0000|b|Tuesday Schedule|a|28800|b|31740|b|Block 3|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 4|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 5|b|0|a|42360|b|45060|b|Block 6|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 1|b|0|a|50580|b|53280|b|Block 7|b|0",
-        "0000|b|Wednesday Schedule|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45300|b|Lunch|b|1|a|45600|b|50400|b|Block 6|b|0|a|50700|b|53400|b|Community Time|b|0",
-        "0000|b|Thursday Schedule|a|28800|b|33840|b|Block 5|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 1|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3|b|0|a|47580|b|48300|b|Mini-Break|b|0|a|48600|b|53400|b|Block 7|b|0",
-        "0000|b|Friday Schedule|a|28800|b|31740|b|Block 6|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 1|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 3|b|0|a|42360|b|45060|b|Block 4|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 5|b|0|a|50580|b|53280|b|Block 7|b|0",
-        "0000|b|Saturday Weekend|a|0|b|0|b|noclass|b|0",
-      ];
-      
-var weekdayschedules = [
-        "0000|b|Sunday Weekend|a|0|b|0|b|noclass|b|0",
-        "0000|b|Monday Schedule|a|30600|b|35400|b|Block 1|b|0|a|35400|b|36300|b|Break|b|1|a|36300|b|40800|b|Block 2|b|0|a|40800|b|43200|b|Lunch|b|1|a|43500|b|4800|b|Block 3|b|0",
+        "0000|b|Monday Schedule|a|30600|b|35400|b|Block 1|b|0|a|35400|b|36300|b|Break|b|1|a|36300|b|40800|b|Block 2|b|0|a|40800|b|43200|b|Lunch|b|1|a|43200|b|43500|b|Passing Period|b|1|a|43500|b|4800|b|Block 3|b|0|a|4800|b|5400|b|Passing Period|b|1|a|5400|b|9900|b|Block 4|b|0|a|10500|b|12000|b|Tutoring|b|0",
         "0000|b|Tuesday Schedule|a|28800|b|31740|b|Block 3|b|0|a|31980|b|34680|b|Block 2|b|0|a|34920|b|37620|b|Block 4|b|0|a|37620|b|39120|b|Break|b|1|a|39420|b|42120|b|Block 5|b|0|a|42360|b|45060|b|Block 6|b|0|a|45060|b|47340|b|Lunch|b|1|a|47640|b|50340|b|Block 1|b|0|a|50580|b|53280|b|Block 7|b|0",
         "0000|b|Wednesday Schedule|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45300|b|Lunch|b|1|a|45600|b|50400|b|Block 6|b|0|a|50700|b|53400|b|Community Time|b|0",
         "0000|b|Thursday Schedule|a|28800|b|33840|b|Block 5|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 1|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3|b|0|a|47580|b|48300|b|Mini-Break|b|0|a|48600|b|53400|b|Block 7|b|0",
