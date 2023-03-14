@@ -608,7 +608,7 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
     >
       NO
     </button>
-    
+
     <!--Start of script-->
     <script>
       function makeHttpObject() {
@@ -624,15 +624,15 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
 
         throw new Error("Could not create HTTP request object.");
       }
-      
-      //Generation of new cookie 
+
+      //Generation of new cookie
       function setCookie(cname, cvalue, exdays) {
         const d = new Date();
         d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
         let expires = "expires=" + d.toUTCString();
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
       }
-      
+
       //Looking for existing cookie and...
       function getCookie(cname) {
         let name = cname + "=";
@@ -649,7 +649,7 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
         }
         return "";
       }
-      
+
       function refreshpage() {
         window.location.replace(window.location);
       }
@@ -873,9 +873,9 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
         }
       }
       /*
-      
+
       BELOW ARE SOME COMMON SPECIAL SCHEDULES
-      
+
       "0000|b|Wednesday Faith Families|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
       "0000|b|Wednesday (Extended Lunch)|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Extended Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
       "0000|b|Wednesday Early Dismissal|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45300|b|Lunch|b|1|a|45600|b|50400|b|Block 6|b|0",
@@ -885,14 +885,14 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
       "0000|b|Early Start Wednesday|a|28800|b|33840|b|Block 4|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 2|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 6|b|0",
       "0000|b|Winter Break|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlight.png?v=1638985593784|b|cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinter.png?v=1638987890125|b|!full!cdn.glitch.me/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0%2Fwinterlist.png?v=1638988271463|b|8FD3CF|a|0|b|0|b|noclass|b|0",
       "0000|b|Winter Break|b|CC231E|b|0F8A5F|b|34A65F|b|0F8A5F|a|0|b|0|b|noclass|b|0",
- 
-      
+
+
       BELOW ARE SOME SPECIAL SCHEDULES THAT HAVE THEMES
-      
+
       "2701|b|Thursday [PLAYGROUND] (Athletic wear, sports jerseys, sweatpants)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|28800|b|33840|b|Block 5|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 1|b|0|a|40380|b|42480|b|Lunch|b|1|a|42780|b|47580|b|Block 3|b|0|a|47580|b|48300|b|Mini-Break|b|0|a|48600|b|53400|b|Block 7|b|0",
       "2801|b|Friday Bosco Day [FREE DRESS] (with freedress guidelines)|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/backgroun.png?v=1643058150581|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/happytop.png?v=1643198846428|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/sheet.png?v=1643199976535!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|31500|b|32400|b|Meet Block 6|b|0|a|32400|b|45000|b|Bosco Day!|b|0",
       "2302|b|Wednesday African American Heritage Celebration|b|cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0c6c3a15-cdf1-41d4-bd7d-06f99a33a670.image.png?v=1645635010171|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/d6440bb2-7740-41ab-b324-9ea9319a8ed5.image.png?v=1645635150964|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|AA Heritage Celebration|b|0|a|45780|b|48300|b|Lunch|b|1|a|48300|b|53400|b|Block 6|b|0",
-      "0503|b|UCBerkley PiE Event <a href='https://salesianschedule.glitch.me/pie.html'><button style='background:#AAFFFF;'>PRESS</button></a>|a|0|b|0|b|noclass|b|0",
+      "1303|b|UCBerkley PiE Event <a href='https://salesianschedule.glitch.me/pie.html'><button style='background:#AAFFFF;'>PRESS</button></a>|a|0|b|0|b|noclass|b|0",
       "0903|b|Wednesday Diversity Club|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/1f9f8b4d-9476-48ab-b1c1-905147f707fe.image.png?v=1646765024073!dress!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0852be4e-3cb5-4b7d-b41a-d2f45c52b43d.image.png?v=1646775031117|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/5b0ec64a-195c-4f57-b53c-e73ce9bb4156.image.png?v=1646769314462|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|48300|b|Extended Lunch (Diversity Club Activities)|b|1|a|48300|b|53400|b|Block 6|b|0",
       "0604|b|Wednesday Faith Families|b|!full!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/6df2e454-06a3-4446-afc8-299e2505e84c.image.png?v=1649095894040!dress!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/4d78ffe4-c05a-4436-8ccc-1fa997529c4e.image.png?v=1649197569578|b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/0363fbdb-a057-4ea7-b2d1-131a725eb24d.image.png?v=1649096162609|a|31500|b|36540|b|Block 4|b|0|a|36540|b|37980|b|Break|b|1|a|38280|b|43080|b|Block 2|b|0|a|43080|b|45780|b|Faith Family Meetings|b|0|a|45780|b|48300|b|Lunch|b|1|a|48600|b|53400|b|Block 6|b|0",
       "0804|b|Salesian Service Day|b||b||b|!corner!cdn.glitch.global/187d2ee4-535a-4ad4-a4f5-0e7eedadafb0/boscoguy.png?v=1643150838642|a|28800|b|29400|b|Meet with Faith Families|b|0|a|29400|b|46800|b|Service Day!|b|0",
@@ -917,13 +917,13 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
       "0206|b|Thursday, EOSA (SENIORS) (press dropdown to change)|a|28800|b|33840|b|Block 5 (EOSA)|b|0|a|33840|b|35280|b|Break|b|1|a|35580|b|40380|b|Block 6 (EOSA)|b|0",
       "0306|b|Friday, EOSA 6 (9th-11th Grades)|a|32400|b|37440|b|Block 6 (EOSA)|b|0|a|37440|b|38940|b|Break|b|1|a|39600|b|45000|b|Seniors '22 Farewell|b|0",
       "0306|b|Friday, (SENIORS)|a|39600|b|45000|b|Seniors '22 Farewell|b|0",
-      
+
       FORMAT FOR A SCHEDULE THEME
-      
+
       title|b|background!dress!specialdresscode|b|simple|b|detail!corner!icon|b|hexcolor
       exclude HTTP from links
       !full! anywhere to use full image stretch
-      
+
       */
       var specialschedules = [
         "1508|b|Summer Break (Resumes August 18th)|a|0|b|0|b|noclass|b|0",
@@ -982,11 +982,11 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
         "0102|b|Schedule Change: 1:05pm Early Dismissal: New Student Interviews|a|30600|b|35100|b|Block 3|b|0|a|35100|b|36000|b|Break|b|0|a|36000|b|40200|b|Block 2|b|0|a|40200|b|42600|b|Lunch|b|1|a|42900|b|47100|b|Block 1|b|0",
         "0202|b|Schedule Change: Blocks 4, 5, 6, 7|a|30600|b|35700|b|Block 4|b|0|a|35700|b|36600|b|Break|b|1|a|36600|b|41400|b|Block 6|b|0|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 5|b|0|a|49500|b|54000|b|Block 7|b|0",
         "0302|b|Schedule Change: 12:30pm Early Dismissal; Faith Family Breakfast, Fun Day!|a|30600|b|45000|b|Faith Families|b|0",
-        "3101|b|Schedule Change: St. John Bosco Mass; Blks 4, 5, 6, 7|a|30600|b|34500|b|Block 4|b|0|a|34500|b|35400|b|Break|b|1|a|35400|b|39000|b|Block 5|b|0", 
+        "3101|b|Schedule Change: St. John Bosco Mass; Blks 4, 5, 6, 7|a|30600|b|34500|b|Block 4|b|0|a|34500|b|35400|b|Break|b|1|a|35400|b|39000|b|Block 5|b|0",
         "0702|b|Tuesday Schedule|a|30600|b|35400|b|Block 5|b|0|a|35400|b|36300|b|Break|b|1|a|36300|b|40800|b|Block 6|b|0|a|40800|b|43200|b|Lunch|b|1|a|43500|b|48000|b|Block 7|b|0|a|48600|b|51900|b|Block 1|b|0",
         "0802|b|Schedule Changes: Faith Family Games|a|30600|b|33900|b|Block 2|b|0|a|34620|b|37620|b|Block 3|b|0|a|37980|b|40980|b|Block 4|b|0|a|41280|b|44880|b|Faith Families|b|0|a|44880|b|47280|b|Lunch|b|1|a|47640|b|50640|b|Block 5|b|0|a|51000|b|54000|b|Block 6|b|0",
         "1302|b|Schedule Change: Blks 7, 6, 5, 4|a|30600|b|35700|b|Block 7|b|0|a|35700|b|36600|b|Break|b|1|a|36600|b|41400|b|Block 6|b|0|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 5|b|0|a|49500|b|54000|b|Block 4|b|0",
-        "1302|b|Schedule Change: Early 1:35pm Dismissal, Blks 1, 2, 3, PF for Teachers|a|30600|b|35700|b|Block 1|b|0|a|35700|b|36600|b|Break|b|0|a|36600|b|41400|b|Block 2|b|0|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 3|b|0",      
+        "1302|b|Schedule Change: Early 1:35pm Dismissal, Blks 1, 2, 3, PF for Teachers|a|30600|b|35700|b|Block 1|b|0|a|35700|b|36600|b|Break|b|0|a|36600|b|41400|b|Block 2|b|0|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 3|b|0",
         "1502|b|Schedule Change: Blks 4, 5, 6, 7|a|30600|b|35700|b|Block 4|b|0|a|35700|b|36600|b|Break|b|1|a|36600|b|41400|b|Block 5|b|0|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 6|b|0|a|49500|b|54000|b|Block 7|b|0",
         "1602|b|Schedule Change: 2:30 pm Early Dismissal; African American Heritage Celebration|a|30600|b|35700|b|Block 3|b|0|a|35700|b|36600|b|Break|b|0|a|36600|b|41400|b|Block 2|b|0|a|41700|b|44400|b|African American Heritage Celebration|b|0|a|44700|b|47100|b|Lunch|b|1|a|47400|b|52200|b|Block 1|b|0",
         "2102|b|Schedule Change Blks 1-4|a|30600|b|35700|b|Block 1|b|0|a|35700|b|36600|b|Break|b|1|a|36600|b|41400|b|Block 2|b|0|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 3|b|0|a|49500|b|54000|b|Block 4|b|0",
@@ -996,16 +996,17 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
         "2702|b|02-27-23|a|30600|b|35700|b|Block 7|b|1|a|35700|b|36600|b|15 minutes break|b|1|a|36600|b|41400|b|Block 6|b|1|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 5|b|1|a|48900|b|49500|b|10 minutes passing|b|1|a|49500|b|54000|b|Block 4|b|0",
         "2802|b|Schedule Change: Early 1:35pm Dismissal, Blks 1-3|a|30600|b|35700|b|Block 1|b|0|a|35700|b|36600|b|Break|b|1|a|36600|b|41400|b|Block 2|b|0|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 3|b|0",
         "0103|b|Schedule Change Blks 4-7|a|30600|b|35700|b|Block 4|b|0|a|35700|b|36600|b|Break|b|1|a|36600|b|41400|b|Block 5|b|0|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 6|b|0|a|48900|b|49500|b|Passing|b|1|a|49500|b|54000|b|Block 7|b|0",
-        "0203|b|03-02-23|a|30600|b|35700|b|Block 3|b|1|a|35700|b|36600|b|15 min break|b|1|a|36600|b|41400|b|Block 2|b|1|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 1|b|1|a|48900|b|49500|b|10 min passing|b|1|a|49500|b|53100|b|The B'Oscars!|b|0"
+        "0203|b|03-02-23|a|30600|b|35700|b|Block 3|b|1|a|35700|b|36600|b|15 min break|b|1|a|36600|b|41400|b|Block 2|b|1|a|41400|b|43800|b|Lunch|b|1|a|44100|b|48900|b|Block 1|b|1|a|48900|b|49500|b|10 min passing|b|1|a|49500|b|53100|b|The B'Oscars!|b|0",
+        "0303|b|Career Day 2023|a|30600|b|31200|b|Gym Assembly|b|1|a|31200|b|32100|b|Keynote Address|b|1|a|32400|b|35100|b|Workshop 1|b|1|a|32100|b|32400|b|Passing Period|b|1|a|35400|b|38100|b|Workshop 2|b|1|a|38100|b|39000|b|15 min break|b|1|a|39300|b|39600|b|Passing Period|b|1|a|39600|b|42300|b|Workshop 3|b|1|a|42300|b|42600|b|Passing Period|b|1|a|42600|b|45300|b|Workshop 4|b|0",
+        "0803|b|Faith Family schedule|a|30600|b|34200|b|Block 2|b|1|a|34920|b|38220|b|Block 3|b|1|a|38580|b|41880|b|Block 4|b|1|a|41880|b|44280|b|Lunch|b|1|a|44580|b|46680|b|Faith Family|b|1|a|47040|b|50340|b|Block 5|b|1|a|50700|b|54000|b|Block 6|b|0",
+        "1303|b|UCBerkley PiE Event <a href='https://salesianschedule.glitch.me/pie.html'><button style='background:#AAFFFF;'>PRESS</button></a>|a|0|b|0|b|noclass|b|0",
+
       ];
-        "0303|b|Career Day 2023|a|30600|b|31200|b|Gym Assembly|b|1|a|31200|b|32100|b|Keynote Address|b|1|a|32400|b|35100|b|Workshop 1|b|1|a|32100|b|32400|b|Passing Period|b|1|a|35400|b|38100|b|Workshop 2|b|1|a|38100|b|39000|b|15 min break|b|1|a|39300|b|39600|b|Passing Period|b|1|a|39600|b|42300|b|Workshop 3|b|1|a|42300|b|42600|b|Passing Period|b|1|a|42600|b|45300|b|Workshop 4|b|0"
-        "803|b|Faith Family schedule|a|30600|b|34200|b|Block 2|b|1|a|34920|b|38220|b|Block 3|b|1|a|38580|b|41880|b|Block 4|b|1|a|41880|b|44280|b|Lunch|b|1|a|44580|b|46680|b|Faith Family|b|1|a|47040|b|50340|b|Block 5|b|1|a|50700|b|54000|b|Block 6|b|0"
-      
+
       var weekdayschedules = [
         "0000|b|Sunday Weekend|a|0|b|0|b|noclass|b|0",
         "0000|b|Monday Schedule|a|30600|b|35400|b|Block 1|b|0|a|35400|b|36300|b|Break|b|1|a|36300|b|40800|b|Block 2|b|0|a|40800|b|43200|b|Lunch|b|1|a|43500|b|48000|b|Block 3|b|0|a|48600|b|53100|b|Block 4|b|0|",
         "0000|b|Tuesday Schedule|a|30600|b|35400|b|Block 5|b|0|a|35400|b|36300|b|Break|b|1|a|36300|b|40800|b|Block 6|b|0|a|40800|b|43200|b|Lunch|b|1,
-        |a|43500|b|48000|b|Block 7|b|0|a|48600|b|51900|b|Block 1|b|0|a|52200|b|54000|b|Flex/CT|b|0",
         "0000|b|Wednesday Schedule|a|30600|b|34200|b|Block 2|b|0|a|34920|b|38220|b|Block 3|b|0|a|38580|b|41880|b|Block 4|b|0|a|41880|b|44280|b|Lunch|b|1|a|44580|b|46680|b|Faith Families/Community Time|b|0|a|47040|b|50340|b|Block 5|b|0|a|50700|b|54000|b|Block 6|b|0",
         "0000|b|Thursday Schedule|a|30600|b|34200|b|Block 7|b|0|a|34200|b|35100|b|Break|b|1|a|35100|b|39600|b|Block 1|b|0|a|39600|b|42000|b|Lunch|b|1|a|42300|b|46800|b|Block 2|b|0|a|47400|b|51900|b|Block 3|b|0|a|52200|b|54000|b|Flex/CT|b|0",
         "0000|b|Friday Schedule|a|30600|b|35400|b|Block 4|b|0|a|35400|b|36300|b|Break|b|1|a|36300|b|40800|b|Block 5|b|0|a|40800|b|43200|b|Lunch|b|1|a|43500|b|48000|b|Block 6|b|0|a|48600|b|53100|b|Block 7|b|0",
@@ -1198,7 +1199,7 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
         }
         return ms;
       }
-      
+
       //Decoding creator string into separate blocks and periods
       function decode(sched) {
         var msg = sched.split("|a|");
@@ -1216,10 +1217,10 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
         return ms;
       }
       //Decoding creator string into separate blocks and periods
-      
+
       var clothessheet = "";
       var schedule = decode(selectedschedule);
-      
+
       //Theme selector preferences
       if (window.location == window.parent.location) {
         if (getCookie("themforce") == "on" || schedule[0][2] == undefined) {
@@ -1336,7 +1337,7 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
         }
       }
       //Theme selector preferences
-      
+
       if (schedule[0][2] !== undefined) {
         var theba = schedule[0][2];
         if (schedule[0][2].includes("!full!")) {
