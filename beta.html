@@ -611,7 +611,7 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
 
     <div id="credits" style="position: fixed; z-index: 1; width: 100%; height: 100%; display: none; flex-direction: column; justify-content: center; align-items: center; padding: 0px 0px 0px;">
       <div style="background-color: #a6192e; width: 35%; height: 35%; border-radius: 12px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-        <h1 style="color: whitesmoke; text-align: center; font-size: 32px;">Made with ❤️ by: <br>
+        <h1 style="color: whitesmoke; text-align: center; font-size: 1rem; padding-left: 2px; padding-right: 2px;">Made with ❤️ by: <br>
           H.H. (Maintainer) <br>
           C.J.F '22 (Original Creator) <br>
           I.L. '23 (Maintainer)<br>
@@ -1760,9 +1760,11 @@ Ouyay areyay ikelay isthay illysay atcay ookinglay intoyay ethay ebsiteway onsle
       function refreshloop() {
         setTimeout("refreshloop()", 1000);
         calcSchedule();
-        document.querySelector("#pidayFLEX").onclick = () => {
-          startPiLoop();
-        }
+        // Remove this after PI day
+        if (document.querySelector("#pidayFLEX") != null)
+          document.querySelector("#pidayFLEX").onclick = () => {
+            startPiLoop();
+          }
       }
 
       let hasOpenedCredits = false;
